@@ -2,7 +2,7 @@
 <metadata>
   <name>Revolver Samson - 4-Shot Revolver Character</name>
   <directory>zzzz_revolver_samson</directory>
-  <description>v1.75-art: correct conditional head anchors and attached loop alignment; neutral character and body geometry retained.</description>
-  <version>1.75-art</version>
+  <description>v1.76-art: per-outfit, per-pose face-landmark registration replaces the v1.75 global offset. Neutral actor/body and gameplay retained.</description>
+  <version>1.76-art</version>
   <visibility>Private</visibility>
 </metadata>

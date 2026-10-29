@@ -147,4 +147,8 @@ print(f'Assembled {len(complete)}/66 integrated heads; registered three real ove
 
 # Apply the conditional outfit actor geometry after regenerating loop files.
 import runpy
+runpy.run_path(str(REPO/'tools/recover_full_unicorn.py'))
+runpy.run_path(str(REPO/'tools/measure_head_landmarks.py'))
+runpy.run_path(str(REPO/'tools/recover_complete_faces.py'))
+runpy.run_path(str(REPO/'tools/measure_head_landmarks.py'))
 runpy.run_path(str(REPO/'tools/align_head_anchors.py'))

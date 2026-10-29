@@ -103,7 +103,7 @@ local alignmentProbe=player();players={alignmentProbe}
 alignmentProbe.sprite.animation='Pickup';alignmentProbe.sprite.frame=3
 alignmentProbe.sprite.overlay='HeadRight';alignmentProbe.sprite.overlayFrame=1
 alignmentProbe.items[1]=1;api.sync(alignmentProbe)
-assert(alignmentProbe.sprite.file=='gfx/001.000_player_hunter_b_v175.anm2')
+assert(alignmentProbe.sprite.file=='gfx/001.000_player_hunter_b_v176_1.anm2')
 assert(alignmentProbe.sprite.frame==3 and alignmentProbe.sprite.animation=='Pickup')
 assert(alignmentProbe.sprite.overlay=='HeadRight'and alignmentProbe.sprite.overlayFrame==1)
 alignmentProbe.items[1]=nil;api.sync(alignmentProbe)
@@ -202,7 +202,7 @@ assert(codec.decode(savedData).existingGameplayState.ammo==2,'shared save data l
 fire('start',true);assert(api.selected(p).id==4,'continue changed acquisition order')
 diagnostic=nil;fire('command','unrelated');assert(diagnostic==nil)
 writes=p.sprite.writes;fire('command','hunterartdiag')
-assert(diagnostic:find('[Hunter art v1.75]',1,true)
+assert(diagnostic:find('[Hunter art v1.76]',1,true)
     and diagnostic:find('selected=4',1,true)
     and diagnostic:find('sheet='..lookup[4].sheet,1,true),'diagnostic missing actual outfit')
 assert(p.sprite.writes==writes,'diagnostic changed outfit state')

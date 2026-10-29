@@ -103,6 +103,30 @@ def main() -> None:
 
     for path in list(MOD.rglob('*.xml')) + list(MOD.rglob('*.anm2')):
         ET.parse(path)
+    # Test measured face points through actual per-pose XML transforms, not
+    # merely that the same hard-coded offset was written into every outfit.
+    landmarks=json.loads((CHECKOUT/'art_sources/head_landmarks176.json').read_text())
+    neutral=ET.parse(gfx/'001.000_player_hunter_b_v153.anm2').getroot()
+    for item_id,*_ in entries:
+        actor=ET.parse(gfx/f'001.000_player_hunter_b_v176_{item_id}.anm2').getroot()
+        assert ET.tostring(actor.find('Content'))==ET.tostring(neutral.find('Content'))
+        for original_animation,new_animation in zip(neutral.findall('Animations/Animation'),actor.findall('Animations/Animation')):
+            assert original_animation.attrib==new_animation.attrib
+            for old_layer,new_layer in zip(original_animation.findall('LayerAnimations/LayerAnimation'),new_animation.findall('LayerAnimations/LayerAnimation')):
+                assert old_layer.attrib==new_layer.attrib
+                for old,new in zip(old_layer.findall('Frame'),new_layer.findall('Frame')):
+                    column=int(old.get('XCrop','-128'))//128
+                    pose={6:1,9:0,10:1}.get(column,column)
+                    if old_layer.get('LayerId')!='4' or old.get('YCrop')!='0' or pose not in range(6):
+                        assert old.attrib==new.attrib;continue
+                    assert {k:v for k,v in old.attrib.items()if k not in ('XPivot','YPivot')}=={k:v for k,v in new.attrib.items()if k not in ('XPivot','YPivot')}
+                    point=landmarks['outfits'][item_id][pose];reference=landmarks['neutral'][pose]
+                    for axis,pivot,scale in [('x','XPivot','XScale'),('y','YPivot','YScale')]:
+                        actual=(point[axis]-float(new.get(pivot)))*float(new.get(scale))/100
+                        expected=(reference[axis]-float(old.get(pivot)))*float(old.get(scale))/100
+                        assert abs(actual-expected)<1e-7,(item_id,pose,axis,actual,expected)
+    assert len(list(gfx.glob('001.000_player_hunter_b_v176_*.anm2')))==66
+    print('PASS:66individual pose tables; face-centre/chin coordinates match neutral under actual native/mirrored/action transforms; body/timing preserved.')
     registrations = ET.parse(MOD / 'content/costumes2.xml').getroot()
     assert not any('hunter_art173/' in node.get('anm2path', '')
                    for node in registrations), 'Old static costumes still registered'

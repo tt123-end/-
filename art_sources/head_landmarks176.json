@@ -1,0 +1,2413 @@
+{
+  "version": 176,
+  "neutral": [
+    {
+      "x": 64.5,
+      "y": 103,
+      "area": 952,
+      "method": "skin-contour"
+    },
+    {
+      "x": 64.0,
+      "y": 103,
+      "area": 1270,
+      "method": "skin-contour"
+    },
+    {
+      "x": 86.5,
+      "y": 99,
+      "area": 604,
+      "method": "skin-contour"
+    },
+    {
+      "x": 86.5,
+      "y": 99,
+      "area": 1020,
+      "method": "skin-contour"
+    },
+    {
+      "x": 64,
+      "y": 116,
+      "method": "back-frame"
+    },
+    {
+      "x": 64,
+      "y": 116,
+      "method": "back-frame"
+    }
+  ],
+  "outfits": {
+    "1": [
+      {
+        "x": 71.0,
+        "y": 100,
+        "area": 902,
+        "method": "skin-contour"
+      },
+      {
+        "x": 71.5,
+        "y": 99,
+        "area": 1274,
+        "method": "skin-contour"
+      },
+      {
+        "x": 105.5,
+        "y": 96,
+        "area": 430,
+        "method": "skin-contour"
+      },
+      {
+        "x": 95.0,
+        "y": 97,
+        "area": 733,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "101": [
+      {
+        "x": 68.5,
+        "y": 98,
+        "area": 1054,
+        "method": "skin-contour"
+      },
+      {
+        "x": 69.5,
+        "y": 98,
+        "area": 1408,
+        "method": "skin-contour"
+      },
+      {
+        "x": 96.0,
+        "y": 96,
+        "area": 627,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.5,
+        "y": 96,
+        "area": 775,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "103": [
+      {
+        "x": 70.0,
+        "y": 106,
+        "area": 1009,
+        "method": "skin-contour"
+      },
+      {
+        "x": 69.0,
+        "y": 105,
+        "area": 1395,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 102,
+        "area": 577,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 103,
+        "area": 985,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "104": [
+      {
+        "x": 70.5,
+        "y": 105,
+        "area": 973,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.0,
+        "y": 105,
+        "area": 1011,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.5,
+        "y": 102,
+        "area": 565,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 103,
+        "area": 938,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "106": [
+      {
+        "x": 70.0,
+        "y": 100,
+        "area": 941,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.0,
+        "y": 100,
+        "area": 1003,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.5,
+        "y": 98,
+        "area": 551,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.0,
+        "y": 99,
+        "area": 869,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "109": [
+      {
+        "x": 70.5,
+        "y": 100,
+        "area": 999,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.5,
+        "y": 100,
+        "area": 1308,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.5,
+        "y": 96,
+        "area": 532,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 97,
+        "area": 890,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "110": [
+      {
+        "x": 67.0,
+        "y": 100,
+        "area": 916,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.0,
+        "y": 100,
+        "area": 1084,
+        "method": "skin-contour"
+      },
+      {
+        "x": 80.5,
+        "y": 98,
+        "area": 737,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 98,
+        "area": 934,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "115": [
+      {
+        "x": 68.0,
+        "y": 100,
+        "area": 830,
+        "method": "skin-contour"
+      },
+      {
+        "x": 66.0,
+        "y": 100,
+        "area": 970,
+        "method": "skin-contour"
+      },
+      {
+        "x": 81.0,
+        "y": 99,
+        "area": 699,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 99,
+        "area": 880,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "116": [
+      {
+        "x": 67.5,
+        "y": 108,
+        "area": 957,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.5,
+        "y": 108,
+        "area": 1180,
+        "method": "skin-contour"
+      },
+      {
+        "x": 82.0,
+        "y": 108,
+        "area": 791,
+        "method": "skin-contour"
+      },
+      {
+        "x": 83.0,
+        "y": 109,
+        "area": 1037,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "117": [
+      {
+        "x": 66.5,
+        "y": 99,
+        "area": 912,
+        "method": "skin-contour"
+      },
+      {
+        "x": 66.0,
+        "y": 98,
+        "area": 1339,
+        "method": "skin-contour"
+      },
+      {
+        "x": 83.0,
+        "y": 96,
+        "area": 663,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.5,
+        "y": 96,
+        "area": 887,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "118": [
+      {
+        "x": 71.0,
+        "y": 109,
+        "area": 900,
+        "method": "skin-contour"
+      },
+      {
+        "x": 69.0,
+        "y": 109,
+        "area": 818,
+        "method": "skin-contour"
+      },
+      {
+        "x": 94.5,
+        "y": 108,
+        "area": 585,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.5,
+        "y": 108,
+        "area": 711,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "119": [
+      {
+        "x": 74.0,
+        "y": 100,
+        "area": 1003,
+        "method": "skin-contour"
+      },
+      {
+        "x": 74.5,
+        "y": 100,
+        "area": 1238,
+        "method": "skin-contour"
+      },
+      {
+        "x": 96.5,
+        "y": 97,
+        "area": 621,
+        "method": "skin-contour"
+      },
+      {
+        "x": 88.0,
+        "y": 98,
+        "area": 814,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "122": [
+      {
+        "x": 71.5,
+        "y": 103,
+        "area": 849,
+        "method": "skin-contour"
+      },
+      {
+        "x": 70.5,
+        "y": 103,
+        "area": 708,
+        "method": "skin-contour"
+      },
+      {
+        "x": 99.5,
+        "y": 103,
+        "area": 489,
+        "method": "skin-contour"
+      },
+      {
+        "x": 95.5,
+        "y": 103,
+        "area": 645,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "123": [
+      {
+        "x": 74.0,
+        "y": 100,
+        "area": 900,
+        "method": "skin-contour"
+      },
+      {
+        "x": 76.5,
+        "y": 100,
+        "area": 1099,
+        "method": "skin-contour"
+      },
+      {
+        "x": 99.0,
+        "y": 97,
+        "area": 551,
+        "method": "skin-contour"
+      },
+      {
+        "x": 93.0,
+        "y": 97,
+        "area": 637,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "126": [
+      {
+        "x": 72.0,
+        "y": 111,
+        "area": 1117,
+        "method": "skin-contour"
+      },
+      {
+        "x": 72.0,
+        "y": 111,
+        "area": 1112,
+        "method": "skin-contour"
+      },
+      {
+        "x": 89.5,
+        "y": 108,
+        "area": 820,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.0,
+        "y": 108,
+        "area": 1082,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "129": [
+      {
+        "x": 72.0,
+        "y": 99,
+        "area": 897,
+        "method": "skin-contour"
+      },
+      {
+        "x": 71.5,
+        "y": 99,
+        "area": 1062,
+        "method": "skin-contour"
+      },
+      {
+        "x": 89.0,
+        "y": 96,
+        "area": 723,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.5,
+        "y": 97,
+        "area": 946,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "13": [
+      {
+        "x": 69.5,
+        "y": 103,
+        "area": 643,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64.5,
+        "y": 102,
+        "area": 714,
+        "method": "skin-contour"
+      },
+      {
+        "x": 89.5,
+        "y": 100,
+        "area": 415,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 101,
+        "area": 756,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "130": [
+      {
+        "x": 70.5,
+        "y": 92,
+        "area": 884,
+        "method": "skin-contour"
+      },
+      {
+        "x": 71.5,
+        "y": 92,
+        "area": 903,
+        "method": "skin-contour"
+      },
+      {
+        "x": 89.0,
+        "y": 89,
+        "area": 575,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.0,
+        "y": 90,
+        "area": 819,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "132": [
+      {
+        "x": 71.5,
+        "y": 101,
+        "area": 943,
+        "method": "skin-contour"
+      },
+      {
+        "x": 72.0,
+        "y": 102,
+        "area": 1250,
+        "method": "skin-contour"
+      },
+      {
+        "x": 90.5,
+        "y": 99,
+        "area": 551,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.5,
+        "y": 100,
+        "area": 876,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "134": [
+      {
+        "x": 66.5,
+        "y": 101,
+        "area": 894,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.5,
+        "y": 101,
+        "area": 1305,
+        "method": "skin-contour"
+      },
+      {
+        "x": 88.5,
+        "y": 99,
+        "area": 568,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 98,
+        "area": 930,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "138": [
+      {
+        "x": 62.5,
+        "y": 108,
+        "area": 804,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.5,
+        "y": 109,
+        "area": 1325,
+        "method": "skin-contour"
+      },
+      {
+        "x": 88.5,
+        "y": 106,
+        "area": 514,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 106,
+        "area": 948,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "14": [
+      {
+        "x": 68.5,
+        "y": 102,
+        "area": 773,
+        "method": "skin-contour"
+      },
+      {
+        "x": 67.0,
+        "y": 102,
+        "area": 805,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.0,
+        "y": 98,
+        "area": 489,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 99,
+        "area": 836,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "141": [
+      {
+        "x": 65.5,
+        "y": 100,
+        "area": 857,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64.5,
+        "y": 101,
+        "area": 1032,
+        "method": "skin-contour"
+      },
+      {
+        "x": 89.5,
+        "y": 98,
+        "area": 526,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 98,
+        "area": 918,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "143": [
+      {
+        "x": 66.0,
+        "y": 100,
+        "area": 898,
+        "method": "skin-contour"
+      },
+      {
+        "x": 67.0,
+        "y": 100,
+        "area": 1210,
+        "method": "skin-contour"
+      },
+      {
+        "x": 89.5,
+        "y": 98,
+        "area": 491,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 98,
+        "area": 870,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "17": [
+      {
+        "x": 69.0,
+        "y": 101,
+        "area": 960,
+        "method": "skin-contour"
+      },
+      {
+        "x": 67.5,
+        "y": 100,
+        "area": 1259,
+        "method": "skin-contour"
+      },
+      {
+        "x": 88.5,
+        "y": 99,
+        "area": 695,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 98,
+        "area": 888,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "19": [
+      {
+        "x": 68.0,
+        "y": 110,
+        "area": 846,
+        "method": "skin-contour"
+      },
+      {
+        "x": 66.5,
+        "y": 110,
+        "area": 1027,
+        "method": "skin-contour"
+      },
+      {
+        "x": 88.0,
+        "y": 107,
+        "area": 566,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 106,
+        "area": 925,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "2": [
+      {
+        "x": 70.5,
+        "y": 108,
+        "area": 1236,
+        "method": "skin-contour"
+      },
+      {
+        "x": 72.5,
+        "y": 108,
+        "area": 1681,
+        "method": "skin-contour"
+      },
+      {
+        "x": 96.5,
+        "y": 105,
+        "area": 784,
+        "method": "skin-contour"
+      },
+      {
+        "x": 94.5,
+        "y": 105,
+        "area": 913,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "27": [
+      {
+        "x": 69.0,
+        "y": 101,
+        "area": 865,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.0,
+        "y": 101,
+        "area": 1360,
+        "method": "skin-contour"
+      },
+      {
+        "x": 88.0,
+        "y": 99,
+        "area": 676,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 99,
+        "area": 865,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "29": [
+      {
+        "x": 69.5,
+        "y": 96,
+        "area": 831,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.5,
+        "y": 96,
+        "area": 1301,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.5,
+        "y": 93,
+        "area": 671,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 94,
+        "area": 863,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "3": [
+      {
+        "x": 71.0,
+        "y": 102,
+        "area": 1152,
+        "method": "skin-contour"
+      },
+      {
+        "x": 73.0,
+        "y": 103,
+        "area": 1556,
+        "method": "skin-contour"
+      },
+      {
+        "x": 97.0,
+        "y": 100,
+        "area": 703,
+        "method": "skin-contour"
+      },
+      {
+        "x": 95.5,
+        "y": 101,
+        "area": 801,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "300": [
+      {
+        "x": 71.5,
+        "y": 102,
+        "area": 1048,
+        "method": "skin-contour"
+      },
+      {
+        "x": 67.5,
+        "y": 102,
+        "area": 958,
+        "method": "skin-contour"
+      },
+      {
+        "x": 89.5,
+        "y": 99,
+        "area": 623,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.0,
+        "y": 100,
+        "area": 826,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "31": [
+      {
+        "x": 70.5,
+        "y": 106,
+        "area": 947,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.5,
+        "y": 106,
+        "area": 1330,
+        "method": "skin-contour"
+      },
+      {
+        "x": 88.0,
+        "y": 102,
+        "area": 637,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 103,
+        "area": 938,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "32": [
+      {
+        "x": 70.5,
+        "y": 103,
+        "area": 931,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.0,
+        "y": 102,
+        "area": 1040,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.5,
+        "y": 100,
+        "area": 669,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 100,
+        "area": 904,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "34": [
+      {
+        "x": 70.5,
+        "y": 100,
+        "area": 897,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.0,
+        "y": 100,
+        "area": 1109,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.5,
+        "y": 96,
+        "area": 578,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 97,
+        "area": 866,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "342": [
+      {
+        "x": 72.5,
+        "y": 106,
+        "area": 1049,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.0,
+        "y": 106,
+        "area": 1247,
+        "method": "skin-contour"
+      },
+      {
+        "x": 88.0,
+        "y": 102,
+        "area": 639,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 103,
+        "area": 892,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "39": [
+      {
+        "x": 70.5,
+        "y": 95,
+        "area": 974,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.5,
+        "y": 95,
+        "area": 971,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.0,
+        "y": 93,
+        "area": 642,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 94,
+        "area": 870,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "4": [
+      {
+        "x": 71.5,
+        "y": 99,
+        "area": 1021,
+        "method": "skin-contour"
+      },
+      {
+        "x": 72.5,
+        "y": 99,
+        "area": 1544,
+        "method": "skin-contour"
+      },
+      {
+        "x": 97.5,
+        "y": 97,
+        "area": 636,
+        "method": "skin-contour"
+      },
+      {
+        "x": 96.0,
+        "y": 97,
+        "area": 756,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "46": [
+      {
+        "x": 66.5,
+        "y": 95,
+        "area": 975,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64.5,
+        "y": 94,
+        "area": 941,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.0,
+        "y": 92,
+        "area": 600,
+        "method": "skin-contour"
+      },
+      {
+        "x": 83.5,
+        "y": 92,
+        "area": 757,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "48": [
+      {
+        "x": 66.5,
+        "y": 98,
+        "area": 958,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.0,
+        "y": 98,
+        "area": 985,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.0,
+        "y": 95,
+        "area": 548,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 96,
+        "area": 809,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "49": [
+      {
+        "x": 67.0,
+        "y": 98,
+        "area": 829,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64.5,
+        "y": 98,
+        "area": 976,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.0,
+        "y": 95,
+        "area": 629,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 96,
+        "area": 807,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "50": [
+      {
+        "x": 66.0,
+        "y": 94,
+        "area": 815,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.0,
+        "y": 94,
+        "area": 884,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.5,
+        "y": 91,
+        "area": 595,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 92,
+        "area": 772,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "51": [
+      {
+        "x": 67.5,
+        "y": 99,
+        "area": 1006,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64.5,
+        "y": 100,
+        "area": 1045,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.5,
+        "y": 98,
+        "area": 727,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 99,
+        "area": 888,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "52": [
+      {
+        "x": 67.5,
+        "y": 110,
+        "area": 873,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.5,
+        "y": 111,
+        "area": 1036,
+        "method": "skin-contour"
+      },
+      {
+        "x": 89.0,
+        "y": 109,
+        "area": 685,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 109,
+        "area": 926,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "53": [
+      {
+        "x": 67.5,
+        "y": 97,
+        "area": 1017,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64.5,
+        "y": 97,
+        "area": 1012,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.5,
+        "y": 95,
+        "area": 679,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 96,
+        "area": 870,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "55": [
+      {
+        "x": 67.5,
+        "y": 99,
+        "area": 900,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.5,
+        "y": 99,
+        "area": 1055,
+        "method": "skin-contour"
+      },
+      {
+        "x": 89.0,
+        "y": 96,
+        "area": 676,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 97,
+        "area": 871,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "6": [
+      {
+        "x": 68.5,
+        "y": 102,
+        "area": 858,
+        "method": "skin-contour"
+      },
+      {
+        "x": 66.5,
+        "y": 102,
+        "area": 956,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.0,
+        "y": 99,
+        "area": 646,
+        "method": "skin-contour"
+      },
+      {
+        "x": 83.5,
+        "y": 100,
+        "area": 898,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "62": [
+      {
+        "x": 65.0,
+        "y": 106,
+        "area": 1120,
+        "method": "skin-contour"
+      },
+      {
+        "x": 66.0,
+        "y": 106,
+        "area": 1410,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.0,
+        "y": 102,
+        "area": 615,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.5,
+        "y": 102,
+        "area": 1008,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "63": [
+      {
+        "x": 65.5,
+        "y": 99,
+        "area": 1080,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.5,
+        "y": 101,
+        "area": 1128,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.0,
+        "y": 98,
+        "area": 599,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.5,
+        "y": 98,
+        "area": 991,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "64": [
+      {
+        "x": 66.0,
+        "y": 102,
+        "area": 1110,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.0,
+        "y": 103,
+        "area": 1146,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.5,
+        "y": 100,
+        "area": 601,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.0,
+        "y": 100,
+        "area": 975,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "68": [
+      {
+        "x": 63.0,
+        "y": 102,
+        "area": 812,
+        "method": "skin-contour"
+      },
+      {
+        "x": 63.0,
+        "y": 102,
+        "area": 896,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.0,
+        "y": 100,
+        "area": 614,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.5,
+        "y": 100,
+        "area": 808,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "69": [
+      {
+        "x": 66.0,
+        "y": 104,
+        "area": 1011,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.5,
+        "y": 104,
+        "area": 1110,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 100,
+        "area": 668,
+        "method": "skin-contour"
+      },
+      {
+        "x": 83.5,
+        "y": 100,
+        "area": 952,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "7": [
+      {
+        "x": 68.0,
+        "y": 107,
+        "area": 925,
+        "method": "skin-contour"
+      },
+      {
+        "x": 66.5,
+        "y": 107,
+        "area": 960,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.0,
+        "y": 105,
+        "area": 611,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 106,
+        "area": 854,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "70": [
+      {
+        "x": 65.0,
+        "y": 108,
+        "area": 1203,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64.0,
+        "y": 108,
+        "area": 1259,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 103,
+        "area": 792,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.5,
+        "y": 104,
+        "area": 1068,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "75": [
+      {
+        "x": 64.5,
+        "y": 103,
+        "area": 595,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.0,
+        "y": 103,
+        "area": 517,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 101,
+        "area": 515,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 101,
+        "area": 484,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "76": [
+      {
+        "x": 65.0,
+        "y": 101,
+        "area": 607,
+        "method": "skin-contour"
+      },
+      {
+        "x": 65.0,
+        "y": 102,
+        "area": 544,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.5,
+        "y": 97,
+        "area": 352,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.5,
+        "y": 85,
+        "area": 266,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "77": [
+      {
+        "x": 71.5,
+        "y": 104,
+        "area": 915,
+        "method": "skin-contour"
+      },
+      {
+        "x": 70.5,
+        "y": 104,
+        "area": 1254,
+        "method": "skin-contour"
+      },
+      {
+        "x": 90.0,
+        "y": 101,
+        "area": 548,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 101,
+        "area": 812,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "79": [
+      {
+        "x": 71.5,
+        "y": 102,
+        "area": 1038,
+        "method": "skin-contour"
+      },
+      {
+        "x": 73.0,
+        "y": 102,
+        "area": 1468,
+        "method": "skin-contour"
+      },
+      {
+        "x": 90.5,
+        "y": 99,
+        "area": 567,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.5,
+        "y": 99,
+        "area": 887,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "80": [
+      {
+        "x": 72.5,
+        "y": 109,
+        "area": 1074,
+        "method": "skin-contour"
+      },
+      {
+        "x": 74.5,
+        "y": 109,
+        "area": 1457,
+        "method": "skin-contour"
+      },
+      {
+        "x": 95.5,
+        "y": 106,
+        "area": 494,
+        "method": "skin-contour"
+      },
+      {
+        "x": 87.0,
+        "y": 106,
+        "area": 947,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "82": [
+      {
+        "x": 72.0,
+        "y": 102,
+        "area": 985,
+        "method": "skin-contour"
+      },
+      {
+        "x": 73.0,
+        "y": 102,
+        "area": 1396,
+        "method": "skin-contour"
+      },
+      {
+        "x": 95.5,
+        "y": 101,
+        "area": 521,
+        "method": "skin-contour"
+      },
+      {
+        "x": 88.0,
+        "y": 100,
+        "area": 866,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "83": [
+      {
+        "x": 69.5,
+        "y": 102,
+        "area": 997,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.0,
+        "y": 101,
+        "area": 1382,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 99,
+        "area": 719,
+        "method": "skin-contour"
+      },
+      {
+        "x": 79.5,
+        "y": 99,
+        "area": 979,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "87": [
+      {
+        "x": 69.5,
+        "y": 103,
+        "area": 1011,
+        "method": "skin-contour"
+      },
+      {
+        "x": 67.0,
+        "y": 101,
+        "area": 1155,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.0,
+        "y": 99,
+        "area": 676,
+        "method": "skin-contour"
+      },
+      {
+        "x": 79.5,
+        "y": 99,
+        "area": 954,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "89": [
+      {
+        "x": 70.0,
+        "y": 101,
+        "area": 920,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.0,
+        "y": 101,
+        "area": 1115,
+        "method": "skin-contour"
+      },
+      {
+        "x": 85.0,
+        "y": 98,
+        "area": 704,
+        "method": "skin-contour"
+      },
+      {
+        "x": 79.5,
+        "y": 98,
+        "area": 973,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "90": [
+      {
+        "x": 71.5,
+        "y": 101,
+        "area": 1012,
+        "method": "skin-contour"
+      },
+      {
+        "x": 69.0,
+        "y": 101,
+        "area": 1182,
+        "method": "skin-contour"
+      },
+      {
+        "x": 86.5,
+        "y": 98,
+        "area": 695,
+        "method": "skin-contour"
+      },
+      {
+        "x": 80.5,
+        "y": 98,
+        "area": 978,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "91": [
+      {
+        "x": 69.5,
+        "y": 100,
+        "area": 743,
+        "method": "skin-contour"
+      },
+      {
+        "x": 69.0,
+        "y": 100,
+        "area": 1116,
+        "method": "skin-contour"
+      },
+      {
+        "x": 92.5,
+        "y": 97,
+        "area": 481,
+        "method": "skin-contour"
+      },
+      {
+        "x": 84.5,
+        "y": 98,
+        "area": 733,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "92": [
+      {
+        "x": 69,
+        "y": 107,
+        "method": "bandage-face-outline"
+      },
+      {
+        "x": 67,
+        "y": 106,
+        "method": "bandage-face-outline"
+      },
+      {
+        "x": 96,
+        "y": 104,
+        "method": "bandage-face-outline"
+      },
+      {
+        "x": 89.5,
+        "y": 105,
+        "method": "bandage-face-outline"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ],
+    "93": [
+      {
+        "x": 70.0,
+        "y": 98,
+        "area": 528,
+        "method": "skin-contour"
+      },
+      {
+        "x": 68.5,
+        "y": 97,
+        "area": 426,
+        "method": "skin-contour"
+      },
+      {
+        "x": 96.0,
+        "y": 96,
+        "area": 420,
+        "method": "skin-contour"
+      },
+      {
+        "x": 88.5,
+        "y": 96,
+        "area": 355,
+        "method": "skin-contour"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      },
+      {
+        "x": 64,
+        "y": 116,
+        "method": "back-frame"
+      }
+    ]
+  }
+}

@@ -6,8 +6,9 @@ return function(mod, playerType)
     local definitions = include('hunter_costume_manifest')
     local jsonOK, json = pcall(require, 'json')
     local nativeFile = 'gfx/001.000_player_hunter_b_v153.anm2'
-    local alignedFile = 'gfx/001.000_player_hunter_b_v175.anm2'
-    local function owned(source)return source==nativeFile or source==alignedFile end
+    local alignment=include('hunter_head_alignment')
+    local legacyAlignedFile = 'gfx/001.000_player_hunter_b_v175.anm2'
+    local function owned(source)return source==nativeFile or source==legacyAlignedFile or source:match('^gfx/001%.000_player_hunter_b_v176_%d+%.anm2$')~=nil end
     local baseSheet = 'gfx/characters/costumes/hunter_b_heads_v152.png'
     local byId, serial = {}, 0
     local nativeActive = {[34]=true, [77]=true, [83]=true, [93]=true}
@@ -173,7 +174,7 @@ return function(mod, playerType)
         -- selected head, so a costume rebuild cannot erase it in this frame.
         sprite = p:GetSprite()
         source = normalized(sprite:GetFilename())
-        local target=entry and alignedFile or nativeFile
+        local target=entry and assert(alignment[entry.id],'Missing outfit alignment')or nativeFile
         local swapped=owned(source) and actor(sprite,target)
         if owned(source) and (swapped or sheet ~= s.sheet or force or changed or previousLoop ~= s.loopCostume) then
             sprite:ReplaceSpritesheet(4, sheet)
@@ -194,7 +195,7 @@ return function(mod, playerType)
     if ModCallbacks.MC_EXECUTE_CMD then
         mod:AddCallback(ModCallbacks.MC_EXECUTE_CMD, function(_, command)
             if command ~= 'hunterartdiag' then return end
-            local lines = {'[Hunter art v1.75] integrated heads and native dynamic overlays'}
+            local lines = {'[Hunter art v1.76] integrated heads and native dynamic overlays'}
             for i=0,game:GetNumPlayers()-1 do
                 local p = Isaac.GetPlayer(i)
                 local s = p:GetData().hunterDynamic174

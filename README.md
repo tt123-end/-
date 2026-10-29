@@ -1,8 +1,8 @@
-# 里猎手 v1.75-art 动态外观测试版
+# 里猎手 v1.76-art 动态外观测试版
 
 本版移除v1.73的全部静态配饰贴片，重做66项道具的整合头部造型与表情帧。目标环境：忏悔+及匹配版本的REPENTOGON。
 
-- [下载完整Mod安装包](deliverables/Hunter_v1.75-art_test.zip)
+- [下载完整Mod安装包](deliverables/Hunter_v1.76-art_test.zip)
 - [浏览美术源图](art_sources) · [制作与验证工具](tools)
 - [查看动态哭泣合成预览](deliverables/crying-animation.gif)
 - [道具清单](deliverables/COSTUME_CATALOG.md)
@@ -10,11 +10,15 @@
 
 点击ZIP文件后选择Download raw file下载。也可直接使用仓库中的zzzz_revolver_samson文件夹。
 
-## v1.75位置修正
+## v1.76逐项位置校准
 
-修正启用道具造型后头部向右下方偏移的问题。仅为道具造型切换校正后的头部枢轴，正常人物仍使用原动画；脸部循环效果同步校正。覆盖正面、侧面以及拾取、举物和受伤动作，背面与身体动画保持原坐标。
+撤销v1.75统一使用的(8,7)头部偏移。66项造型现在各自拥有六个方向/动作状态的坐标表，以正常人物的脸部轮廓中心和下巴为参照，正面、侧面、待机和射击分别计算。帽子、角、灯和装饰不作为定位依据；被绷带遮挡的脸部使用单独记录的轮廓点。
 
-[查看位置对比](deliverables/alignment-comparison.png)
+例如荆棘造型（殉道者之血）的正面待机修正由统一(8,7)改为(3.5,4)源贴图像素；射击、左右朝向另有对应值。数据见art_sources/head_landmarks176.json，生成工具为tools/measure_head_landmarks.py和tools/align_head_anchors.py。
+
+所有新坐标保持身体与碰撞体不动，拾取/受伤/举物复用对应表情的坐标，左向镜像按原生缩放处理。循环粒子同步跟随各自造型。清除道具造型后恢复原人物动画。
+
+[查看正常／旧版／本版位置对比](deliverables/alignment-comparison.png) · [查看66项统一身体锚点下的预览](deliverables/alignment-all-outfits.png)
 
 ## 原外观重做
 
