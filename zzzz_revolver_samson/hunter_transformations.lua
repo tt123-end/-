@@ -5,7 +5,7 @@ return function(mod, playerType, items, isHunter)
     local definitions = include('hunter_form_manifest')
     local anchors = include('hunter_wing_anchors')
     local motion = include('hunter_wing_motion')
-    local paletteColours={}
+    local spriteState=include('hunter_sprite_state')
     -- Wing-only vanilla visual providers can otherwise add a second white
     -- pair over the selected form. Inventory/effects remain engine-owned.
     local wingProviders={33,179,181,184,185,633,643}
@@ -277,12 +277,11 @@ return function(mod, playerType, items, isHunter)
             or animation:match('(Left)$') or animation:match('(Right)$') or 'Down'
         local path=anchors[animation]
         local index=sprite:GetFrame()+1
-        local point=path and path[(index-1)%#path+1] or {0,-3.6}
+        local point=path and path[(index-1)%#path+1] or {0,-10.2}
         local scale=sprite.Scale or Vector(1,1)
         local wing=s.wingSprite
         wing.Scale=Vector(motion.scale*scale.X,motion.scale*scale.Y)
-        if not paletteColours[style]then paletteColours[style]=Color(palette[1],palette[2],palette[3],1,0,0,0)end
-        wing.Color=sprite.Color*paletteColours[style]
+        wing.Color=spriteState.colour(sprite.Color,palette)
         wing.Rotation=sprite.Rotation or 0
         wing.FlipX,wing.FlipY=sprite.FlipX,sprite.FlipY
         -- Game ticks freeze on pause. Frame selection is independent of the

@@ -5,7 +5,7 @@ from PIL import Image
 import xml.etree.ElementTree as E
 from render_dynamic_preview import render, run, REPO, GFX, OUT
 
-TMP=REPO/'art_sources/assembly/forms179_preview'
+TMP=REPO/'art_sources/assembly/forms180_preview'
 TMP.mkdir(parents=True,exist_ok=True)
 LABELS=['Guppy','Beelzebub','Fun Guy','Seraphim','Bob','Spun','Yes Mother',
         'Conjoined','Leviathan','Oh Crap','Bookworm','Adulthood','Spider Baby','Stompy']
@@ -19,7 +19,7 @@ def card(id,direction,tick,dest,shoot=0):
     if id in WINGS:
         folder=GFX/'characters/hunter_wings179'
         wing=E.parse(folder/'wings.anm2').getroot()
-        render(dest,wing,folder,direction,tick,origin=(96,120-3.6*2),
+        render(dest,wing,folder,direction,tick,origin=(96,120-10.2*2),
                sprite_scale=MOTION['scale'],tint=MOTION['colours'][WINGS[id]])
     render(dest,actor,GFX,'Walk'+direction,0,origin=(96,120))
     render(dest,actor,GFX,'Head'+direction,shoot,origin=(96,120))

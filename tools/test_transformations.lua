@@ -13,15 +13,15 @@ return function(T)
         if type(a)=='number'then return Vector(a*b.X,a*b.Y)end
         return Vector(a.X*b,a.Y*b)
     end
+    vt.__index={Length=function(self)return math.sqrt(self.X*self.X+self.Y*self.Y)end}
     local colourMeta={}
-    function Color(r,g,b,a,ro,go,bo)
-        return setmetatable({R=r,G=g,B=b,A=a,RO=ro or 0,GO=go or 0,BO=bo or 0},colourMeta)
-    end
-    colourMeta.__mul=function(a,b)
-        local colour=Color(a.R*b.R,a.G*b.G,a.B*b.B,a.A*b.A,a.RO+b.RO,a.GO+b.GO,a.BO+b.BO)
-        colour.left,colour.right=a,b
+    function Color(r,g,b,a,ro,go,bo,rc,gc,bc,ac)
+        local colour=setmetatable({R=r,G=g,B=b,A=a,RO=ro or 0,GO=go or 0,BO=bo or 0,
+            colourize={R=rc or 0,G=gc or 0,B=bc or 0,A=ac or 0}},colourMeta)
+        function colour:GetColorize()return self.colourize end
         return colour
     end
+    colourMeta.__mul=function()error('render path used shared Color multiplication')end
     local renders,loads={},0
     function Sprite()
         local sprite={}
@@ -66,8 +66,8 @@ return function(T)
     q.forms[3]=true;q.CanFly=true;api.sync(q);assert(api.selected(q).form==3)
     assert(bridge.select(p,'H178:F8'));assert(api.selected(p).form==8 and api.state(p).wingStyle=='devil')
     assert(api.selected(q).form==3,'coop selection leaked')
-    assert(bridge.select(p,'H178:I1'));assert(api.selected(p).id==1 and next(p.nulls))
-    assert(bridge.select(p,'H178:BASE'));assert(not api.selected(p)and not next(p.nulls))
+    assert(bridge.select(p,'H178:I1'));assert(api.selected(p).id==1 and api.state(p).loopId==1)
+    assert(bridge.select(p,'H178:BASE'));assert(not api.selected(p)and not api.state(p).loopId)
     assert(not api.state(p).wingStyle and p.CanFly,'base appearance removed flight')
     assert(bridge.select(p,'H178:AUTO'));assert(api.selected(p).form==10)
     assert(bridge.undress(p,'H178:F10'));assert(api.selected(p).form==0)
@@ -92,9 +92,9 @@ return function(T)
         assert(#renders==1 and renders[1].kind=='wings')
         local wing=renders[1];frames[wing.frame]=true
         near(wing.position.X,p.Position.X+camera.X+p.SpriteOffset.X)
-        near(wing.position.Y,p.Position.Y+camera.Y+p.SpriteOffset.Y-3.6)
+        near(wing.position.Y,p.Position.Y+camera.Y+p.SpriteOffset.Y-10.2)
         local rgb=api.transformations.wingMotion.colours.devil
-        assert(wing.color.left==p.sprite.Color and p.sprite.frame==0)
+        assert(wing.color~=p.sprite.Color and p.sprite.frame==0)
         near(wing.color.R,p.sprite.Color.R*rgb[1]);near(wing.color.G,p.sprite.Color.G*rgb[2])
         near(wing.color.B,p.sprite.Color.B*rgb[3]);near(wing.color.A,p.sprite.Color.A)
     end
@@ -108,9 +108,9 @@ return function(T)
     p.sprite.animation='WalkDown';p.sprite.Scale=Vector(1.4,.9)
     renders={};fire('pre_render',p);near(renders[1].scale.X,.33*1.4);near(renders[1].scale.Y,.33*.9)
     renders={};api.transformations.renderWings(p,Vector(258,111),true)
-    near(renders[1].position.X,258);near(renders[1].position.Y,111-3.6*.9)
+    near(renders[1].position.X,258);near(renders[1].position.Y,111-10.2*.9)
     p.sprite.Rotation=90;renders={};api.transformations.renderWings(p,Vector(258,111),true)
-    near(renders[1].position.X,258+3.6*.9);near(renders[1].position.Y,111)
+    near(renders[1].position.X,258+10.2*.9);near(renders[1].position.Y,111)
     p.sprite.Rotation=0
     p.Visible=false;renders={};fire('pre_render',p);assert(#renders==0);p.Visible=true
     p.dead=true;fire('pre_render',p);assert(#renders==0);p.dead=false
@@ -217,7 +217,7 @@ return function(T)
     renders={};drawPlayer(p)
     assert(#renders==5 and renders[1].kind=='wings'and renders[2].kind=='RenderGlow'and renders[5].kind=='RenderTop')
     near(renders[1].position.X,renders[3].position.X)
-    near(renders[1].position.Y,renders[3].position.Y-3.6)
+    near(renders[1].position.Y,renders[3].position.Y-10.2)
     set(renderList,'DrawList',function()end)
     local furniture={ToNPC=function(self)return self end,PlaySound=function()end,Exists=function()return true end}
     set(renderList,'dressingEnt',furniture)
@@ -281,4 +281,9 @@ return function(T)
     print('PASS:14forms+fallback, form/item/manual precedence,40tick feather beat/4directions, '
         ..'native anchors/tint/scale/visibility, death/ghost/special guards, no flight/inventory changes, '
         ..'coop isolation, saved filters/order, native wing deduplication/Bible activity, actual uploaded wardrobe list/grid/preview/bulk actions, bilingual EID.')
+    assert(loadfile(T.root..'../tools/test_visual_regressions180.lua'))()({
+        api=api,player=player,fire=fire,mod=T.mod,setFrame=T.setFrame,setPlayers=T.setPlayers,
+        getRenders=function()return renders end,clearRenders=function()renders={}end,
+        getLoads=function()return loads end,root=T.root,
+    })
 end

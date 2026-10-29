@@ -119,14 +119,14 @@ def main():
     body_mask=rendered_alpha(head,'WalkDown',GFX)
     head_mask=rendered_alpha(head,'HeadDown',GFX)
     occluder=ImageChops.screen(body_mask,head_mask)
-    down=rendered_alpha(actor,'Down',GFX/'characters/hunter_wings179',origin=(96,120-3.6*2),scale=.33,tick=0)
-    up=rendered_alpha(actor,'Down',GFX/'characters/hunter_wings179',origin=(96,120-3.6*2),scale=.33,tick=23)
+    down=rendered_alpha(actor,'Down',GFX/'characters/hunter_wings179',origin=(96,120-10.2*2),scale=.33,tick=0)
+    up=rendered_alpha(actor,'Down',GFX/'characters/hunter_wings179',origin=(96,120-10.2*2),scale=.33,tick=23)
     visible_down=ImageChops.multiply(down,ImageOps.invert(occluder))
     visible_up=ImageChops.multiply(up,ImageOps.invert(occluder))
     down_area=sum(value>100 for value in visible_down.getdata())
     up_area=sum(value>100 for value in visible_up.getdata())
-    assert down_area>100 and up_area<down_area*.12,(down_area,up_area,'upstroke does not tuck behind the head')
-    assert 6<=visible_down.getbbox()[3]-body_mask.getbbox()[3]<=18,'feathers are detached or do not drop below the body'
+    assert down_area>40 and up_area<down_area*.12,(down_area,up_area,'upstroke does not tuck behind the head')
+    assert visible_down.getbbox()[3]<=body_mask.getbbox()[3]+3,'feathers still hang below the feet'
     selector='hunter_forms178/wardrobe_selector.anm2'
     registrations=E.parse(MOD/'content/costumes2.xml').getroot()
     node=next(node for node in registrations if node.get('anm2path')==selector)

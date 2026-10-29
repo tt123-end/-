@@ -53,6 +53,12 @@ end''')
         HunterWardrobe178.renderWings(player, Vector(invPosition.X+148,invPosition.Y+29), true)
     end
 \tplayer:RenderGlow''')
+    replace('''\tplayer:RenderHead(Vector(invPosition.X+148,invPosition.Y+29))
+\tplayer:RenderTop''','''\tplayer:RenderHead(Vector(invPosition.X+148,invPosition.Y+29))
+    if HunterWardrobe178 and HunterWardrobe178.isHunter(player) and HunterWardrobe178.renderItemEffects then
+        HunterWardrobe178.renderItemEffects(player, Vector(invPosition.X+148,invPosition.Y+29))
+    end
+\tplayer:RenderTop''')
     # Custom list selections choose Hunter art without adding marker costumes.
     replace('''local function RenderList()
 \tDrawList()

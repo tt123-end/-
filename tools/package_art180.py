@@ -5,7 +5,7 @@ import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'deliverables'
-NAME='Hunter_v1.79-art_wardrobe_test.zip'
+NAME='Hunter_v1.80-art_wardrobe_test.zip'
 
 
 def main():
@@ -33,7 +33,7 @@ def main():
     sha=hashlib.sha256(path.read_bytes()).hexdigest()
     (OUT/'SHA256SUMS.txt').write_text(f'{sha}  {NAME}\n')
     # Previous complete releases remain available in repository history.
-    for pattern in ['Hunter_v1.77-art_test.zip','Hunter_v1.78-art_wardrobe_test.zip']:
+    for pattern in ['Hunter_v1.77-art_test.zip','Hunter_v1.78-art_wardrobe_test.zip','Hunter_v1.79-art_wardrobe_test.zip']:
         for old in OUT.glob(pattern):old.unlink()
     print(f'PASS: full two-Mod bundle, byte/CRC verified, {path.stat().st_size:,}bytes, SHA256 {sha}')
 

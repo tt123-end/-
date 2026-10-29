@@ -244,6 +244,9 @@ local function DrawPlayer(player)
 	player:RenderGlow(Vector(invPosition.X+148,invPosition.Y+29))
 	player:RenderBody(Vector(invPosition.X+148,invPosition.Y+29))
 	player:RenderHead(Vector(invPosition.X+148,invPosition.Y+29))
+    if HunterWardrobe178 and HunterWardrobe178.isHunter(player) and HunterWardrobe178.renderItemEffects then
+        HunterWardrobe178.renderItemEffects(player, Vector(invPosition.X+148,invPosition.Y+29))
+    end
 	player:RenderTop(Vector(invPosition.X+148,invPosition.Y+29))
 end
 ---------------------------------------------------------------------------------------------

@@ -42,7 +42,7 @@
  			pid[maxlines] = k
  			maxlines = maxlines + 1
  		end
-@@ -212,6 +238,9 @@
+@@ -212,9 +238,15 @@
  end
  ---------------------------------------------------------------------------------------------
  local function DrawPlayer(player)
@@ -52,7 +52,13 @@
  	player:RenderGlow(Vector(invPosition.X+148,invPosition.Y+29))
  	player:RenderBody(Vector(invPosition.X+148,invPosition.Y+29))
  	player:RenderHead(Vector(invPosition.X+148,invPosition.Y+29))
-@@ -300,7 +329,20 @@
++    if HunterWardrobe178 and HunterWardrobe178.isHunter(player) and HunterWardrobe178.renderItemEffects then
++        HunterWardrobe178.renderItemEffects(player, Vector(invPosition.X+148,invPosition.Y+29))
++    end
+ 	player:RenderTop(Vector(invPosition.X+148,invPosition.Y+29))
+ end
+ ---------------------------------------------------------------------------------------------
+@@ -300,7 +332,20 @@
  end
  ---------------------------------------------------------------------------------------------
  local function RenderList()
@@ -73,7 +79,7 @@
  
  	if (actionbutton == ButtonAction.ACTION_MENUCONFIRM) then
  		if paintfly[pid[selectionline]] ~= nil and player.CanFly == false then
-@@ -311,14 +353,16 @@
+@@ -311,14 +356,16 @@
  			else
  				validation = false
  				player:ClearCostumes()
@@ -91,7 +97,7 @@
  			for k,v in pairs(paintname) do
  				if tonumber(paintloc[k]) ~= nil then
  					player:TryRemoveNullCostume(tonumber(paintloc[k]))
-@@ -351,6 +395,7 @@
+@@ -351,6 +398,7 @@
  		end
  		dressingEnt:ToNPC():PlaySound(283,1,0,false,1)
  	elseif (actionbutton == ButtonAction.ACTION_BOMB) then
@@ -99,7 +105,7 @@
  		for k,v in pairs(paintname) do
  			if tonumber(paintloc[k]) ~= nil then
  				player:TryRemoveNullCostume(tonumber(paintloc[k]))
-@@ -360,6 +405,7 @@
+@@ -360,6 +408,7 @@
  		end
  		dressingEnt:ToNPC():PlaySound(283,1,0,false,1)
  	end
@@ -107,7 +113,7 @@
  end
  ---------------------------------------------------------------------------------------------
  local function DrawUI()
-@@ -599,6 +645,11 @@
+@@ -599,6 +648,11 @@
  end
  ---------------------------------------------------------------------------------------------
  function OWR.RenderUI()
@@ -119,7 +125,7 @@
  	local	firstitem = 1
  	local	configItem
  
-@@ -739,6 +790,7 @@
+@@ -739,6 +793,7 @@
  					transfo[form] = 1
  					player:AddNullCostume(form)
  				end
@@ -127,7 +133,7 @@
  				phase = 1
  				actionbutton = -1
  				dressingEnt:ToNPC():PlaySound(283,1,0,false,1)
-@@ -761,6 +813,7 @@
+@@ -761,6 +816,7 @@
  						player:RemoveCostume(iteminfos[selection])
  					end
  				end
@@ -135,7 +141,7 @@
  				phase = 1
  				actionbutton = -1
  				dressingEnt:ToNPC():PlaySound(283,1,0,false,1)
-@@ -781,9 +834,10 @@
+@@ -781,9 +837,10 @@
  			end
  			actionbutton = -1
  		elseif (actionbutton == ButtonAction.ACTION_BOMB) then
@@ -147,7 +153,7 @@
  				end
  			end
  			phase = 1
-@@ -791,6 +845,10 @@
+@@ -791,6 +848,10 @@
  		end
  	end
  

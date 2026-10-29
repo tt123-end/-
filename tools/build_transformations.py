@@ -211,8 +211,8 @@ def build_wings():
 
 
 def build_anchors():
-    # Native-style wings attach to the lower back (source y80), as shown in
-    # the supplied video, rather than the old y64 neck/upper-chest anchor.
+    # User feedback: attach at the upper back (source y58); the old y80
+    # attachment put short feathers beside the feet in live gameplay.
     # Preserve each body transform, including item-holding motion and scale.
     actor = E.parse(GFX / '001.000_player_hunter_b_v153.anm2')
     lines = ['return {']
@@ -227,10 +227,10 @@ def build_anchors():
         values = []
         for frame in frames:
             x = float(frame.get('XPosition', '0')) + (64 - float(frame.get('XPivot', '64'))) * float(frame.get('XScale', '30')) / 100
-            y = float(frame.get('YPosition', '0')) + (80 - float(frame.get('YPivot', '100'))) * float(frame.get('YScale', '30')) / 100
+            y = float(frame.get('YPosition', '0')) + (58 - float(frame.get('YPivot', '100'))) * float(frame.get('YScale', '30')) / 100
             # Only regular body crops have the common 128-pixel anatomy.
             if frame.get('Width') != '128':
-                x, y = 0, -3.6
+                x, y = 0, -10.2
             values.extend(['{%s,%s}' % (round(x, 4), round(y, 4))] * int(frame.get('Delay', '1')))
         lines.append('  [%s]={%s},' % (json.dumps(animation.get('Name')), ','.join(values)))
     lines.append('}')

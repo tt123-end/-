@@ -1,9 +1,10 @@
 -- Dynamic Hunter outfits. One integrated head owns the complete face/hood;
--- reference outfits with an independent effect use a native looping overlay.
+-- reference particles use independent sprites so actor swaps cannot clear them.
 -- This module never changes inventory, numerical caches, attacks or health.
 return function(mod, playerType)
     local game = Game()
     local definitions = include('hunter_costume_manifest')
+    local spriteState=include('hunter_sprite_state')
     local jsonOK, json = pcall(require, 'json')
     local nativeFile = 'gfx/001.000_player_hunter_b_v153.anm2'
     local alignment=include('hunter_head_alignment')
@@ -36,6 +37,7 @@ return function(mod, playerType)
         return not (lost and p:GetEffects():HasNullEffect(lost))
     end
     local transformations=include('hunter_transformations')(mod,playerType,definitions,isHunter)
+    local itemEffects=include('hunter_item_effects')(mod,definitions,isHunter,owned)
     local function count(p, id)
         local e = p:GetEffects()
         local n = p:GetCollectibleNum(id, true) + e:GetCollectibleEffectNum(id)
@@ -86,6 +88,7 @@ return function(mod, playerType)
             p:TryRemoveNullCostume(s.loopCostume)
             s.loopCostume = nil
         end
+        s.loopId=nil
     end
     local function restoreNative(p, s)
         transformations.cleanup(p,s)
@@ -124,17 +127,9 @@ return function(mod, playerType)
     -- Keep all native animation state while changing only the head pivot table.
     local function actor(sprite, target)
         if normalized(sprite:GetFilename())==target then return false end
-        local animation=sprite:GetAnimation()
-        local frame=sprite.GetFrame and sprite:GetFrame()or 0
-        local overlay=sprite.GetOverlayAnimation and sprite:GetOverlayAnimation()or ''
-        local overlayFrame=sprite.GetOverlayFrame and sprite:GetOverlayFrame()or 0
-        local scale,color,rotation=sprite.Scale,sprite.Color,sprite.Rotation
-        local flipX,flipY,speed=sprite.FlipX,sprite.FlipY,sprite.PlaybackSpeed
+        local snapshot=spriteState.capture(sprite)
         sprite:Load(target,true)
-        if animation~=''then sprite:Play(animation,true);sprite:SetFrame(frame)end
-        if overlay~=''then sprite:PlayOverlay(overlay,true);sprite:SetOverlayFrame(overlay,overlayFrame)end
-        sprite.Scale,sprite.Color,sprite.Rotation=scale,color,rotation
-        sprite.FlipX,sprite.FlipY,sprite.PlaybackSpeed=flipX,flipY,speed
+        spriteState.restore(sprite,snapshot)
         return true
     end
     local function sync(p, revision)
@@ -168,22 +163,26 @@ return function(mod, playerType)
         end
         local entry, signature = choose(p, s)
         local changed = signature ~= s.signature
+        local before=(changed or force or not s.particleMigration180)and spriteState.capture(sprite)or nil
+        if not s.particleMigration180 then
+            -- Remove any old native loop instances, including continued saves.
+            -- Fresh loops are rendered independently of costume bindings.
+            for _,definition in ipairs(definitions)do
+                if definition.loop and definition.costume and definition.costume>=0 then
+                    p:TryRemoveNullCostume(definition.costume)
+                end
+            end
+            s.loopCostume=nil;s.particleMigration180=true;force=true
+        end
         if changed or force then suppressNative(p, s) end
         s.signature = signature
         s.selectedId = entry and entry.id or nil
         local sheet = entry and entry.sheet or baseSheet
-        local previousLoop = s.loopCostume
-        local animation = sprite.GetAnimation and sprite:GetAnimation() or ''
+        local previousLoop = s.loopId
+        local animation = before and before.animation or(sprite.GetAnimation and sprite:GetAnimation()or'')
         local dead = (p.IsDead and p:IsDead())
             or tostring(animation):lower():find('death', 1, true) ~= nil
-        local looping = entry and entry.loop and entry.costume and entry.costume >= 0
-        if looping and owned(source) and not dead then
-            if s.loopCostume ~= entry.costume or force then
-                removeLoop(p, s)
-                p:AddNullCostume(entry.costume)
-                s.loopCostume = entry.costume
-            end
-        else removeLoop(p, s) end
+        s.loopId=entry and entry.loop and owned(source)and not dead and entry.id or nil
         -- Costume removal/addition can rebuild native graphics. Apply the
         -- integrated head LAST, including on a signature change with the same
         -- selected head, so a costume rebuild cannot erase it in this frame.
@@ -191,7 +190,7 @@ return function(mod, playerType)
         source = normalized(sprite:GetFilename())
         local target=entry and (entry.actor or assert(alignment[entry.id],'Missing outfit alignment'))or nativeFile
         local swapped=owned(source) and actor(sprite,target)
-        if owned(source) and (swapped or sheet ~= s.sheet or force or changed or previousLoop ~= s.loopCostume) then
+        if owned(source) and (swapped or sheet ~= s.sheet or force or changed or previousLoop ~= s.loopId) then
             sprite:ReplaceSpritesheet(4, sheet)
             sprite:LoadGraphics()
             s.sheet = sheet
@@ -199,6 +198,7 @@ return function(mod, playerType)
             -- Reapply when the native Hunter sprite returns from a special form.
             s.sheet = nil
         end
+        if before and owned(normalized(sprite:GetFilename()))then spriteState.restore(sprite,before)end
         s.source=normalized(sprite:GetFilename())
     end
     local api = {sync=sync, state=state, definitions=definitions}
@@ -207,19 +207,21 @@ return function(mod, playerType)
         return transformations.selected(s) or (s and byId[s.selectedId] or nil)
     end
     api.transformations=transformations
+    api.renderEffects=itemEffects.render
+    if HunterWardrobe178 then HunterWardrobe178.renderItemEffects=itemEffects.render end
     transformations.attach(sync)
     mod.HunterDynamicArt174 = api
     if ModCallbacks.MC_EXECUTE_CMD then
         mod:AddCallback(ModCallbacks.MC_EXECUTE_CMD, function(_, command)
             if command ~= 'hunterartdiag' then return end
-            local lines = {'[Hunter art v1.79] integrated heads, transformations and native-style feather wings'}
+            local lines = {'[Hunter art v1.80] isolated colours, idle body hold and independent item effects'}
             for i=0,game:GetNumPlayers()-1 do
                 local p = Isaac.GetPlayer(i)
                 local s = p:GetData().hunterDynamic174
                 if p:GetPlayerType() == playerType or s then
                     lines[#lines+1] = string.format('P%d: selected=%s sheet=%s loop=%s source=%s form=%s wings=%s wardrobe=%s',
                         i, tostring(s and s.selectedId or 'none'), tostring(s and s.sheet or baseSheet),
-                        tostring(s and s.loopCostume or 'none'), normalized(p:GetSprite():GetFilename()),
+                        tostring(s and s.loopId or 'none'), normalized(p:GetSprite():GetFilename()),
                         tostring(s and s.selectedForm or 'none'),tostring(s and s.wingStyle or 'none'),
                         tostring(s and s.wardrobe and s.wardrobe.mode or 'auto'))
                 end

@@ -2,6 +2,7 @@
 -- The ANM2 is cloned from Isaac: timing, events, pivots and trajectories are retained.
 -- No screen-space render callback, input interception, collision or stat modification.
 return function(mod, playerType, normalType)
+    local spriteState=include('hunter_sprite_state')
     local DEFAULT = "gfx/001.000_player.anm2"
     local LEGACY = "gfx/001.000_player_hunter_b.anm2"
     local PREVIOUS = "gfx/001.000_player_hunter_b_v135.anm2"
@@ -141,10 +142,7 @@ return function(mod, playerType, normalType)
             -- Keep engine/other-mod special animation files intact.
             return
         end
-        local animation, frame = sprite:GetAnimation(), sprite:GetFrame()
-        local overlay, overlayFrame = sprite:GetOverlayAnimation(), sprite:GetOverlayFrame()
-        local scale, color, rotation = sprite.Scale, sprite.Color, sprite.Rotation
-        local flipX, flipY, speed = sprite.FlipX, sprite.FlipY, sprite.PlaybackSpeed
+        local snapshot=spriteState.capture(sprite)
         sprite:Load(target, true)
         if hunter then
             data.hunterWasB136 = true
@@ -160,54 +158,52 @@ return function(mod, playerType, normalType)
             sprite:ReplaceSpritesheet(0, NORMAL_SKIN)
             sprite:LoadGraphics()
             data.silentMotion124, data.hunterFacing136, data.hunterWasB136 = nil, nil, nil
-            rotation, flipX, flipY, speed = 0, false, false, 1
-            if not player:IsDead() and (animation == "Death" or animation == "ForgottenDeath" or overlay == "Death" or overlay == "ForgottenDeath") then
-                animation, frame, overlay = "WalkDown", 0, ""
+            snapshot.rotation,snapshot.flipX,snapshot.flipY,snapshot.speed=0,false,false,1
+            if not player:IsDead() and (snapshot.animation == "Death" or snapshot.animation == "ForgottenDeath" or snapshot.overlay == "Death" or snapshot.overlay == "ForgottenDeath") then
+                snapshot.animation,snapshot.frame,snapshot.overlay="WalkDown",0,""
             end
         end
-        if not hunter then data.hunterWasB136, data.hunterFacing136 = nil, nil end
-        -- SetFrame(int) preserves playback; SetFrame(animation,int) would stop it.
-        if animation and animation ~= "" then
-            sprite:Play(animation, true)
-            sprite:SetFrame(frame)
+        if not hunter then
+            data.hunterWasB136,data.hunterFacing136=nil,nil
+            if data.hunterBodyHeld180 then snapshot.playing=true;data.hunterBodyHeld180=nil end
         end
-        if overlay and overlay ~= "" then
-            sprite:PlayOverlay(overlay, true)
-            sprite:SetOverlayFrame(overlay, overlayFrame)
-        end
-        sprite.Scale, sprite.Color, sprite.Rotation = scale, color, rotation
-        sprite.FlipX, sprite.FlipY, sprite.PlaybackSpeed = flipX, flipY, speed
+        spriteState.restore(sprite,snapshot)
     end
     -- Only ordinary locomotion is affected. Pickup, damage, death, special
     -- engine animations and the head overlay remain owned by the engine.
     local ordinary = {WalkDown=true, WalkUp=true, WalkLeft=true, WalkRight=true}
     local function synchronizeBodyAim(player)
-        if playerType == -1 or player:GetPlayerType() ~= playerType or player:IsDead() then return end
-        local visual=player:GetData().hunterVisualState153
-        if visual and visual.observed.lost then return end
-        if player.IsCoopGhost and player:IsCoopGhost() then return end
+        local data=player:GetData()
+        if playerType == -1 or player:GetPlayerType() ~= playerType or player:IsDead() then data.hunterBodyHeld180=nil;return end
+        local visual=data.hunterVisualState153
+        if visual and visual.observed and visual.observed.lost then data.hunterBodyHeld180=nil;return end
+        if player.IsCoopGhost and player:IsCoopGhost() then data.hunterBodyHeld180=nil;return end
         local sprite = player:GetSprite()
-        if filename(sprite) ~= NATIVE or not ordinary[sprite:GetAnimation()] then return end
+        if filename(sprite) ~= NATIVE or not ordinary[sprite:GetAnimation()] then data.hunterBodyHeld180=nil;return end
         local shoot = player:GetShootingInput()
-        if shoot:Length() <= 0.1 then return end
-        local direction
-        if math.abs(shoot.X) > math.abs(shoot.Y) then
-            direction = shoot.X < 0 and "Left" or "Right"
-        else
-            direction = shoot.Y < 0 and "Up" or "Down"
+        local target=sprite:GetAnimation()
+        if shoot:Length()>0.1 then
+            local direction
+            if math.abs(shoot.X)>math.abs(shoot.Y)then direction=shoot.X<0 and'Left'or'Right'
+            else direction=shoot.Y<0 and'Up'or'Down'end
+            target='Walk'..direction
         end
-        local target = "Walk" .. direction
-        local frame = sprite:GetFrame()
-        -- Preserve playback with Play + single-index SetFrame. The two-argument
-        -- SetFrame overload would stop walking, so never use it here.
-        if player.Velocity:Length() < 0.1 then frame = 0 end
-        local overlay, overlayFrame = sprite:GetOverlayAnimation(), sprite:GetOverlayFrame()
-        if sprite:GetAnimation() ~= target then
-            sprite:Play(target, true)
-            sprite:SetFrame(frame)
-            if overlay and overlay ~= "" then sprite:SetOverlayFrame(overlay, overlayFrame) end
-        elseif player.Velocity:Length() < 0.1 then
+        local idle=player.Velocity:Length()<0.1
+        if sprite:GetAnimation()~=target then
+            local snapshot=spriteState.capture(sprite)
+            snapshot.animation=target;snapshot.frame=idle and 0 or snapshot.frame
+            snapshot.playing=not idle
+            spriteState.restore(sprite,snapshot)
+        end
+        if idle then
             sprite:SetFrame(0)
+            -- Stop ONLY the body; head/shot overlay and independent effects
+            -- keep their own clocks. REPENTOGON defaults Stop() to both tracks.
+            sprite:Stop(false)
+            data.hunterBodyHeld180=true
+        elseif data.hunterBodyHeld180 then
+            if sprite.Continue then sprite:Continue(false)else sprite:Play(target,true)end
+            data.hunterBodyHeld180=nil
         end
     end
     mod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, function(_, player)
@@ -217,10 +213,11 @@ return function(mod, playerType, normalType)
     -- replacing the Sprite during rendering or restarting an animation each frame.
     mod:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, function(_, player)
         changeAnimationFile(player)
-        synchronizeBodyAim(player)
         if mod.HunterDynamicArt174 then
             mod.HunterDynamicArt174.sync(player, player:GetData().hunterArtGraphicsRevision174)
         end
+        -- Costume swaps can restart the body; apply the hold after that swap.
+        synchronizeBodyAim(player)
     end)
     Isaac.DebugString("[Revolver Samson] v1.53 Tainted Hunter: connected pickup and costume-exit recovery loaded")
 end

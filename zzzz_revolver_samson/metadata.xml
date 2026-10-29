@@ -2,7 +2,7 @@
 <metadata>
   <name>Revolver Samson - 4-Shot Revolver Character</name>
   <directory>zzzz_revolver_samson</directory>
-  <description>v1.79-art: video-referenced compact vanilla-style feather wings for flying Hunter forms; six folding poses with a 40-tick cycle, proper side views and lower-back attachment. Retains transformation/item outfits, Old Wardrobe bridge, EID and Stats+ compatibility.</description>
-  <version>1.79-art</version>
+  <description>v1.80-art: isolate wing colours, move feathers to the upper back, hold idle bodies without stopping head overlays, and render item particles independently of costume bindings. Preserves Hunter gameplay, EID, Stats+ and Old Wardrobe compatibility.</description>
+  <version>1.80-art</version>
   <visibility>Private</visibility>
 </metadata>

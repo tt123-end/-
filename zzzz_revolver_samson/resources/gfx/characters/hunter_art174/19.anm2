@@ -58,7 +58,7 @@
         </Animation>
         <Animation Name="HeadDown_Overlay" FrameNum="8" Loop="true">
             <RootAnimation>
-                <Frame XPosition="-0.99" YPosition="-2.31" Delay="8" Visible="true" XScale="100" YScale="100" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false" />
+                <Frame XPosition="24.2953" YPosition="0.2695" Delay="8" Visible="true" XScale="100" YScale="100" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false" />
             </RootAnimation>
             <LayerAnimations>
                 <LayerAnimation LayerId="0" Visible="true">
@@ -73,7 +73,7 @@
         </Animation>
         <Animation Name="HeadLeft_Overlay" FrameNum="8" Loop="true">
             <RootAnimation>
-                <Frame XPosition="-0.165" YPosition="-2.475" Delay="8" Visible="true" XScale="100" YScale="100" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false" />
+                <Frame XPosition="-5.5536" YPosition="-0.5603" Delay="8" Visible="true" XScale="100" YScale="100" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false" />
             </RootAnimation>
             <LayerAnimations>
                 <LayerAnimation LayerId="0" Visible="true">
@@ -88,7 +88,7 @@
         </Animation>
         <Animation Name="HeadUp_Overlay" FrameNum="8" Loop="true">
             <RootAnimation>
-                <Frame XPosition="-0.0" YPosition="-0.0" Delay="8" Visible="true" XScale="100" YScale="100" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false" />
+                <Frame XPosition="1.7043" YPosition="3.8538" Delay="8" Visible="true" XScale="100" YScale="100" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false" />
             </RootAnimation>
             <LayerAnimations>
                 <LayerAnimation LayerId="0" Visible="true">
@@ -103,7 +103,7 @@
         </Animation>
         <Animation Name="HeadRight_Overlay" FrameNum="8" Loop="true">
             <RootAnimation>
-                <Frame XPosition="0.165" YPosition="-2.475" Delay="8" Visible="true" XScale="100" YScale="100" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false" />
+                <Frame XPosition="4.5536" YPosition="-0.5603" Delay="8" Visible="true" XScale="100" YScale="100" RedTint="255" GreenTint="255" BlueTint="255" AlphaTint="255" RedOffset="0" GreenOffset="0" BlueOffset="0" Rotation="0" Interpolated="false" />
             </RootAnimation>
             <LayerAnimations>
                 <LayerAnimation LayerId="0" Visible="true">

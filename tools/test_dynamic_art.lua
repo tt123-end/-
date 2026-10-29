@@ -8,7 +8,8 @@ local mod={AddCallback=function(_,event,fn)
 end}
 ModCallbacks={MC_POST_PEFFECT_UPDATE='tick',MC_USE_ITEM='use',
     MC_POST_NEW_ROOM='room',MC_POST_GAME_STARTED='start',MC_POST_UPDATE='post',
-    MC_PRE_GAME_EXIT='exit',MC_EXECUTE_CMD='command',MC_PRE_PLAYER_ADD_COSTUME='costume_pre',MC_PRE_PLAYER_RENDER='pre_render'}
+    MC_PRE_GAME_EXIT='exit',MC_EXECUTE_CMD='command',MC_PRE_PLAYER_ADD_COSTUME='costume_pre',MC_PRE_PLAYER_RENDER='pre_render',
+    MC_POST_PLAYER_RENDER='player_render',MC_POST_PLAYER_UPDATE='player_update',MC_POST_PLAYER_INIT='player_init'}
 NullItemID={ID_LOST_CURSE=112}
 local frame=0;local players={};local nullId=8000;local config={};local playerSerial=0
 local diagnostic
@@ -69,14 +70,30 @@ local function player()
     function p.sprite:GetFrame()return self.frame or 0 end
     function p.sprite:GetOverlayAnimation()return self.overlay or '' end
     function p.sprite:GetOverlayFrame()return self.overlayFrame or 0 end
-    function p.sprite:Load(file)self.file=file;self.animation='';self.frame=0;self.overlay='';self.overlayFrame=0 end
-    function p.sprite:Play(animation)self.animation=animation end
-    function p.sprite:SetFrame(frame)self.frame=frame end
-    function p.sprite:PlayOverlay(animation)self.overlay=animation end
-    function p.sprite:SetOverlayFrame(animation,frame)self.overlay=animation;self.overlayFrame=frame end
+    function p.sprite:Load(file)self.file=file;self.animation='';self.frame=0;self.overlay='';self.overlayFrame=0;self.playing=true;self.overlayPlaying=false end
+    function p.sprite:Play(animation)self.animation=animation;self.playing=true end
+    function p.sprite:IsPlaying()return self.playing~=false end
+    function p.sprite:IsOverlayPlaying()return self.overlayPlaying~=false end
+    function p.sprite:SetFrame(first,second)
+        if type(first)=='string'then self.animation,self.frame,self.playing=first,second,false
+        else self.frame=first end
+    end
+    function p.sprite:PlayOverlay(animation)self.overlay=animation;self.overlayPlaying=true end
+    function p.sprite:SetOverlayFrame(first,second)
+        if type(first)=='string'then self.overlay,self.overlayFrame,self.overlayPlaying=first,second,false
+        else self.overlayFrame=first end
+    end
+    function p.sprite:Stop(overlay)self.playing=false;if overlay~=false then self.overlayPlaying=false end end
+    function p.sprite:Continue(overlay)self.playing=true;if overlay~=false then self.overlayPlaying=true end end
+    function p.sprite:StopOverlay()self.overlayPlaying=false end
+    function p.sprite:ContinueOverlay()self.overlayPlaying=true end
+    function p.sprite:Update()
+        if self.playing~=false then self.frame=((self.frame or 0)+1)%20 end
+        if self.overlayPlaying~=false then self.overlayFrame=((self.overlayFrame or 0)+1)%4 end
+    end
     function p.sprite:ReplaceSpritesheet(layer,path)
-        assert(layer==4,'cosmetic modified a body, cape, ghost or collision layer')
-        self.writes=self.writes+1;self.sheet=path
+        assert(layer==4 or p.allowVisualLayerBindings,'cosmetic modified a body, cape, ghost or collision layer')
+        self.writes=self.writes+1;if layer==4 then self.sheet=path end
     end
     function p.sprite:LoadGraphics()self.loads=self.loads+1 end
     function p:RemoveCostume(item)
@@ -147,7 +164,7 @@ for _,entry in ipairs(definitions)do
     assert(api.selected(p).id==entry.id,'unreachable costume '..entry.id)
     assert(p.sprite.sheet==entry.sheet)
     assert(p.sprite.writes==1 and p.sprite.loads==1)
-    if entry.loop then assert(next(p.nulls),'loop not installed for '..entry.id)end
+    if entry.loop then assert(api.state(p).loopId==entry.id,'independent loop not selected for '..entry.id)end
     local writes=p.sprite.writes;api.sync(p)
     assert(p.sprite.writes==writes,'unnecessary per-frame graphics reload')
 end
@@ -163,36 +180,36 @@ p.items[51]=1;api.sync(p);assert(api.selected(p).id==1)
 assert(p.sprite.sheet==lookup[1].sheet,'new non-winning item clobbered selected head')
 local writes=p.sprite.writes;api.sync(p);assert(p.sprite.writes==writes)
 p.items[1]=nil;api.sync(p);assert(api.selected(p).id==118)
-assert(next(p.nulls)==nil,'cry loop survives removal')
+assert(api.state(p).loopId==nil,'cry loop survives removal')
 p.items[118]=nil;api.sync(p);assert(api.selected(p).id==51)
 assert(api.selected(q).id==68,'another player changed the choice')
 
 -- Independent overlays and no costume instances leaking through shape changes.
 p.items={[19]=1};q.items={[1]=1};api.sync(p);api.sync(q)
-assert(next(p.nulls)and next(q.nulls))
-p.items={};api.sync(p);assert(next(p.nulls)==nil and next(q.nulls))
+assert(api.state(p).loopId==19 and api.state(q).loopId==1)
+p.items={};api.sync(p);assert(api.state(p).loopId==nil and api.state(q).loopId==1)
 assert(p.sprite.sheet==base)
 q.lost=true;writes=q.sprite.writes;api.sync(q)
 assert(q.sprite.writes==writes,'white-fire form texture was overwritten')
-assert(next(q.nulls)==nil)
-q.lost=false;api.sync(q);assert(api.selected(q).id==1 and next(q.nulls))
+assert(api.state(q).loopId==nil)
+q.lost=false;api.sync(q);assert(api.selected(q).id==1 and api.state(q).loopId==1)
 q.sprite.file='gfx/custom_special_form.anm2';writes=q.sprite.writes;api.sync(q)
-assert(q.sprite.writes==writes and next(q.nulls)==nil)
-q.sprite.file=native;api.sync(q);assert(q.sprite.writes==writes+1 and next(q.nulls))
-q.kind=0;api.sync(q);assert(q.sprite.sheet==base and next(q.nulls)==nil)
+assert(q.sprite.writes==writes and api.state(q).loopId==nil)
+q.sprite.file=native;api.sync(q);assert(q.sprite.writes==writes+1 and api.state(q).loopId==1)
+q.kind=0;api.sync(q);assert(q.sprite.sheet==base and api.state(q).loopId==nil)
 assert(q.nativeAdded[1],'native costume not restored on permanent type exit')
 
 local corpse=player();corpse.items[1]=1;api.sync(corpse)
-assert(next(corpse.nulls)and corpse.sprite.sheet==lookup[1].sheet)
+assert(api.state(corpse).loopId==1 and corpse.sprite.sheet==lookup[1].sheet)
 corpse.dead=true;api.sync(corpse)
-assert(next(corpse.nulls)==nil,'cry loop appears over dead player')
+assert(api.state(corpse).loopId==nil,'cry loop appears over dead player')
 assert(corpse.sprite.sheet==lookup[1].sheet,'removing death loop erased head binding')
 corpse.dead=false;api.sync(corpse)
-assert(next(corpse.nulls)and corpse.sprite.sheet==lookup[1].sheet)
+assert(api.state(corpse).loopId==1 and corpse.sprite.sheet==lookup[1].sheet)
 corpse.sprite.animation='ForgottenDeath';api.sync(corpse)
-assert(next(corpse.nulls)==nil,'death animation not respected before IsDead')
+assert(api.state(corpse).loopId==nil,'death animation not respected before IsDead')
 corpse.sprite.animation='WalkDown';api.sync(corpse)
-assert(next(corpse.nulls)and corpse.sprite.sheet==lookup[1].sheet)
+assert(api.state(corpse).loopId==1 and corpse.sprite.sheet==lookup[1].sheet)
 
 -- Native short/long active effects are observed, not guessed from ownership.
 p=player();p.items[34]=1;api.sync(p);assert(not api.selected(p))
@@ -220,7 +237,7 @@ assert(codec.decode(savedData).existingGameplayState.ammo==2,'shared save data l
 fire('start',true);assert(api.selected(p).id==4,'continue changed acquisition order')
 diagnostic=nil;fire('command','unrelated');assert(diagnostic==nil)
 writes=p.sprite.writes;fire('command','hunterartdiag')
-assert(diagnostic:find('[Hunter art v1.79]',1,true)
+assert(diagnostic:find('[Hunter art v1.80]',1,true)
     and diagnostic:find('selected=4',1,true)
     and diagnostic:find('sheet='..lookup[4].sheet,1,true),'diagnostic missing actual outfit')
 assert(p.sprite.writes==writes,'diagnostic changed outfit state')
