@@ -2,7 +2,7 @@
 <metadata>
   <name>Revolver Samson - 4-Shot Revolver Character</name>
   <directory>zzzz_revolver_samson</directory>
-  <description>v1.77-art: restore complete outfit borders with padded animation frames; hide Tainted Hunter Dead Eye costume while retaining native item effects and v1.76 face registration.</description>
-  <version>1.77-art</version>
+  <description>v1.78-art: 14 Tainted Hunter transformation appearances, six-frame animated back wings for flying forms, and an explicit Old Wardrobe dressing bridge. Preserves native gameplay, registered face anchors and hidden Dead Eye costume.</description>
+  <version>1.78-art</version>
   <visibility>Private</visibility>
 </metadata>

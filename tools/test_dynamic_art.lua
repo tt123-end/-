@@ -8,7 +8,7 @@ local mod={AddCallback=function(_,event,fn)
 end}
 ModCallbacks={MC_POST_PEFFECT_UPDATE='tick',MC_USE_ITEM='use',
     MC_POST_NEW_ROOM='room',MC_POST_GAME_STARTED='start',MC_POST_UPDATE='post',
-    MC_PRE_GAME_EXIT='exit',MC_EXECUTE_CMD='command',MC_PRE_PLAYER_ADD_COSTUME='costume_pre'}
+    MC_PRE_GAME_EXIT='exit',MC_EXECUTE_CMD='command',MC_PRE_PLAYER_ADD_COSTUME='costume_pre',MC_PRE_PLAYER_RENDER='pre_render'}
 NullItemID={ID_LOST_CURSE=112}
 local frame=0;local players={};local nullId=8000;local config={};local playerSerial=0
 local diagnostic
@@ -54,6 +54,7 @@ local function player()
         nulls={},nativeRemoved={},nativeAdded={},sprite={file=native,writes=0,loads=0},
         InitSeed=playerSerial,ControllerIndex=playerSerial}
     function p:GetPlayerType()return self.kind end
+    function p:HasPlayerForm(id)return self.forms and self.forms[id]or false end
     function p:GetData()return self.data end
     function p:IsCoopGhost()return self.ghost end
     function p:IsDead()return self.dead end
@@ -219,7 +220,7 @@ assert(codec.decode(savedData).existingGameplayState.ammo==2,'shared save data l
 fire('start',true);assert(api.selected(p).id==4,'continue changed acquisition order')
 diagnostic=nil;fire('command','unrelated');assert(diagnostic==nil)
 writes=p.sprite.writes;fire('command','hunterartdiag')
-assert(diagnostic:find('[Hunter art v1.77]',1,true)
+assert(diagnostic:find('[Hunter art v1.78]',1,true)
     and diagnostic:find('selected=4',1,true)
     and diagnostic:find('sheet='..lookup[4].sheet,1,true),'diagnostic missing actual outfit')
 assert(p.sprite.writes==writes,'diagnostic changed outfit state')
@@ -249,3 +250,11 @@ print('PASS: all66 reachable, actual lifecycle simulation, native-active effects
     ..'forced rebind, hidden milk, unchanged inventory, save-order restoration, '
     ..'shared save preservation, costume-rebuild binding order, death/revive loops, '
     ..'diagnostic output, Dead Eye costume-only cancellation/continue/effects, EID idempotence.')
+
+assert(loadfile(root..'../tools/test_transformations.lua'))()({
+    api=api,player=player,fire=fire,mod=mod,callbacks=callbacks,config=config,
+    setFrame=function(value)frame=value end,
+    setPlayers=function(value)players=value end,
+    savedRoot=function()return codec.decode(savedData)end,
+    root=root,
+})

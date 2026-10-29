@@ -204,6 +204,8 @@ def main() -> None:
           'other special-action preservation, '
           'XML/texture/crop references, 3 effects x 4 genuinely animated '
           'directional loops; game testing pending.')
+    from test_transformation_assets import main as check_transformations
+    check_transformations()
 
 
 if __name__ == '__main__':

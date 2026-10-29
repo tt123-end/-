@@ -1,14 +1,28 @@
-# 里猎手 v1.77-art 动态外观测试版
+# 里猎手 v1.78-art 套装与衣柜测试版
 
-本版移除v1.73的全部静态配饰贴片，重做66项道具的整合头部造型与表情帧。目标环境：忏悔+及匹配版本的REPENTOGON。
+本版为里猎手新增14种套装外观、飞行套装的六帧背部翅膀，以及用户上传旧衣柜的兼容版。保留66项道具外观、边缘补全与死亡之眼隐藏。目标环境：忏悔+及匹配版本的REPENTOGON。
 
-- [下载完整Mod安装包](deliverables/Hunter_v1.77-art_test.zip)
+- [下载完整Mod安装包](deliverables/Hunter_v1.78-art_wardrobe_test.zip)
 - [浏览美术源图](art_sources) · [制作与验证工具](tools)
 - [查看动态哭泣合成预览](deliverables/crying-animation.gif)
 - [道具清单](deliverables/COSTUME_CATALOG.md)
 - [安装与验证说明](zzzz_revolver_samson/ART_PACK_README.md)
 
-点击ZIP文件后选择Download raw file下载。也可直接使用仓库中的zzzz_revolver_samson文件夹。
+点击ZIP文件后选择Download raw file下载。安装包内含猎手与旧衣柜两个完整文件夹及安装说明；请同时替换这两份Mod。也可分别从zzzz_revolver_samson和compat目录取得文件夹。
+
+## v1.78 套装外观与旧衣柜
+
+覆盖游戏的14种角色变身：嗝屁、蝇王、真菌、炽天使、鲍勃、药物过量、妈宝、连体婴、利维坦、大便套装、书虫、成人、蜘蛛宝宝及践踏。保留猎手的白发、绿眼与兜帽，每种含正面/侧面/背面的待机和射击状态，左向使用镜像；按脸部轮廓定位，身体与原动作时序保留。未使用的Flight引擎枚举另有防御性备用支持；超级乞丐属于跟班合成，不是角色PlayerForm。
+
+四种飞行套装各有六帧独立扇动：嗝屁粉白膜翅、蝇王青蓝虫翅、炽天使白金羽翼、利维坦紫黑蝠翼。四个朝向均有动画，站立和蓄力不依赖走路帧，位于身体/头部后方；衣柜预览采用同一绘制接口。
+
+[查看14种套装](deliverables/transformation-preview.png) · [查看四向造型](deliverables/transformation-all-directions.png) · [查看四向动态翅膀](deliverables/transformation-wings.gif)
+
+旧衣柜的原脚本直接增删原生服装，无法通知猎手的整合头部控制器。因此附带兼容版，在原脚本中增加明确的显示/隐藏接口与翅膀预览调用。左侧列表新增82项：自动/原外观、14种套装和66种道具；原套装及道具网格的开关也会同步。手动选择优先，自动时最近形成且未隐藏的套装优先，再取原道具优先级。完整头部显示一种，多飞行变身显示一对对应翅膀。选择、隐藏与形成顺序按玩家保存到续关；新局恢复自动。手动选飞行造型需要已有飞行能力，换装不会授予能力或改变套装效果。
+
+[旧衣柜安装与操作](docs/OLD_WARDROBE_COMPAT.md) · [旧衣柜源码改动](docs/old_wardrobe_178.patch) · [全部套装清单](docs/TRANSFORMATIONS.md)
+
+猎手、兼容版旧衣柜需要各启用一份。EID双语人物和道具说明同步；Stats+数值模块保留。离线检查通过不等于游戏实测，本环境没有Isaac运行程序。
 
 ## v1.77边缘补全与死亡之眼外观
 
@@ -34,17 +48,17 @@
 
 饰物、头发、脸和兜帽合并绘制，移除旧版悬空配件，按原头顶/下巴边界对齐。拾取、举物、使用道具和受伤动作的头部也使用新造型；动作本身的时序与位移保留。
 
-同槽位采用一种整合造型：悲伤洋葱优先，硫磺火/巴比伦/钉子次之，其余按最近获得显示。此规则避免多张完整脸/帽子穿插，组合不会把所有造型同时叠加。持续型主动依赖游戏临时效果，短时使用反应有单独显示。
+没有套装或衣柜手动选择时，道具同槽位采用一种整合造型：悲伤洋葱优先，硫磺火/巴比伦/钉子次之，其余按最近获得显示。此规则避免多张完整脸/帽子穿插，组合不会把所有造型同时叠加。持续型主动依赖游戏临时效果，短时使用反应有单独显示。
 
 EID中英文说明同步，支持巧克力牛奶隐藏替代道具。Stats+数值接口与原玩法保留。调试控制台输入hunterartdiag可查看外观版本和当前造型。
 
 ## 安装
 
-完全退出游戏，把旧猎手文件夹移出mods备份，再解压完整安装包，将zzzz_revolver_samson放入mods。只启用一份猎手。不要覆盖解压到旧文件夹，否则旧静态资源可能残留。无需改动EID或Stats+文件。
+完全退出游戏，把旧猎手和旧衣柜文件夹移出mods备份，再解压完整安装包，将zzzz_revolver_samson和old wardrobe_2488945061两个文件夹放入mods。各只启用一份。不要覆盖解压到旧文件夹，否则旧静态资源可能残留。无需改动EID或Stats+文件。
 
 ## 验证
 
-运行 `python3 tools/test_dynamic_art.py`。检查Lua、66项状态/存档逻辑、实际像素不同的动作帧、原生坐标范围、资源引用和真实多帧循环。使用ImageMagick按ANM2坐标离线合成预览。
+运行 `python3 tools/test_dynamic_art.py`。检查Lua、66项道具和14种套装状态、衣柜实际脚本的列表/网格/预览、续关、实际动作像素、原生坐标与资源引用，以及连续翅膀动画。使用ImageMagick按ANM2坐标离线合成预览。
 
 此云环境没有Isaac运行程序。测试使用接口模拟与离线渲染，尚未进行游戏内验收；不能据此保证全部组合在游戏中显示正确。
 
@@ -56,4 +70,4 @@ EID中英文说明同步，支持巧克力牛奶隐藏替代道具。Stats+数�
 
 原角色/玩法来自用户上传的猎手v1.72。新整合头部图集由图像生成工具参照原人物制作；图集裁切时仅保留主体，清除相邻帧残片。泪滴、引线与蓝蘑菇循环素材及动画结构借用用户提供的Marisa as Cain v1.16（Cordelia、Vd65_63RUS及其贡献者），并按猎手挂接调整。未打包EID/Stats+本体。
 
-原始图集和循环源文件见art_sources。制作依赖：Python3、Pillow、NumPy、SciPy、ImageMagick；运行时模拟检查使用Lua5.4共享库。执行 `python3 tools/build_dynamic_art.py` 装配资源（已存在的头部PNG保留；重新装配前删除hunter_art174中的数字命名PNG）。
+原始图集和循环源文件见art_sources。制作依赖：Python3、Pillow、NumPy、SciPy、ImageMagick；运行时模拟检查使用Lua5.4共享库。执行 `python3 tools/build_dynamic_art.py` 装配全部资源（已存在的道具头部PNG保留；重新装配前删除hunter_art174中的数字命名PNG）；新增套装可单独执行python3 tools/build_transformations.py。

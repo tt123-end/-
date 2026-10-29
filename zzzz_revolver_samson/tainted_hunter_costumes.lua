@@ -8,7 +8,7 @@ return function(mod, playerType)
     local nativeFile = 'gfx/001.000_player_hunter_b_v153.anm2'
     local alignment=include('hunter_head_alignment')
     local legacyAlignedFile = 'gfx/001.000_player_hunter_b_v175.anm2'
-    local function owned(source)return source==nativeFile or source==legacyAlignedFile or source:match('^gfx/001%.000_player_hunter_b_v17[67]_%d+%.anm2$')~=nil end
+    local function owned(source)return source==nativeFile or source==legacyAlignedFile or source:match('^gfx/001%.000_player_hunter_b_v17[67]_%d+%.anm2$')~=nil or source:match('^gfx/001%.000_player_hunter_b_v178_f%d+%.anm2$')~=nil end
     local baseSheet = 'gfx/characters/costumes/hunter_b_heads_v152.png'
     local byId, serial = {}, 0
     local nativeActive = {[34]=true, [77]=true, [83]=true, [93]=true}
@@ -35,6 +35,7 @@ return function(mod, playerType)
         local lost = NullItemID and NullItemID.ID_LOST_CURSE
         return not (lost and p:GetEffects():HasNullEffect(lost))
     end
+    local transformations=include('hunter_transformations')(mod,playerType,definitions,isHunter)
     local function count(p, id)
         local e = p:GetEffects()
         local n = p:GetCollectibleNum(id, true) + e:GetCollectibleEffectNum(id)
@@ -67,7 +68,7 @@ return function(mod, playerType)
             end
             s.present[entry.id] = yes
             signature[#signature+1] = entry.id .. ':' .. n .. ':' .. tostring(yes)
-            if yes and entry.sheet then
+            if yes and entry.sheet and transformations.itemVisible(p,entry.id) then
                 local priority = entry.priority or defaultPriority[entry.id] or 100
                 local acquired = s.acquired[entry.id] or 0
                 if not winner or priority > winnerPriority
@@ -78,7 +79,7 @@ return function(mod, playerType)
             end
         end
         signature[#signature+1]='hidden373:'..count(p,373)
-        return winner, table.concat(signature, ';')
+        return transformations.choose(p,s,winner,table.concat(signature, ';'))
     end
     local function removeLoop(p, s)
         if s.loopCostume then
@@ -87,6 +88,7 @@ return function(mod, playerType)
         end
     end
     local function restoreNative(p, s)
+        transformations.cleanup(p,s)
         for id in pairs(s.nativeSuppressed) do
             -- Never resurrect native art for a hidden Hunter replacement.
             if p:GetCollectibleNum(id, true) + p:GetEffects():GetCollectibleEffectNum(id) > 0 then
@@ -97,6 +99,7 @@ return function(mod, playerType)
         s.nativeSuppressed = {}
     end
     local function suppressNative(p, s)
+        transformations.suppress(p,s)
         for _, entry in ipairs(definitions) do
             if count(p, entry.id) > 0 or s.present[entry.id] then
                 local item = Isaac.GetItemConfig():GetCollectible(entry.id)
@@ -186,7 +189,7 @@ return function(mod, playerType)
         -- selected head, so a costume rebuild cannot erase it in this frame.
         sprite = p:GetSprite()
         source = normalized(sprite:GetFilename())
-        local target=entry and assert(alignment[entry.id],'Missing outfit alignment')or nativeFile
+        local target=entry and (entry.actor or assert(alignment[entry.id],'Missing outfit alignment'))or nativeFile
         local swapped=owned(source) and actor(sprite,target)
         if owned(source) and (swapped or sheet ~= s.sheet or force or changed or previousLoop ~= s.loopCostume) then
             sprite:ReplaceSpritesheet(4, sheet)
@@ -201,20 +204,24 @@ return function(mod, playerType)
     local api = {sync=sync, state=state, definitions=definitions}
     function api.selected(p)
         local s = p:GetData().hunterDynamic174
-        return s and byId[s.selectedId] or nil
+        return transformations.selected(s) or (s and byId[s.selectedId] or nil)
     end
+    api.transformations=transformations
+    transformations.attach(sync)
     mod.HunterDynamicArt174 = api
     if ModCallbacks.MC_EXECUTE_CMD then
         mod:AddCallback(ModCallbacks.MC_EXECUTE_CMD, function(_, command)
             if command ~= 'hunterartdiag' then return end
-            local lines = {'[Hunter art v1.77] integrated heads and native dynamic overlays'}
+            local lines = {'[Hunter art v1.78] integrated heads, transformations and animated wings'}
             for i=0,game:GetNumPlayers()-1 do
                 local p = Isaac.GetPlayer(i)
                 local s = p:GetData().hunterDynamic174
                 if p:GetPlayerType() == playerType or s then
-                    lines[#lines+1] = string.format('P%d: selected=%s sheet=%s loop=%s source=%s',
+                    lines[#lines+1] = string.format('P%d: selected=%s sheet=%s loop=%s source=%s form=%s wings=%s wardrobe=%s',
                         i, tostring(s and s.selectedId or 'none'), tostring(s and s.sheet or baseSheet),
-                        tostring(s and s.loopCostume or 'none'), normalized(p:GetSprite():GetFilename()))
+                        tostring(s and s.loopCostume or 'none'), normalized(p:GetSprite():GetFilename()),
+                        tostring(s and s.selectedForm or 'none'),tostring(s and s.wingStyle or 'none'),
+                        tostring(s and s.wardrobe and s.wardrobe.mode or 'auto'))
                 end
             end
             local output = table.concat(lines, '\n') .. '\n'
@@ -272,6 +279,7 @@ return function(mod, playerType)
                     end
                 end
             end
+            transformations.restore(p,record and record.transformations)
             sync(p, true)
         end
     end)
@@ -288,7 +296,7 @@ return function(mod, playerType)
                     for id, order in pairs(s.acquired) do
                         if s.present[id] then acquired[tostring(id)] = order end
                     end
-                    saved.players[playerKey(p)] = {acquired=acquired}
+                    saved.players[playerKey(p)] = {acquired=acquired,transformations=transformations.save(s)}
                 end
             end
             root.hunterDynamic174 = saved
@@ -313,8 +321,9 @@ return function(mod, playerType)
             local entry = resolve(desc.ObjSubType)
             local zh = EID:getLanguage() == 'zh_cn'
             local prefix = zh and '里猎手动态外观：' or 'Hunter dynamic outfit: '
-            local suffix = prefix .. (zh and entry.zh or entry.label)
-                .. (zh and '；整头造型按优先级及最近获得顺序显示一种' or '; one integrated outfit, chosen by priority then acquisition order')
+            local label=entry.label:match('^[^:]+') or entry.label
+            local suffix = prefix .. (zh and entry.zh or label)
+                .. (zh and '；衣柜手动选择优先，自动时套装优先，再按道具优先级及获得顺序显示一种' or '; wardrobe selection first; automatic: transformation, then item priority/acquisition order')
             if entry.id==373 then suffix=prefix..(zh and entry.zh or entry.label)end
             local text = desc.Description or ''
             if not text:find(prefix, 1, true) then desc.Description = text .. '#' .. suffix end

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Old Wardrobe</name>
+    <directory>old wardrobe</directory>
+    <id>2488945061</id>
+    <description>Use the Old Wardrobe to customize the visual of Isaac.
+
+- Appears in the first room on each floor.
+
+- You can equip or desequip the costumes of the items you have, or the transformation (Guppy, Mom, etc...)
+
+- You can't desequip all the flying costumes you have (blue icon).
+
+- Modded costumes are not affected by this mod.
+
+- Works in multiplayer too.
+
+- use the DROP button on the keyboard to exit the wardrobe menu (defaut key is CTRL)
+
+- the timer of the game is stopped when using the wardrobe : take your time to dress
+
+- Use the Pill button to mark up to 64 non-flying costumes ; they will be available on new runs.</description>
+    <version>1.16</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Items"/>
+    <tag id="Tweaks"/>
+    <tag id="Graphics"/>
+</metadata>

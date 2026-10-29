@@ -2,4 +2,4 @@
 <costumes anm2root="gfx/characters/">
     
     <costume anm2path="silent_specialist_marker.anm2" isFlying="true" priority="969" type="none" />
-<costume anm2path="hunter_art174/1.anm2" type="none" priority="105" hasOverlay="true" /><costume anm2path="hunter_art174/19.anm2" type="none" priority="105" hasOverlay="true" /><costume anm2path="hunter_art174/342.anm2" type="none" priority="105" hasOverlay="true" /></costumes>
+<costume anm2path="hunter_art174/1.anm2" type="none" priority="105" hasOverlay="true" /><costume anm2path="hunter_art174/19.anm2" type="none" priority="105" hasOverlay="true" /><costume anm2path="hunter_art174/342.anm2" type="none" priority="105" hasOverlay="true" /><costume anm2path="hunter_forms178/wardrobe_selector.anm2" type="none" priority="-999" /></costumes>

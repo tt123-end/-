@@ -1,0 +1,160 @@
+--- original
++++ Hunter compatibility
+@@ -91,6 +91,32 @@
+ local paintfly = {}
+ local pid = {}
+ CustomWardrobe = true
++
++-- Hunter v1.78 compatibility: explicit UI actions, never gameplay mutations.
++-- All calls are optional and scoped to the currently dressed Hunter player.
++local function HunterBridge(action, value)
++    local api = HunterWardrobe178
++    if api and player and api.isHunter(player) and api[action] then
++        return api[action](player, value)
++    end
++    return false
++end
++local function HunterListAction(action, key)
++    if not HunterBridge(action, key) then return false end
++    if action == "select" and key == "H178:AUTO" then
++        for k in pairs(nocostume) do nocostume[k] = nil end
++        for k in pairs(transfo) do transfo[k] = nil end
++    elseif action == "select" then
++        local item = tonumber(string.match(key, "^H178:I(%d+)$"))
++        local formId = tonumber(string.match(key, "^H178:F(%d+)$"))
++        if item then nocostume[item] = nil end
++        if formId and HunterWardrobe178.formNative then
++            local null = HunterWardrobe178.formNative(formId)
++            if null then transfo[null] = nil end
++        end
++    end
++    return true
++end
+ --------------------------------------------------------------------------- Texte routine
+ local function WriteText(text, px, py, center, colr, colv, colb, cola, outline)
+ 	local f = Font()
+@@ -203,7 +229,7 @@
+ 	end
+ 	-- lignes après 0
+ 	for k,v in sorted(paintname) do
+-		if (WardrobePlus == nil) or (WardrobePlus ~= nil and OWRP.IsCostumeAvailable(k)) then
++		if (string.sub(k,1,5) ~= "H178:" or HunterBridge("isHunter")) and ((WardrobePlus == nil) or (WardrobePlus ~= nil and OWRP.IsCostumeAvailable(k))) then
+ 			pid[maxlines] = k
+ 			maxlines = maxlines + 1
+ 		end
+@@ -212,6 +238,9 @@
+ end
+ ---------------------------------------------------------------------------------------------
+ local function DrawPlayer(player)
++    if HunterWardrobe178 and HunterWardrobe178.isHunter(player) then
++        HunterWardrobe178.renderWings(player, Vector(invPosition.X+148,invPosition.Y+29), true)
++    end
+ 	player:RenderGlow(Vector(invPosition.X+148,invPosition.Y+29))
+ 	player:RenderBody(Vector(invPosition.X+148,invPosition.Y+29))
+ 	player:RenderHead(Vector(invPosition.X+148,invPosition.Y+29))
+@@ -300,7 +329,20 @@
+ end
+ ---------------------------------------------------------------------------------------------
+ local function RenderList()
++    local hunterInput = actionbutton
+ 	DrawList()
++    local key = pid[selectionline]
++    local handled = false
++    if actionbutton == ButtonAction.ACTION_MENUCONFIRM then
++        handled = HunterListAction("select", key)
++    elseif actionbutton == ButtonAction.ACTION_PILLCARD then
++        handled = HunterListAction("undress", key)
++    end
++    if handled then
++        actionbutton = -1
++        dressingEnt:ToNPC():PlaySound(283,1,0,false,1)
++        return
++    end
+ 
+ 	if (actionbutton == ButtonAction.ACTION_MENUCONFIRM) then
+ 		if paintfly[pid[selectionline]] ~= nil and player.CanFly == false then
+@@ -311,14 +353,16 @@
+ 			else
+ 				validation = false
+ 				player:ClearCostumes()
++                HunterBridge("clear")
+ 				for k, v in pairs(iteminfos) do
+ 					if (iteminfos[k].Costume.IsFlying == false) then
+-						nocostume[iteminfos[k].Costume.ID] = true
++						nocostume[HunterBridge("isHunter") and iteminfos[k].ID or iteminfos[k].Costume.ID] = true
+ 					end
+ 				end
+ 				dressingEnt:ToNPC():PlaySound(283,1,0,false,1)
+ 			end
+ 		elseif pid[selectionline] == "!2" then -- wipe listed
++            HunterBridge("clear")
+ 			for k,v in pairs(paintname) do
+ 				if tonumber(paintloc[k]) ~= nil then
+ 					player:TryRemoveNullCostume(tonumber(paintloc[k]))
+@@ -351,6 +395,7 @@
+ 		end
+ 		dressingEnt:ToNPC():PlaySound(283,1,0,false,1)
+ 	elseif (actionbutton == ButtonAction.ACTION_BOMB) then
++        HunterBridge("clear")
+ 		for k,v in pairs(paintname) do
+ 			if tonumber(paintloc[k]) ~= nil then
+ 				player:TryRemoveNullCostume(tonumber(paintloc[k]))
+@@ -360,6 +405,7 @@
+ 		end
+ 		dressingEnt:ToNPC():PlaySound(283,1,0,false,1)
+ 	end
++    if hunterInput > 0 then HunterBridge("refresh") end
+ end
+ ---------------------------------------------------------------------------------------------
+ local function DrawUI()
+@@ -599,6 +645,11 @@
+ end
+ ---------------------------------------------------------------------------------------------
+ function OWR.RenderUI()
++    local hunterInput = actionbutton
++    local hunterRebuild = (phase == 1)
++    if player and HunterWardrobe178 and HunterWardrobe178.isHunter(player) then
++        HunterWardrobe178.visibility(player, nocostume, transfo)
++    end
+ 	local	firstitem = 1
+ 	local	configItem
+ 
+@@ -739,6 +790,7 @@
+ 					transfo[form] = 1
+ 					player:AddNullCostume(form)
+ 				end
++                HunterBridge("form", {id=form, visible=(transfo[form]==1 or transfo[form]==3)})
+ 				phase = 1
+ 				actionbutton = -1
+ 				dressingEnt:ToNPC():PlaySound(283,1,0,false,1)
+@@ -761,6 +813,7 @@
+ 						player:RemoveCostume(iteminfos[selection])
+ 					end
+ 				end
++                HunterBridge("item", {id=iteminfos[selection].ID, visible=not nocostume[iteminfos[selection].ID]})
+ 				phase = 1
+ 				actionbutton = -1
+ 				dressingEnt:ToNPC():PlaySound(283,1,0,false,1)
+@@ -781,9 +834,10 @@
+ 			end
+ 			actionbutton = -1
+ 		elseif (actionbutton == ButtonAction.ACTION_BOMB) then
++            HunterBridge("clear")
+ 			for k, v in pairs(iteminfos) do
+ 				if (iteminfos[k].Costume.IsFlying == false) then
+-					nocostume[iteminfos[k].Costume.ID] = true
++					nocostume[HunterBridge("isHunter") and iteminfos[k].ID or iteminfos[k].Costume.ID] = true
+ 				end
+ 			end
+ 			phase = 1
+@@ -791,6 +845,10 @@
+ 		end
+ 	end
+ 
++    if player and HunterWardrobe178 and HunterWardrobe178.isHunter(player) then
++        HunterWardrobe178.visibility(player, nocostume, transfo)
++        if hunterInput > 0 or hunterRebuild then HunterBridge("refresh") end
++    end
+ 	if (phase > -1) then
+ 		DrawUI() -- dessine l'UI
+ 	end

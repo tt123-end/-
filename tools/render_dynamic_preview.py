@@ -7,7 +7,7 @@ OUT=REPO/'deliverables';OUT.mkdir(exist_ok=True)
 TMP=REPO/'art_sources/assembly/render';TMP.mkdir(parents=True,exist_ok=True)
 native=E.parse(GFX/'001.000_player_hunter_b_v153.anm2').getroot()
 def run(args):subprocess.run(['magick',*map(str,args)],check=True,stderr=subprocess.DEVNULL)
-def render(canvas,actor,folder,name,tick,override=None):
+def render(canvas,actor,folder,name,tick,override=None,origin=(64,108),sprite_scale=1):
     sheets={x.get('Id'):folder/x.get('Path').replace('\\','/')for x in actor.findall('Content/Spritesheets/Spritesheet')}
     layers={x.get('Id'):x.get('SpritesheetId')for x in actor.findall('Content/Layers/Layer')}
     a=actor.find(f"Animations/Animation[@Name='{name}']")
@@ -23,9 +23,9 @@ def render(canvas,actor,folder,name,tick,override=None):
         path=override if override and layer.get('LayerId')=='4'else sheets[layers[layer.get('LayerId')]]
         if not path.exists()or f.get('Visible')=='false':continue
         v=lambda k:float(f.get(k,'0'))
-        sx=v('XScale')/100*2;sy=v('YScale')/100*2
+        sx=v('XScale')/100*2*sprite_scale;sy=v('YScale')/100*2*sprite_scale
         w=max(1,round(v('Width')*abs(sx)));h=max(1,round(v('Height')*abs(sy)))
-        x=round(64+v('XPosition')*2-v('XPivot')*abs(sx));y=round(108+v('YPosition')*2-v('YPivot')*abs(sy))
+        x=round(origin[0]+v('XPosition')*2-v('XPivot')*abs(sx));y=round(origin[1]+v('YPosition')*2-v('YPivot')*abs(sy))
         piece=canvas.with_name(canvas.stem+'_piece.png')
         args=[path,'-crop',f"{int(v('Width'))}x{int(v('Height'))}+{int(v('XCrop'))}+{int(v('YCrop'))}",'+repage','-resize',f'{w}x{h}!']
         if sx<0:args+=['-flop']
