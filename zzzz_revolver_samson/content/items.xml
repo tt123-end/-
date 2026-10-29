@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<items gfxroot="gfx/items/collectibles/" version="1"><passive name="Hunter Chemical Peel" description="+1.5 Damage" gfx="collectibles_154_chemicalpeel.png" cache="damage" quality="2" hidden="true" /><passive name="Hunter Chocolate Milk" description="Rate-dependent knife damage" gfx="collectibles_069_chocolatemilk.png" quality="3" hidden="true" /></items>

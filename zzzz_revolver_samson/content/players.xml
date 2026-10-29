@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<players
+    root="gfx/characters/costumes/"
+    portraitroot="gfx/ui/stage/"
+    nameimageroot="gfx/ui/boss/"
+    bigportraitroot="gfx/ui/stage/">
+    <!-- Silent-inspired custom skin; Death's List start. Keep internal name for Lua/save compatibility. -->
+    <player
+        name="RevolverSamson"
+        skin="character_revolver_silent_blank.png"
+        nameimage="playername_hunter.png"
+        portrait="playerportrait_hunter_crying.png"
+        bigportrait="playerportrait_hunter_crying.png"
+        hp="4"
+        items="530"
+        card="14"
+        trinket="37"
+        skinColor="-1" />
+    <!-- Tainted Hunter v1.54: one red-heart container, Dead Eye and reversed Emperor.
+         Native XML starting loadout avoids re-granting on continue/type changes. -->
+    <player
+        name="RevolverSamson"
+        bSkinParent="RevolverSamson"
+        skin="hunter_b_engine_blank_v147.png"
+        nameimage="playername_hunter.png"
+        portrait="playerportrait_hunter_b.png"
+        bigportrait="playerportrait_hunter_b.png"
+        hp="2"
+        items="373"
+        card="60"
+        bombs="0"
+        skinColor="-1" />
+</players>
