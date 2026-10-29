@@ -1,14 +1,22 @@
-# 里猎手 v1.76-art 动态外观测试版
+# 里猎手 v1.77-art 动态外观测试版
 
 本版移除v1.73的全部静态配饰贴片，重做66项道具的整合头部造型与表情帧。目标环境：忏悔+及匹配版本的REPENTOGON。
 
-- [下载完整Mod安装包](deliverables/Hunter_v1.76-art_test.zip)
+- [下载完整Mod安装包](deliverables/Hunter_v1.77-art_test.zip)
 - [浏览美术源图](art_sources) · [制作与验证工具](tools)
 - [查看动态哭泣合成预览](deliverables/crying-animation.gif)
 - [道具清单](deliverables/COSTUME_CATALOG.md)
 - [安装与验证说明](zzzz_revolver_samson/ART_PACK_README.md)
 
 点击ZIP文件后选择Download raw file下载。也可直接使用仓库中的zzzz_revolver_samson文件夹。
+
+## v1.77边缘补全与死亡之眼外观
+
+全部66项造型的396个方向/动作图格改用带透明边距的256×256绘制范围。帽灯、翅膀和角等越过旧128×128图格的部分，从原始图集中恢复完整轮廓。已有脸部像素保留，枢轴同步增加相同的透明边距，延续v1.76的定位结果；不移动身体或碰撞体。
+
+[查看矿灯／翅膀／角的修复前后对比](deliverables/border-comparison.png)。图片为离线合成，不是游戏截图。全部图格边缘都检查了透明余量，并校验了原像素与定位点不变。
+
+里猎手隐藏死亡之眼的人物服装：清理已显示的红眼，并用REPENTOGON官方MC_PRE_PLAYER_ADD_COSTUME回调阻止重新添加。初始道具、临时效果、连击积累和增伤机制均保留，其他角色照常显示。EID中英文道具说明和角色特性同步。
 
 ## v1.76逐项位置校准
 
@@ -48,4 +56,4 @@ EID中英文说明同步，支持巧克力牛奶隐藏替代道具。Stats+数�
 
 原角色/玩法来自用户上传的猎手v1.72。新整合头部图集由图像生成工具参照原人物制作；图集裁切时仅保留主体，清除相邻帧残片。泪滴、引线与蓝蘑菇循环素材及动画结构借用用户提供的Marisa as Cain v1.16（Cordelia、Vd65_63RUS及其贡献者），并按猎手挂接调整。未打包EID/Stats+本体。
 
-原始图集和循环源文件见art_sources。制作依赖：Python3、Pillow、ImageMagick；运行时模拟检查使用Lua5.4共享库。执行 `python3 tools/build_dynamic_art.py` 装配资源（已存在的头部PNG保留；重新装配前删除hunter_art174中的数字命名PNG）。
+原始图集和循环源文件见art_sources。制作依赖：Python3、Pillow、NumPy、SciPy、ImageMagick；运行时模拟检查使用Lua5.4共享库。执行 `python3 tools/build_dynamic_art.py` 装配资源（已存在的头部PNG保留；重新装配前删除hunter_art174中的数字命名PNG）。

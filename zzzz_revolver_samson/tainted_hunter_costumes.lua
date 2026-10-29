@@ -8,7 +8,7 @@ return function(mod, playerType)
     local nativeFile = 'gfx/001.000_player_hunter_b_v153.anm2'
     local alignment=include('hunter_head_alignment')
     local legacyAlignedFile = 'gfx/001.000_player_hunter_b_v175.anm2'
-    local function owned(source)return source==nativeFile or source==legacyAlignedFile or source:match('^gfx/001%.000_player_hunter_b_v176_%d+%.anm2$')~=nil end
+    local function owned(source)return source==nativeFile or source==legacyAlignedFile or source:match('^gfx/001%.000_player_hunter_b_v17[67]_%d+%.anm2$')~=nil end
     local baseSheet = 'gfx/characters/costumes/hunter_b_heads_v152.png'
     local byId, serial = {}, 0
     local nativeActive = {[34]=true, [77]=true, [83]=true, [93]=true}
@@ -77,6 +77,7 @@ return function(mod, playerType)
                 end
             end
         end
+        signature[#signature+1]='hidden373:'..count(p,373)
         return winner, table.concat(signature, ';')
     end
     local function removeLoop(p, s)
@@ -105,6 +106,17 @@ return function(mod, playerType)
                 end
             end
         end
+        if count(p,373)>0 then
+            local item=Isaac.GetItemConfig():GetCollectible(373)
+            if item then p:RemoveCostume(item);s.nativeSuppressed[373]=true end
+        end
+    end
+    -- REPENTOGON's documented return value TRUE cancels only the costume.
+    -- Item ownership, Dead Eye charge and native damage remain untouched.
+    if ModCallbacks.MC_PRE_PLAYER_ADD_COSTUME then
+        mod:AddCallback(ModCallbacks.MC_PRE_PLAYER_ADD_COSTUME,function(_,item,p)
+            if item and item.ID==373 and isHunter(p)then return true end
+        end)
     end
     -- Keep all native animation state while changing only the head pivot table.
     local function actor(sprite, target)
@@ -195,7 +207,7 @@ return function(mod, playerType)
     if ModCallbacks.MC_EXECUTE_CMD then
         mod:AddCallback(ModCallbacks.MC_EXECUTE_CMD, function(_, command)
             if command ~= 'hunterartdiag' then return end
-            local lines = {'[Hunter art v1.76] integrated heads and native dynamic overlays'}
+            local lines = {'[Hunter art v1.77] integrated heads and native dynamic overlays'}
             for i=0,game:GetNumPlayers()-1 do
                 local p = Isaac.GetPlayer(i)
                 local s = p:GetData().hunterDynamic174
@@ -290,6 +302,7 @@ return function(mod, playerType)
         local function resolve(id)
             local token = Isaac.GetItemIdByName('Hunter Chocolate Milk')
             if token and token > 0 and id == token then id = 69 end
+            if id==373 then return {id=373,zh='隐藏死亡之眼外观，保留连击与伤害效果',label='Dead Eye costume hidden; native charge and damage retained'}end
             return byId[id]
         end
         EID:addDescriptionModifier('Hunter dynamic outfits 174', function(desc)
@@ -302,6 +315,7 @@ return function(mod, playerType)
             local prefix = zh and '里猎手动态外观：' or 'Hunter dynamic outfit: '
             local suffix = prefix .. (zh and entry.zh or entry.label)
                 .. (zh and '；整头造型按优先级及最近获得顺序显示一种' or '; one integrated outfit, chosen by priority then acquisition order')
+            if entry.id==373 then suffix=prefix..(zh and entry.zh or entry.label)end
             local text = desc.Description or ''
             if not text:find(prefix, 1, true) then desc.Description = text .. '#' .. suffix end
             return desc

@@ -11,7 +11,7 @@ for animation in old.findall('Animations/Animation'):
             frame.set('YPivot',str(float(frame.get('YPivot'))+7))
 scenes=[('Normal',base,None),('v1.75',old,7)]
 for label,item in [('Fixed crown',7),('Fixed eye',2)]:
-    scenes.append((label,E.parse(GFX/f'001.000_player_hunter_b_v176_{item}.anm2').getroot(),item))
+    scenes.append((label,E.parse(GFX/f'001.000_player_hunter_b_v177_{item}.anm2').getroot(),item))
 cards=[]
 for label,actor,item in scenes:
     path=TMP/(label.replace(' ','_')+'comparison176.png')

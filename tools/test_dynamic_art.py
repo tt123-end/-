@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import ctypes
+import copy
+import numpy as np
 import ctypes.util
 import json
 from pathlib import Path
@@ -68,7 +70,7 @@ def main() -> None:
         assert sheet.startswith('gfx/'), sheet
         path = MOD / 'resources' / sheet
         image = Image.open(path).convert('RGBA')
-        assert image.size == original.size, (item_id, image.size)
+        assert image.size == (2048,2304), (item_id, image.size)
         assert image.getchannel('A').getextrema()[0] == 0, (item_id, 'no alpha')
         for index in range(6):
             cell_alpha = image.crop((index*128, 0, (index+1)*128, 128)).getchannel('A')
@@ -94,6 +96,27 @@ def main() -> None:
                                    image.crop((128, 0, 256, 128))), (
                                        item_id, 'idle/shoot pixels identical')
 
+    recovery=json.loads((CHECKOUT/'art_sources/border_recovery177.json').read_text())
+    assert len(recovery['outfits'])==66
+    checked=0
+    for item_id,sheet,*_ in entries:
+        image=Image.open(MOD/'resources'/sheet).convert('RGBA')
+        for pose in range(6):
+            previous=image.crop((pose*128,0,pose*128+128,128))
+            padded=image.crop((pose*256,2048,pose*256+256,2304))
+            previous_pixels=np.asarray(previous);current_pixels=np.asarray(padded.crop((64,64,192,192)))
+            visible=previous_pixels[:,:,3]>0
+            assert np.array_equal(previous_pixels[visible],current_pixels[visible]),(item_id,pose,'existing visible pixel changed')
+            alpha=padded.getchannel('A');box=alpha.point(lambda x:255 if x>20 else 0).getbbox()
+            assert box and min(box[:2])>=6 and max(box[2:])<=250,(item_id,pose,box,'clipped expanded border')
+            checked+=1
+    assert checked==396
+    # All three reported examples must have gained real right-hand pixels.
+    for item in ['91','82','118']:
+        image=Image.open(gfx/f'characters/hunter_art174/{item}.png').convert('RGBA')
+        assert image.crop((192,2048+64,256,2304)).getchannel('A').getextrema()[1]>20,item
+    print('PASS:396expanded frames have clear gutters; existing pixels and anchor positions retained; miner/wing/horn right borders restored.')
+
     sad = Image.open(MOD / 'resources' / next(
         entry[1] for entry in entries if entry[0] == '1')).convert('RGBA')
     # A crying expression must visibly replace the face, not just add tiny dots.
@@ -108,8 +131,11 @@ def main() -> None:
     landmarks=json.loads((CHECKOUT/'art_sources/head_landmarks176.json').read_text())
     neutral=ET.parse(gfx/'001.000_player_hunter_b_v153.anm2').getroot()
     for item_id,*_ in entries:
-        actor=ET.parse(gfx/f'001.000_player_hunter_b_v176_{item_id}.anm2').getroot()
-        assert ET.tostring(actor.find('Content'))==ET.tostring(neutral.find('Content'))
+        actor=ET.parse(gfx/f'001.000_player_hunter_b_v177_{item_id}.anm2').getroot()
+        expected_content=copy.deepcopy(neutral.find('Content'))
+        head_sheet=expected_content.find("Layers/Layer[@Id='4']").get('SpritesheetId')
+        expected_content.find(f"Spritesheets/Spritesheet[@Id='{head_sheet}']").set('Path',f'characters/hunter_art174/{item_id}.png')
+        assert ET.tostring(actor.find('Content'))==ET.tostring(expected_content)
         for original_animation,new_animation in zip(neutral.findall('Animations/Animation'),actor.findall('Animations/Animation')):
             assert original_animation.attrib==new_animation.attrib
             for old_layer,new_layer in zip(original_animation.findall('LayerAnimations/LayerAnimation'),new_animation.findall('LayerAnimations/LayerAnimation')):
@@ -119,13 +145,14 @@ def main() -> None:
                     pose={6:1,9:0,10:1}.get(column,column)
                     if old_layer.get('LayerId')!='4' or old.get('YCrop')!='0' or pose not in range(6):
                         assert old.attrib==new.attrib;continue
-                    assert {k:v for k,v in old.attrib.items()if k not in ('XPivot','YPivot')}=={k:v for k,v in new.attrib.items()if k not in ('XPivot','YPivot')}
+                    assert {k:v for k,v in old.attrib.items()if k not in ('XPivot','YPivot','XCrop','YCrop','Width','Height')}=={k:v for k,v in new.attrib.items()if k not in ('XPivot','YPivot','XCrop','YCrop','Width','Height')}
+                    assert (int(new.get('XCrop')),int(new.get('YCrop')),int(new.get('Width')),int(new.get('Height')))==(pose*256,2048,256,256)
                     point=landmarks['outfits'][item_id][pose];reference=landmarks['neutral'][pose]
                     for axis,pivot,scale in [('x','XPivot','XScale'),('y','YPivot','YScale')]:
-                        actual=(point[axis]-float(new.get(pivot)))*float(new.get(scale))/100
+                        actual=(point[axis]+64-float(new.get(pivot)))*float(new.get(scale))/100
                         expected=(reference[axis]-float(old.get(pivot)))*float(old.get(scale))/100
                         assert abs(actual-expected)<1e-7,(item_id,pose,axis,actual,expected)
-    assert len(list(gfx.glob('001.000_player_hunter_b_v176_*.anm2')))==66
+    assert len(list(gfx.glob('001.000_player_hunter_b_v177_*.anm2')))==66
     print('PASS:66individual pose tables; face-centre/chin coordinates match neutral under actual native/mirrored/action transforms; body/timing preserved.')
     registrations = ET.parse(MOD / 'content/costumes2.xml').getroot()
     assert not any('hunter_art173/' in node.get('anm2path', '')

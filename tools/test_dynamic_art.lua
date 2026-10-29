@@ -8,7 +8,7 @@ local mod={AddCallback=function(_,event,fn)
 end}
 ModCallbacks={MC_POST_PEFFECT_UPDATE='tick',MC_USE_ITEM='use',
     MC_POST_NEW_ROOM='room',MC_POST_GAME_STARTED='start',MC_POST_UPDATE='post',
-    MC_PRE_GAME_EXIT='exit',MC_EXECUTE_CMD='command'}
+    MC_PRE_GAME_EXIT='exit',MC_EXECUTE_CMD='command',MC_PRE_PLAYER_ADD_COSTUME='costume_pre'}
 NullItemID={ID_LOST_CURSE=112}
 local frame=0;local players={};local nullId=8000;local config={};local playerSerial=0
 local diagnostic
@@ -41,7 +41,7 @@ Isaac={GetCostumeIdByPath=function(path)
     end,
     GetItemIdByName=function(name)return name=='Hunter Chocolate Milk'and 999 or -1 end,
     GetItemConfig=function()return{GetCollectible=function(_,id)
-        config[id]=config[id]or{id=id};return config[id]
+        config[id]=config[id]or{id=id,ID=id};return config[id]
     end}end,
     GetPlayer=function(index)return assert(players[index+1])end,
     ConsoleOutput=function(text)diagnostic=text end,
@@ -103,11 +103,28 @@ local alignmentProbe=player();players={alignmentProbe}
 alignmentProbe.sprite.animation='Pickup';alignmentProbe.sprite.frame=3
 alignmentProbe.sprite.overlay='HeadRight';alignmentProbe.sprite.overlayFrame=1
 alignmentProbe.items[1]=1;api.sync(alignmentProbe)
-assert(alignmentProbe.sprite.file=='gfx/001.000_player_hunter_b_v176_1.anm2')
+assert(alignmentProbe.sprite.file=='gfx/001.000_player_hunter_b_v177_1.anm2')
 assert(alignmentProbe.sprite.frame==3 and alignmentProbe.sprite.animation=='Pickup')
 assert(alignmentProbe.sprite.overlay=='HeadRight'and alignmentProbe.sprite.overlayFrame==1)
 alignmentProbe.items[1]=nil;api.sync(alignmentProbe)
 assert(alignmentProbe.sprite.file==native,'neutral actor must retain its original head anchor')
+-- Dead Eye hiding is cosmetic: ownership/effects and other characters remain intact.
+local eye=player();players={eye};eye.items[373]=1;eye.effects[373]=2
+api.sync(eye);assert(eye.nativeRemoved[373])
+assert(eye.items[373]==1 and eye.effects[373]==2)
+local writes=eye.sprite.writes;api.sync(eye);assert(eye.sprite.writes==writes,'hiding costume rebuilt every frame')
+for _,callback in ipairs(callbacks.costume_pre)do
+    assert(callback(nil,{ID=373},eye,false)==true)
+    assert(callback(nil,{ID=373},eye,true)==true)
+    assert(callback(nil,{ID=2},eye,false)==nil)
+end
+eye.kind=0
+for _,callback in ipairs(callbacks.costume_pre)do assert(callback(nil,{ID=373},eye,false)==nil)end
+api.sync(eye);assert(eye.nativeAdded[373],'type exit did not restore normal Dead Eye costume')
+eye.kind=42;eye.nativeRemoved[373]=nil;players={eye};fire('start',true)
+assert(eye.nativeRemoved[373]and eye.items[373]==1 and eye.effects[373]==2,'continue changed Dead Eye effects or restored its costume')
+local legacy=player();legacy.items[7]=1;legacy.sprite.file='gfx/001.000_player_hunter_b_v176_7.anm2'
+api.sync(legacy);assert(legacy.sprite.file=='gfx/001.000_player_hunter_b_v177_7.anm2')
 local lookup={}
 local exported=assert(io.open(TEST_MANIFEST_OUTPUT,'w'))
 for _,entry in ipairs(definitions)do
@@ -202,7 +219,7 @@ assert(codec.decode(savedData).existingGameplayState.ammo==2,'shared save data l
 fire('start',true);assert(api.selected(p).id==4,'continue changed acquisition order')
 diagnostic=nil;fire('command','unrelated');assert(diagnostic==nil)
 writes=p.sprite.writes;fire('command','hunterartdiag')
-assert(diagnostic:find('[Hunter art v1.76]',1,true)
+assert(diagnostic:find('[Hunter art v1.77]',1,true)
     and diagnostic:find('selected=4',1,true)
     and diagnostic:find('sheet='..lookup[4].sheet,1,true),'diagnostic missing actual outfit')
 assert(p.sprite.writes==writes,'diagnostic changed outfit state')
@@ -222,9 +239,13 @@ local desc={ObjType=5,ObjVariant=100,ObjSubType=999,Description='Existing gamepl
 assert(modifier[1](desc),'hidden milk item has no EID cosmetic description')
 modifier[2](desc);local text=desc.Description;modifier[2](desc)
 assert(desc.Description==text and text:find('Existing gameplay details',1,true)==1)
+local deadEyeDesc={ObjType=5,ObjVariant=100,ObjSubType=373,Description='Native Dead Eye mechanics'}
+assert(modifier[1](deadEyeDesc));modifier[2](deadEyeDesc)
+assert(deadEyeDesc.Description:find('隐藏死亡之眼外观',1,true))
+assert(not deadEyeDesc.Description:find('显示一种',1,true))
 p.kind=0;assert(not modifier[1](desc),'EID modified a different character')
 print('PASS: all66 reachable, actual lifecycle simulation, native-active effects, '
     ..'per-player precedence, three loop registrations, removal and form recovery, '
     ..'forced rebind, hidden milk, unchanged inventory, save-order restoration, '
     ..'shared save preservation, costume-rebuild binding order, death/revive loops, '
-    ..'diagnostic output, EID idempotence.')
+    ..'diagnostic output, Dead Eye costume-only cancellation/continue/effects, EID idempotence.')

@@ -32,7 +32,7 @@ def render(canvas,actor,folder,name,tick,override=None):
         run(args+[piece]);run([canvas,piece,'-geometry',f'{x:+}{y:+}','-composite',canvas])
 def card(id,direction,tick,dest):
     run(['-size','128x144','xc:#283832',dest])
-    actor=E.parse(GFX/f'001.000_player_hunter_b_v176_{id}.anm2').getroot()
+    actor=E.parse(GFX/f'001.000_player_hunter_b_v177_{id}.anm2').getroot()
     render(dest,actor,GFX,'Walk'+direction,tick)
     sheet=GFX/f'characters/hunter_art174/{id}.png'
     render(dest,actor,GFX,'Head'+direction,tick,sheet)

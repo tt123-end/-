@@ -1,0 +1,5689 @@
+{
+  "version": 177,
+  "canvas": [
+    256,
+    256
+  ],
+  "unchanged_origin": [
+    64,
+    64
+  ],
+  "outfits": {
+    "1": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          76,
+          195,
+          179
+        ],
+        "restored_border_pixels": 26,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9942,
+        "source_overlap": 0.9943585457584622,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          75,
+          197,
+          179
+        ],
+        "restored_border_pixels": 63,
+        "restored_empty_core_pixels": 4,
+        "preserved_visible_pixels": 10170,
+        "source_overlap": 0.9957173447537473,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          75,
+          77,
+          199,
+          178
+        ],
+        "restored_border_pixels": 93,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9621,
+        "source_overlap": 0.9951487710219923,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          74,
+          77,
+          192,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9485,
+        "source_overlap": 0.9944604475958343,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          78,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9066,
+        "source_overlap": 0.9936708860759493,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          66,
+          77,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9165,
+        "source_overlap": 0.9945336522036214,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "2": [
+      {
+        "pose": 0,
+        "bounds": [
+          70,
+          77,
+          196,
+          189
+        ],
+        "restored_border_pixels": 43,
+        "restored_empty_core_pixels": 209,
+        "preserved_visible_pixels": 10575,
+        "source_overlap": 0.9960019502681619,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          78,
+          198,
+          189
+        ],
+        "restored_border_pixels": 113,
+        "restored_empty_core_pixels": 245,
+        "preserved_visible_pixels": 10667,
+        "source_overlap": 0.9977837733667373,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          73,
+          75,
+          195,
+          188
+        ],
+        "restored_border_pixels": 58,
+        "restored_empty_core_pixels": 143,
+        "preserved_visible_pixels": 10470,
+        "source_overlap": 0.9965622237501228,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          72,
+          78,
+          192,
+          189
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 183,
+        "preserved_visible_pixels": 10014,
+        "source_overlap": 0.9973132169060659,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          78,
+          191,
+          190
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 279,
+        "preserved_visible_pixels": 9598,
+        "source_overlap": 0.9966630785791173,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          65,
+          77,
+          187,
+          189
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 277,
+        "preserved_visible_pixels": 9853,
+        "source_overlap": 0.9977962010704167,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "3": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          76,
+          196,
+          181
+        ],
+        "restored_border_pixels": 44,
+        "restored_empty_core_pixels": 7,
+        "preserved_visible_pixels": 10251,
+        "source_overlap": 0.9953389401155133,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          78,
+          198,
+          182
+        ],
+        "restored_border_pixels": 80,
+        "restored_empty_core_pixels": 16,
+        "preserved_visible_pixels": 10308,
+        "source_overlap": 0.996177831422249,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          73,
+          76,
+          195,
+          182
+        ],
+        "restored_border_pixels": 56,
+        "restored_empty_core_pixels": 16,
+        "preserved_visible_pixels": 10022,
+        "source_overlap": 0.9961788701848601,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          72,
+          77,
+          192,
+          182
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 17,
+        "preserved_visible_pixels": 9810,
+        "source_overlap": 0.9949060808659662,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          77,
+          191,
+          183
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 23,
+        "preserved_visible_pixels": 9427,
+        "source_overlap": 0.9948123620309051,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          65,
+          76,
+          187,
+          183
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 18,
+        "preserved_visible_pixels": 9622,
+        "source_overlap": 0.995021645021645,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "4": [
+      {
+        "pose": 0,
+        "bounds": [
+          70,
+          76,
+          196,
+          179
+        ],
+        "restored_border_pixels": 46,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 10023,
+        "source_overlap": 0.9947172156619019,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          77,
+          198,
+          180
+        ],
+        "restored_border_pixels": 84,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 10087,
+        "source_overlap": 0.9960881202388305,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          74,
+          76,
+          195,
+          180
+        ],
+        "restored_border_pixels": 83,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9811,
+        "source_overlap": 0.9963064584212749,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          74,
+          76,
+          193,
+          180
+        ],
+        "restored_border_pixels": 1,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9592,
+        "source_overlap": 0.9953276105617733,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          76,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9345,
+        "source_overlap": 0.9957612939208031,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          65,
+          76,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9358,
+        "source_overlap": 0.9947603121516165,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "6": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          76,
+          192,
+          177
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9433,
+        "source_overlap": 0.9942433300121776,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          76,
+          190,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9541,
+        "source_overlap": 0.9950684931506849,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          72,
+          77,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9214,
+        "source_overlap": 0.9953509468193673,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          75,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 5,
+        "preserved_visible_pixels": 9446,
+        "source_overlap": 0.9954600819399845,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          66,
+          76,
+          180,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8921,
+        "source_overlap": 0.9954316504626918,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          62,
+          75,
+          181,
+          179
+        ],
+        "restored_border_pixels": 8,
+        "restored_empty_core_pixels": 8,
+        "preserved_visible_pixels": 9005,
+        "source_overlap": 0.9929389975691632,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "7": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          76,
+          191,
+          183
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 48,
+        "preserved_visible_pixels": 10087,
+        "source_overlap": 0.9957762439476666,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          76,
+          191,
+          184
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 81,
+        "preserved_visible_pixels": 10170,
+        "source_overlap": 0.9946846570581621,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          76,
+          188,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 89,
+        "preserved_visible_pixels": 9887,
+        "source_overlap": 0.996115077698446,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          67,
+          76,
+          186,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 98,
+        "preserved_visible_pixels": 10047,
+        "source_overlap": 0.9965887947074633,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          67,
+          77,
+          181,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 125,
+        "preserved_visible_pixels": 9412,
+        "source_overlap": 0.9955805988288587,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          65,
+          76,
+          182,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 134,
+        "preserved_visible_pixels": 9571,
+        "source_overlap": 0.9976128472222222,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "13": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          76,
+          192,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9650,
+        "source_overlap": 0.9950248756218906,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          76,
+          190,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9708,
+        "source_overlap": 0.99536887452881,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          72,
+          76,
+          185,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 3,
+        "preserved_visible_pixels": 9339,
+        "source_overlap": 0.9959731543624161,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          68,
+          76,
+          185,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 7,
+        "preserved_visible_pixels": 9549,
+        "source_overlap": 0.9957264957264957,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          66,
+          77,
+          179,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 9,
+        "preserved_visible_pixels": 8993,
+        "source_overlap": 0.9958222119066961,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          62,
+          77,
+          181,
+          181
+        ],
+        "restored_border_pixels": 8,
+        "restored_empty_core_pixels": 7,
+        "preserved_visible_pixels": 9099,
+        "source_overlap": 0.9945017182130584,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "14": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          75,
+          193,
+          177
+        ],
+        "restored_border_pixels": 3,
+        "restored_empty_core_pixels": 8,
+        "preserved_visible_pixels": 9617,
+        "source_overlap": 0.99576914732046,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          76,
+          190,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9593,
+        "source_overlap": 0.9954223433242507,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          71,
+          77,
+          185,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9138,
+        "source_overlap": 0.9953116066323614,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          77,
+          185,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9294,
+        "source_overlap": 0.995047276001801,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          66,
+          78,
+          182,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8964,
+        "source_overlap": 0.9952186588921282,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          63,
+          78,
+          181,
+          180
+        ],
+        "restored_border_pixels": 6,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8999,
+        "source_overlap": 0.9943155452436195,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "17": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          76,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9442,
+        "source_overlap": 0.9963471330529112,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          76,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9435,
+        "source_overlap": 0.9953447129239636,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          75,
+          76,
+          188,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9226,
+        "source_overlap": 0.9952461799660441,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          76,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9201,
+        "source_overlap": 0.9942124375851112,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          70,
+          77,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8983,
+        "source_overlap": 0.9932518906340896,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          70,
+          77,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8909,
+        "source_overlap": 0.9957662001646478,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "19": [
+      {
+        "pose": 0,
+        "bounds": [
+          70,
+          76,
+          192,
+          188
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 333,
+        "preserved_visible_pixels": 9262,
+        "source_overlap": 0.9965058611361587,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          81,
+          191,
+          188
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 321,
+        "preserved_visible_pixels": 9265,
+        "source_overlap": 0.9964121538289046,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          75,
+          77,
+          186,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 243,
+        "preserved_visible_pixels": 8988,
+        "source_overlap": 0.9961703609144714,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          76,
+          184,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 204,
+        "preserved_visible_pixels": 8915,
+        "source_overlap": 0.996135831381733,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          69,
+          82,
+          182,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 265,
+        "preserved_visible_pixels": 8378,
+        "source_overlap": 0.9963700087620478,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          71,
+          84,
+          184,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 276,
+        "preserved_visible_pixels": 8448,
+        "source_overlap": 0.9964015386524383,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "27": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          76,
+          194,
+          180
+        ],
+        "restored_border_pixels": 11,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9871,
+        "source_overlap": 0.9947246254484068,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          76,
+          193,
+          180
+        ],
+        "restored_border_pixels": 3,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9806,
+        "source_overlap": 0.9954289358987988,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          75,
+          78,
+          189,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9073,
+        "source_overlap": 0.9959672773360986,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          79,
+          185,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8945,
+        "source_overlap": 0.9959102594064033,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          70,
+          79,
+          185,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8770,
+        "source_overlap": 0.9939220593493028,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          69,
+          79,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8861,
+        "source_overlap": 0.9941009910335064,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "29": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          74,
+          194,
+          180
+        ],
+        "restored_border_pixels": 13,
+        "restored_empty_core_pixels": 44,
+        "preserved_visible_pixels": 9436,
+        "source_overlap": 0.995268485915493,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          74,
+          194,
+          180
+        ],
+        "restored_border_pixels": 7,
+        "restored_empty_core_pixels": 31,
+        "preserved_visible_pixels": 9574,
+        "source_overlap": 0.9946837365737224,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          74,
+          76,
+          188,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8831,
+        "source_overlap": 0.9935072600637469,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          68,
+          75,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 17,
+        "preserved_visible_pixels": 9089,
+        "source_overlap": 0.9949702789208962,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          67,
+          76,
+          188,
+          175
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8712,
+        "source_overlap": 0.9947292764734068,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          76,
+          188,
+          175
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8700,
+        "source_overlap": 0.994716618635927,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "31": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          76,
+          195,
+          187
+        ],
+        "restored_border_pixels": 24,
+        "restored_empty_core_pixels": 123,
+        "preserved_visible_pixels": 10010,
+        "source_overlap": 0.9966979671860489,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          76,
+          193,
+          187
+        ],
+        "restored_border_pixels": 5,
+        "restored_empty_core_pixels": 126,
+        "preserved_visible_pixels": 10074,
+        "source_overlap": 0.9969189688815857,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          72,
+          75,
+          186,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 123,
+        "preserved_visible_pixels": 9848,
+        "source_overlap": 0.9969531414162639,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          76,
+          185,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 112,
+        "preserved_visible_pixels": 9722,
+        "source_overlap": 0.9961636828644501,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          76,
+          184,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 111,
+        "preserved_visible_pixels": 9212,
+        "source_overlap": 0.996511366194013,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          76,
+          181,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 110,
+        "preserved_visible_pixels": 9224,
+        "source_overlap": 0.9975292003593891,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "32": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          75,
+          195,
+          182
+        ],
+        "restored_border_pixels": 20,
+        "restored_empty_core_pixels": 15,
+        "preserved_visible_pixels": 9350,
+        "source_overlap": 0.9943131132917038,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          77,
+          193,
+          182
+        ],
+        "restored_border_pixels": 1,
+        "restored_empty_core_pixels": 13,
+        "preserved_visible_pixels": 9314,
+        "source_overlap": 0.9946158160403814,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          72,
+          76,
+          184,
+          182
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 10,
+        "preserved_visible_pixels": 8950,
+        "source_overlap": 0.9956785797710815,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          77,
+          184,
+          182
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 11,
+        "preserved_visible_pixels": 8724,
+        "source_overlap": 0.9957957957957958,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          81,
+          185,
+          182
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 11,
+        "preserved_visible_pixels": 8692,
+        "source_overlap": 0.9939896622190167,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          81,
+          181,
+          182
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 12,
+        "preserved_visible_pixels": 8753,
+        "source_overlap": 0.9951038930021495,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "34": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          76,
+          195,
+          180
+        ],
+        "restored_border_pixels": 22,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9491,
+        "source_overlap": 0.9955058642990244,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          76,
+          193,
+          180
+        ],
+        "restored_border_pixels": 4,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9563,
+        "source_overlap": 0.9944450495588716,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          72,
+          76,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9244,
+        "source_overlap": 0.9950456029726382,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          76,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9173,
+        "source_overlap": 0.9939841089670829,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          76,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8672,
+        "source_overlap": 0.9951946179721288,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          76,
+          181,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8707,
+        "source_overlap": 0.994373952597558,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "39": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          76,
+          195,
+          180
+        ],
+        "restored_border_pixels": 22,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9435,
+        "source_overlap": 0.994498844757399,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          76,
+          193,
+          180
+        ],
+        "restored_border_pixels": 5,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9518,
+        "source_overlap": 0.9951923076923077,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          72,
+          75,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 4,
+        "preserved_visible_pixels": 9177,
+        "source_overlap": 0.9958121109224675,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          76,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9138,
+        "source_overlap": 0.995435353189547,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          76,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8686,
+        "source_overlap": 0.9943631566322859,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          76,
+          181,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8699,
+        "source_overlap": 0.9949670461354104,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "46": [
+      {
+        "pose": 0,
+        "bounds": [
+          70,
+          77,
+          189,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8952,
+        "source_overlap": 0.9948747815958067,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          76,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9027,
+        "source_overlap": 0.9938792008315048,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          73,
+          76,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8705,
+        "source_overlap": 0.9940155595451825,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          75,
+          182,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 7,
+        "preserved_visible_pixels": 8832,
+        "source_overlap": 0.9944582006838816,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          76,
+          180,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8295,
+        "source_overlap": 0.995212296837596,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          70,
+          76,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8562,
+        "source_overlap": 0.9940192847552789,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "48": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          75,
+          188,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 8,
+        "preserved_visible_pixels": 9549,
+        "source_overlap": 0.9952012215072527,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          75,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 9,
+        "preserved_visible_pixels": 9652,
+        "source_overlap": 0.9943880854737751,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          73,
+          75,
+          191,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 8,
+        "preserved_visible_pixels": 8893,
+        "source_overlap": 0.9961367361273706,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          76,
+          192,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9194,
+        "source_overlap": 0.9946669692499717,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          70,
+          77,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8850,
+        "source_overlap": 0.9939644970414201,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          76,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8914,
+        "source_overlap": 0.9949589683470106,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "49": [
+      {
+        "pose": 0,
+        "bounds": [
+          70,
+          76,
+          190,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 3,
+        "preserved_visible_pixels": 9660,
+        "source_overlap": 0.9948264712222462,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          71,
+          76,
+          189,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9595,
+        "source_overlap": 0.995658780117213,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          73,
+          77,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8917,
+        "source_overlap": 0.995676054692065,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          77,
+          183,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 2,
+        "preserved_visible_pixels": 9286,
+        "source_overlap": 0.9942921096810297,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          77,
+          182,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8969,
+        "source_overlap": 0.9948538011695907,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          64,
+          76,
+          186,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9216,
+        "source_overlap": 0.9945423536100056,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "50": [
+      {
+        "pose": 0,
+        "bounds": [
+          70,
+          76,
+          189,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9138,
+        "source_overlap": 0.9956729674333865,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          76,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9031,
+        "source_overlap": 0.9958434360928299,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          73,
+          77,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8597,
+        "source_overlap": 0.9941832283082889,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          77,
+          183,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8846,
+        "source_overlap": 0.9944647273583794,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          76,
+          182,
+          177
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8507,
+        "source_overlap": 0.9949674726893335,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          70,
+          76,
+          185,
+          176
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8461,
+        "source_overlap": 0.9946998644151362,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "51": [
+      {
+        "pose": 0,
+        "bounds": [
+          70,
+          76,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9713,
+        "source_overlap": 0.9947345798409628,
+        "source_rgb_median": 5.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          67,
+          76,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9831,
+        "source_overlap": 0.9959608843537415,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          68,
+          76,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9703,
+        "source_overlap": 0.9946242339533383,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          76,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9527,
+        "source_overlap": 0.9944195207353103,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          73,
+          76,
+          191,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9014,
+        "source_overlap": 0.9945601851851852,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          72,
+          76,
+          187,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8907,
+        "source_overlap": 0.9942596063730085,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "52": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          77,
+          192,
+          193
+        ],
+        "restored_border_pixels": 5,
+        "restored_empty_core_pixels": 482,
+        "preserved_visible_pixels": 9607,
+        "source_overlap": 0.9965509808148307,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          68,
+          77,
+          191,
+          194
+        ],
+        "restored_border_pixels": 16,
+        "restored_empty_core_pixels": 563,
+        "preserved_visible_pixels": 9656,
+        "source_overlap": 0.9968960719255058,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          77,
+          186,
+          194
+        ],
+        "restored_border_pixels": 10,
+        "restored_empty_core_pixels": 439,
+        "preserved_visible_pixels": 9483,
+        "source_overlap": 0.9968395815170009,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          77,
+          183,
+          194
+        ],
+        "restored_border_pixels": 14,
+        "restored_empty_core_pixels": 461,
+        "preserved_visible_pixels": 9401,
+        "source_overlap": 0.9967011216186497,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          72,
+          76,
+          189,
+          191
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 550,
+        "preserved_visible_pixels": 8923,
+        "source_overlap": 0.9966384606468065,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          71,
+          77,
+          186,
+          191
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 535,
+        "preserved_visible_pixels": 8907,
+        "source_overlap": 0.9967479674796748,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "53": [
+      {
+        "pose": 0,
+        "bounds": [
+          68,
+          76,
+          192,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 4,
+        "preserved_visible_pixels": 9687,
+        "source_overlap": 0.9949386172733147,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          66,
+          76,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9684,
+        "source_overlap": 0.9961173425366695,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          67,
+          77,
+          185,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 2,
+        "preserved_visible_pixels": 9423,
+        "source_overlap": 0.9950121924185324,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          66,
+          78,
+          183,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 3,
+        "preserved_visible_pixels": 9315,
+        "source_overlap": 0.9942728804042673,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          72,
+          77,
+          189,
+          177
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8747,
+        "source_overlap": 0.9950980392156863,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          71,
+          76,
+          186,
+          176
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8643,
+        "source_overlap": 0.9952932657494569,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "55": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          76,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9766,
+        "source_overlap": 0.9954035275253875,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          68,
+          76,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9774,
+        "source_overlap": 0.9951948745328351,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          69,
+          76,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9640,
+        "source_overlap": 0.9949222126188418,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          76,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9503,
+        "source_overlap": 0.9941898706424029,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          72,
+          78,
+          186,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8554,
+        "source_overlap": 0.9952351863164325,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          69,
+          75,
+          185,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 16,
+        "preserved_visible_pixels": 8789,
+        "source_overlap": 0.9957300438856601,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "62": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          79,
+          191,
+          191
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 325,
+        "preserved_visible_pixels": 9877,
+        "source_overlap": 0.9967569829480071,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          68,
+          78,
+          192,
+          192
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 363,
+        "preserved_visible_pixels": 10041,
+        "source_overlap": 0.9971205265322912,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          77,
+          184,
+          191
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 231,
+        "preserved_visible_pixels": 9748,
+        "source_overlap": 0.9956424699755553,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          78,
+          185,
+          191
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 215,
+        "preserved_visible_pixels": 9626,
+        "source_overlap": 0.9960176514906899,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          73,
+          76,
+          186,
+          191
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 311,
+        "preserved_visible_pixels": 9111,
+        "source_overlap": 0.997384877771461,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          70,
+          76,
+          185,
+          191
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 321,
+        "preserved_visible_pixels": 9032,
+        "source_overlap": 0.9953067765567766,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "63": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          77,
+          191,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 202,
+        "preserved_visible_pixels": 9876,
+        "source_overlap": 0.9959068010075567,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          68,
+          77,
+          192,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 215,
+        "preserved_visible_pixels": 10011,
+        "source_overlap": 0.9967878976271889,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          77,
+          185,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 157,
+        "preserved_visible_pixels": 9515,
+        "source_overlap": 0.9966249319542733,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          77,
+          185,
+          185
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 139,
+        "preserved_visible_pixels": 9536,
+        "source_overlap": 0.9961919268849961,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          72,
+          76,
+          186,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 204,
+        "preserved_visible_pixels": 9119,
+        "source_overlap": 0.9968138370505234,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          70,
+          76,
+          185,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 233,
+        "preserved_visible_pixels": 9017,
+        "source_overlap": 0.9965493443754313,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "64": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          76,
+          191,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9764,
+        "source_overlap": 0.9951835598844054,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          67,
+          76,
+          191,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9840,
+        "source_overlap": 0.9943790433768162,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          76,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9401,
+        "source_overlap": 0.9964460239893381,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          77,
+          185,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9414,
+        "source_overlap": 0.9955649185053775,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          73,
+          76,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8934,
+        "source_overlap": 0.9946230274693162,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          71,
+          75,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 2,
+        "preserved_visible_pixels": 8928,
+        "source_overlap": 0.994140396109223,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "68": [
+      {
+        "pose": 0,
+        "bounds": [
+          68,
+          77,
+          189,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9560,
+        "source_overlap": 0.9943175609223036,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          67,
+          77,
+          191,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9782,
+        "source_overlap": 0.9955132998611259,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          77,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9380,
+        "source_overlap": 0.9955446647360214,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          78,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9269,
+        "source_overlap": 0.9952697375830611,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          78,
+          76,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8729,
+        "source_overlap": 0.9950845222395396,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          70,
+          76,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8782,
+        "source_overlap": 0.9946307123254982,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "69": [
+      {
+        "pose": 0,
+        "bounds": [
+          68,
+          79,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9761,
+        "source_overlap": 0.9946615417467436,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          67,
+          79,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9913,
+        "source_overlap": 0.9953693959166491,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          71,
+          76,
+          188,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9505,
+        "source_overlap": 0.9950614574187884,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          68,
+          77,
+          186,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9493,
+        "source_overlap": 0.994612424409016,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          76,
+          185,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9183,
+        "source_overlap": 0.9950028392958546,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          75,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 2,
+        "preserved_visible_pixels": 9136,
+        "source_overlap": 0.9956556533668687,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "70": [
+      {
+        "pose": 0,
+        "bounds": [
+          67,
+          77,
+          192,
+          192
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 667,
+        "preserved_visible_pixels": 10380,
+        "source_overlap": 0.9972205677982926,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          66,
+          77,
+          192,
+          192
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 689,
+        "preserved_visible_pixels": 10510,
+        "source_overlap": 0.9974502304599392,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          75,
+          187,
+          193
+        ],
+        "restored_border_pixels": 1,
+        "restored_empty_core_pixels": 382,
+        "preserved_visible_pixels": 10126,
+        "source_overlap": 0.9967380224260958,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          68,
+          77,
+          187,
+          194
+        ],
+        "restored_border_pixels": 18,
+        "restored_empty_core_pixels": 466,
+        "preserved_visible_pixels": 10108,
+        "source_overlap": 0.9965206713057716,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          67,
+          76,
+          185,
+          192
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 738,
+        "preserved_visible_pixels": 9675,
+        "source_overlap": 0.9980787704130644,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          78,
+          186,
+          193
+        ],
+        "restored_border_pixels": 8,
+        "restored_empty_core_pixels": 756,
+        "preserved_visible_pixels": 9672,
+        "source_overlap": 0.9972210346301839,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "75": [
+      {
+        "pose": 0,
+        "bounds": [
+          68,
+          78,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9787,
+        "source_overlap": 0.995411375520222,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          66,
+          78,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9886,
+        "source_overlap": 0.9958843393837062,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          77,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9395,
+        "source_overlap": 0.995671956497614,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          68,
+          78,
+          187,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9532,
+        "source_overlap": 0.9949638712502737,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          67,
+          75,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 9,
+        "preserved_visible_pixels": 9327,
+        "source_overlap": 0.9955297273133661,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          67,
+          77,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9114,
+        "source_overlap": 0.9949616397572426,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "76": [
+      {
+        "pose": 0,
+        "bounds": [
+          67,
+          71,
+          192,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 168,
+        "preserved_visible_pixels": 10382,
+        "source_overlap": 0.99560483468185,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          66,
+          70,
+          192,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 183,
+        "preserved_visible_pixels": 10444,
+        "source_overlap": 0.9953275673526195,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          68,
+          188,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 339,
+        "preserved_visible_pixels": 9910,
+        "source_overlap": 0.995508669312722,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          67,
+          68,
+          187,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 320,
+        "preserved_visible_pixels": 10029,
+        "source_overlap": 0.9959677419354839,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          67,
+          70,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 169,
+        "preserved_visible_pixels": 9657,
+        "source_overlap": 0.9957035445757251,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          67,
+          70,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 176,
+        "preserved_visible_pixels": 9596,
+        "source_overlap": 0.9956719324821467,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "77": [
+      {
+        "pose": 0,
+        "bounds": [
+          78,
+          77,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 7945,
+        "source_overlap": 0.9947180773801664,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          75,
+          77,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8323,
+        "source_overlap": 0.9942094662638469,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          76,
+          82,
+          190,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8031,
+        "source_overlap": 0.9929328621908127,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          82,
+          189,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8158,
+        "source_overlap": 0.9931718629219274,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          76,
+          183,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 7459,
+        "source_overlap": 0.9949252889765999,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          70,
+          77,
+          181,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 7411,
+        "source_overlap": 0.9931924549709261,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "79": [
+      {
+        "pose": 0,
+        "bounds": [
+          76,
+          76,
+          193,
+          180
+        ],
+        "restored_border_pixels": 6,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9553,
+        "source_overlap": 0.9960741548527808,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          76,
+          76,
+          194,
+          180
+        ],
+        "restored_border_pixels": 12,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9716,
+        "source_overlap": 0.9953936797000535,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          74,
+          75,
+          187,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 6,
+        "preserved_visible_pixels": 9281,
+        "source_overlap": 0.9964032820051703,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          68,
+          76,
+          182,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9252,
+        "source_overlap": 0.9960483233600542,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          79,
+          183,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8685,
+        "source_overlap": 0.9937515020427782,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          69,
+          79,
+          181,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8638,
+        "source_overlap": 0.9942000966650556,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "80": [
+      {
+        "pose": 0,
+        "bounds": [
+          76,
+          79,
+          196,
+          187
+        ],
+        "restored_border_pixels": 82,
+        "restored_empty_core_pixels": 304,
+        "preserved_visible_pixels": 10484,
+        "source_overlap": 0.9976324356318438,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          78,
+          80,
+          195,
+          186
+        ],
+        "restored_border_pixels": 77,
+        "restored_empty_core_pixels": 294,
+        "preserved_visible_pixels": 10347,
+        "source_overlap": 0.9980980980980981,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          79,
+          76,
+          189,
+          185
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 133,
+        "preserved_visible_pixels": 9137,
+        "source_overlap": 0.9959188300646186,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          66,
+          76,
+          183,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 204,
+        "preserved_visible_pixels": 9829,
+        "source_overlap": 0.9959987364430873,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          70,
+          83,
+          189,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 281,
+        "preserved_visible_pixels": 9772,
+        "source_overlap": 0.9959432048681541,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          69,
+          81,
+          181,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 203,
+        "preserved_visible_pixels": 9282,
+        "source_overlap": 0.9967390082087034,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "82": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          80,
+          202,
+          180
+        ],
+        "restored_border_pixels": 101,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9888,
+        "source_overlap": 0.9947894512973203,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          64,
+          80,
+          203,
+          179
+        ],
+        "restored_border_pixels": 116,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9969,
+        "source_overlap": 0.9869143098353735,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          74,
+          76,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9053,
+        "source_overlap": 0.994541231126597,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          68,
+          76,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9399,
+        "source_overlap": 0.9944140319517373,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          61,
+          82,
+          193,
+          180
+        ],
+        "restored_border_pixels": 25,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9348,
+        "source_overlap": 0.9932026736150448,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          67,
+          81,
+          188,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8738,
+        "source_overlap": 0.9929628730890561,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "83": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          77,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9704,
+        "source_overlap": 0.9944247882491691,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          76,
+          189,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9541,
+        "source_overlap": 0.9942209137498637,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          76,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9391,
+        "source_overlap": 0.9954520244037715,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          65,
+          76,
+          183,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9572,
+        "source_overlap": 0.9959743227069959,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          69,
+          77,
+          181,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8631,
+        "source_overlap": 0.9958837772397094,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          66,
+          77,
+          178,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8700,
+        "source_overlap": 0.9956756756756757,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "87": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          80,
+          193,
+          180
+        ],
+        "restored_border_pixels": 4,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9669,
+        "source_overlap": 0.994500754798361,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          69,
+          80,
+          189,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9583,
+        "source_overlap": 0.9943262411347518,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          76,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9178,
+        "source_overlap": 0.9943084803642572,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          65,
+          77,
+          183,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9332,
+        "source_overlap": 0.9951831522347934,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          69,
+          77,
+          182,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8966,
+        "source_overlap": 0.9939088672835891,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          67,
+          77,
+          179,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8786,
+        "source_overlap": 0.9944903581267218,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "89": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          76,
+          193,
+          180
+        ],
+        "restored_border_pixels": 6,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9700,
+        "source_overlap": 0.9951732275018771,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          76,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9607,
+        "source_overlap": 0.9958762886597938,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          71,
+          76,
+          185,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9253,
+        "source_overlap": 0.995384961728951,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          66,
+          76,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9469,
+        "source_overlap": 0.9947124917382684,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          69,
+          78,
+          181,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8486,
+        "source_overlap": 0.9943300875138666,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          67,
+          78,
+          179,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8473,
+        "source_overlap": 0.9949413942011104,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "90": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          76,
+          193,
+          180
+        ],
+        "restored_border_pixels": 6,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9942,
+        "source_overlap": 0.9955020920502092,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          76,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9999,
+        "source_overlap": 0.9956286427976686,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          73,
+          77,
+          186,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9150,
+        "source_overlap": 0.9956709956709957,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          67,
+          76,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9503,
+        "source_overlap": 0.9955088180523606,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          69,
+          76,
+          182,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8657,
+        "source_overlap": 0.9953017708709794,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          67,
+          76,
+          181,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8798,
+        "source_overlap": 0.9961999762498516,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "91": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          77,
+          201,
+          180
+        ],
+        "restored_border_pixels": 256,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 10286,
+        "source_overlap": 0.9955618317530764,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          72,
+          76,
+          201,
+          179
+        ],
+        "restored_border_pixels": 230,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 10163,
+        "source_overlap": 0.9962144464906896,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          73,
+          78,
+          189,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9084,
+        "source_overlap": 0.9955208452968876,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          65,
+          76,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9591,
+        "source_overlap": 0.9934747145187602,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          63,
+          79,
+          185,
+          179
+        ],
+        "restored_border_pixels": 6,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9231,
+        "source_overlap": 0.9945744320108512,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          58,
+          78,
+          184,
+          178
+        ],
+        "restored_border_pixels": 66,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9199,
+        "source_overlap": 0.9944457039220131,
+        "source_rgb_median": 2.0
+      }
+    ],
+    "92": [
+      {
+        "pose": 0,
+        "bounds": [
+          73,
+          76,
+          193,
+          186
+        ],
+        "restored_border_pixels": 9,
+        "restored_empty_core_pixels": 148,
+        "preserved_visible_pixels": 9864,
+        "source_overlap": 0.996542692509167,
+        "source_rgb_median": 5.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          75,
+          76,
+          195,
+          185
+        ],
+        "restored_border_pixels": 19,
+        "restored_empty_core_pixels": 105,
+        "preserved_visible_pixels": 9702,
+        "source_overlap": 0.9961546678060244,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          68,
+          77,
+          192,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 139,
+        "preserved_visible_pixels": 9552,
+        "source_overlap": 0.9948940793047257,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          79,
+          187,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 172,
+        "preserved_visible_pixels": 9526,
+        "source_overlap": 0.9957581031107244,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          77,
+          186,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 213,
+        "preserved_visible_pixels": 9212,
+        "source_overlap": 0.9975308641975309,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          64,
+          77,
+          183,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 140,
+        "preserved_visible_pixels": 9228,
+        "source_overlap": 0.996634129922585,
+        "source_rgb_median": 3.0
+      }
+    ],
+    "93": [
+      {
+        "pose": 0,
+        "bounds": [
+          73,
+          76,
+          193,
+          179
+        ],
+        "restored_border_pixels": 8,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9510,
+        "source_overlap": 0.9948588930212208,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          72,
+          76,
+          192,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9376,
+        "source_overlap": 0.9958806501892674,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          78,
+          77,
+          189,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8847,
+        "source_overlap": 0.9941037735849056,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          80,
+          182,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8758,
+        "source_overlap": 0.995714795857636,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          73,
+          79,
+          183,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9085,
+        "source_overlap": 0.9944852941176471,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          79,
+          178,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9038,
+        "source_overlap": 0.9946955719557196,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "101": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          70,
+          195,
+          180
+        ],
+        "restored_border_pixels": 22,
+        "restored_empty_core_pixels": 273,
+        "preserved_visible_pixels": 10099,
+        "source_overlap": 0.9957831944872981,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          73,
+          71,
+          196,
+          180
+        ],
+        "restored_border_pixels": 30,
+        "restored_empty_core_pixels": 234,
+        "preserved_visible_pixels": 10107,
+        "source_overlap": 0.9958860434022421,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          79,
+          71,
+          190,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 187,
+        "preserved_visible_pixels": 9168,
+        "source_overlap": 0.9951252692438499,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          74,
+          71,
+          182,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 180,
+        "preserved_visible_pixels": 8862,
+        "source_overlap": 0.9948290045833823,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          70,
+          72,
+          184,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 145,
+        "preserved_visible_pixels": 9282,
+        "source_overlap": 0.9956238779174147,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          66,
+          72,
+          181,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 123,
+        "preserved_visible_pixels": 9330,
+        "source_overlap": 0.9945177892145894,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "103": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          79,
+          197,
+          187
+        ],
+        "restored_border_pixels": 50,
+        "restored_empty_core_pixels": 116,
+        "preserved_visible_pixels": 9920,
+        "source_overlap": 0.996970963024859,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          78,
+          195,
+          187
+        ],
+        "restored_border_pixels": 21,
+        "restored_empty_core_pixels": 118,
+        "preserved_visible_pixels": 10113,
+        "source_overlap": 0.997236438075742,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          71,
+          78,
+          186,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 90,
+        "preserved_visible_pixels": 9682,
+        "source_overlap": 0.9967842212455783,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          78,
+          191,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 137,
+        "preserved_visible_pixels": 9824,
+        "source_overlap": 0.9954415350365737,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          69,
+          77,
+          184,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 89,
+        "preserved_visible_pixels": 9145,
+        "source_overlap": 0.9962525550760845,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          66,
+          75,
+          181,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 92,
+        "preserved_visible_pixels": 9334,
+        "source_overlap": 0.9958898022661631,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "104": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          76,
+          196,
+          186
+        ],
+        "restored_border_pixels": 31,
+        "restored_empty_core_pixels": 52,
+        "preserved_visible_pixels": 10142,
+        "source_overlap": 0.9952974851768555,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          78,
+          195,
+          186
+        ],
+        "restored_border_pixels": 20,
+        "restored_empty_core_pixels": 53,
+        "preserved_visible_pixels": 10205,
+        "source_overlap": 0.9955316340002031,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          71,
+          78,
+          193,
+          186
+        ],
+        "restored_border_pixels": 10,
+        "restored_empty_core_pixels": 60,
+        "preserved_visible_pixels": 10018,
+        "source_overlap": 0.996275219865494,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          78,
+          193,
+          186
+        ],
+        "restored_border_pixels": 6,
+        "restored_empty_core_pixels": 80,
+        "preserved_visible_pixels": 9853,
+        "source_overlap": 0.9964240639461506,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          70,
+          77,
+          188,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 83,
+        "preserved_visible_pixels": 9255,
+        "source_overlap": 0.9967466905990576,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          65,
+          77,
+          185,
+          187
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 86,
+        "preserved_visible_pixels": 9673,
+        "source_overlap": 0.9954959785522788,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "106": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          78,
+          195,
+          180
+        ],
+        "restored_border_pixels": 18,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9517,
+        "source_overlap": 0.9954964850615114,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          70,
+          78,
+          194,
+          181
+        ],
+        "restored_border_pixels": 16,
+        "restored_empty_core_pixels": 2,
+        "preserved_visible_pixels": 9765,
+        "source_overlap": 0.9950812660393499,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          72,
+          77,
+          188,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 5,
+        "preserved_visible_pixels": 9461,
+        "source_overlap": 0.9942844581226643,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          78,
+          186,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 5,
+        "preserved_visible_pixels": 9238,
+        "source_overlap": 0.9959427476614449,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          71,
+          76,
+          185,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 4,
+        "preserved_visible_pixels": 9104,
+        "source_overlap": 0.9946107097809884,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          67,
+          75,
+          181,
+          181
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 12,
+        "preserved_visible_pixels": 9106,
+        "source_overlap": 0.9952949277025476,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "109": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          77,
+          195,
+          180
+        ],
+        "restored_border_pixels": 26,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9737,
+        "source_overlap": 0.9959345244463464,
+        "source_rgb_median": 5.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          68,
+          76,
+          195,
+          180
+        ],
+        "restored_border_pixels": 23,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9971,
+        "source_overlap": 0.9962394233782513,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          70,
+          78,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9203,
+        "source_overlap": 0.994679646819108,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          79,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9194,
+        "source_overlap": 0.9950135992747053,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          76,
+          189,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9365,
+        "source_overlap": 0.9939959973315544,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          66,
+          75,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 2,
+        "preserved_visible_pixels": 9207,
+        "source_overlap": 0.9945713639448088,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "110": [
+      {
+        "pose": 0,
+        "bounds": [
+          67,
+          76,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9985,
+        "source_overlap": 0.9953007518796992,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          65,
+          76,
+          189,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9938,
+        "source_overlap": 0.9956986991187579,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          64,
+          76,
+          183,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9616,
+        "source_overlap": 0.9946929492039424,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          64,
+          76,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9827,
+        "source_overlap": 0.9950196036876126,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          67,
+          78,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9330,
+        "source_overlap": 0.9959713518352731,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          64,
+          77,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9620,
+        "source_overlap": 0.9949172704660971,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "115": [
+      {
+        "pose": 0,
+        "bounds": [
+          68,
+          77,
+          192,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9850,
+        "source_overlap": 0.9950015952355631,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          67,
+          76,
+          191,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 10426,
+        "source_overlap": 0.9940307567786322,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          65,
+          81,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9670,
+        "source_overlap": 0.9941425317279532,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          64,
+          81,
+          197,
+          180
+        ],
+        "restored_border_pixels": 40,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9922,
+        "source_overlap": 0.992955525181369,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          62,
+          80,
+          187,
+          180
+        ],
+        "restored_border_pixels": 29,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9472,
+        "source_overlap": 0.9909567935692755,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          62,
+          81,
+          186,
+          180
+        ],
+        "restored_border_pixels": 17,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9473,
+        "source_overlap": 0.9943702395407882,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "116": [
+      {
+        "pose": 0,
+        "bounds": [
+          67,
+          75,
+          191,
+          190
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 604,
+        "preserved_visible_pixels": 10465,
+        "source_overlap": 0.99812789437383,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          65,
+          76,
+          191,
+          190
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 583,
+        "preserved_visible_pixels": 10560,
+        "source_overlap": 0.9974579585451702,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          65,
+          78,
+          183,
+          191
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 557,
+        "preserved_visible_pixels": 9790,
+        "source_overlap": 0.9975820016820858,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          63,
+          79,
+          187,
+          191
+        ],
+        "restored_border_pixels": 3,
+        "restored_empty_core_pixels": 649,
+        "preserved_visible_pixels": 10249,
+        "source_overlap": 0.9980939004815409,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          79,
+          184,
+          191
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 604,
+        "preserved_visible_pixels": 9750,
+        "source_overlap": 0.9979889923793396,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          65,
+          78,
+          184,
+          191
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 714,
+        "preserved_visible_pixels": 10111,
+        "source_overlap": 0.9971373070238216,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "117": [
+      {
+        "pose": 0,
+        "bounds": [
+          67,
+          75,
+          191,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 1,
+        "preserved_visible_pixels": 10046,
+        "source_overlap": 0.9952326665975749,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          66,
+          76,
+          190,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9996,
+        "source_overlap": 0.9953051643192489,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          67,
+          77,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9597,
+        "source_overlap": 0.995112945264987,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          66,
+          77,
+          188,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9989,
+        "source_overlap": 0.9939507717980809,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          69,
+          77,
+          184,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9161,
+        "source_overlap": 0.9952098540145985,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          65,
+          77,
+          187,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9683,
+        "source_overlap": 0.9949244060475162,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "118": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          78,
+          197,
+          193
+        ],
+        "restored_border_pixels": 128,
+        "restored_empty_core_pixels": 445,
+        "preserved_visible_pixels": 10233,
+        "source_overlap": 0.9979869149471565,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          72,
+          79,
+          198,
+          194
+        ],
+        "restored_border_pixels": 143,
+        "restored_empty_core_pixels": 464,
+        "preserved_visible_pixels": 10572,
+        "source_overlap": 0.998439328911432,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          77,
+          76,
+          189,
+          192
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 336,
+        "preserved_visible_pixels": 9136,
+        "source_overlap": 0.9975028376844495,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          77,
+          183,
+          192
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 346,
+        "preserved_visible_pixels": 9067,
+        "source_overlap": 0.9977119322731953,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          85,
+          191,
+          185
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 145,
+        "preserved_visible_pixels": 9661,
+        "source_overlap": 0.9945980985306828,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          69,
+          86,
+          183,
+          186
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 160,
+        "preserved_visible_pixels": 9143,
+        "source_overlap": 0.9963470319634703,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "119": [
+      {
+        "pose": 0,
+        "bounds": [
+          74,
+          78,
+          197,
+          186
+        ],
+        "restored_border_pixels": 52,
+        "restored_empty_core_pixels": 70,
+        "preserved_visible_pixels": 9432,
+        "source_overlap": 0.9962488967343336,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          76,
+          79,
+          196,
+          186
+        ],
+        "restored_border_pixels": 36,
+        "restored_empty_core_pixels": 68,
+        "preserved_visible_pixels": 9330,
+        "source_overlap": 0.9960950574584403,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          79,
+          76,
+          191,
+          183
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 20,
+        "preserved_visible_pixels": 9197,
+        "source_overlap": 0.9952407932011331,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          73,
+          77,
+          184,
+          183
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 21,
+        "preserved_visible_pixels": 9002,
+        "source_overlap": 0.9955926699141731,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          72,
+          76,
+          185,
+          177
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8479,
+        "source_overlap": 0.9945672305222867,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          73,
+          76,
+          185,
+          177
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8390,
+        "source_overlap": 0.9946317103620474,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "122": [
+      {
+        "pose": 0,
+        "bounds": [
+          71,
+          81,
+          199,
+          184
+        ],
+        "restored_border_pixels": 190,
+        "restored_empty_core_pixels": 30,
+        "preserved_visible_pixels": 9538,
+        "source_overlap": 0.9948854792083611,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          73,
+          81,
+          201,
+          184
+        ],
+        "restored_border_pixels": 250,
+        "restored_empty_core_pixels": 26,
+        "preserved_visible_pixels": 9304,
+        "source_overlap": 0.9929393007630111,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          79,
+          76,
+          192,
+          183
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 26,
+        "preserved_visible_pixels": 8057,
+        "source_overlap": 0.9936156351791531,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          74,
+          76,
+          189,
+          183
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 17,
+        "preserved_visible_pixels": 8044,
+        "source_overlap": 0.9956800628354496,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          85,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8774,
+        "source_overlap": 0.9891665640773113,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          65,
+          83,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8884,
+        "source_overlap": 0.990409129537453,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "123": [
+      {
+        "pose": 0,
+        "bounds": [
+          74,
+          74,
+          196,
+          180
+        ],
+        "restored_border_pixels": 36,
+        "restored_empty_core_pixels": 12,
+        "preserved_visible_pixels": 9422,
+        "source_overlap": 0.995452528837622,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          74,
+          76,
+          196,
+          180
+        ],
+        "restored_border_pixels": 35,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9560,
+        "source_overlap": 0.9950867998689813,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          75,
+          78,
+          192,
+          177
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8668,
+        "source_overlap": 0.9929483282674773,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          73,
+          77,
+          184,
+          178
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8326,
+        "source_overlap": 0.9939378630967416,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          72,
+          75,
+          187,
+          175
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 2,
+        "preserved_visible_pixels": 8297,
+        "source_overlap": 0.9946741060106518,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          73,
+          77,
+          186,
+          176
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8490,
+        "source_overlap": 0.9919274714356682,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "126": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          76,
+          197,
+          189
+        ],
+        "restored_border_pixels": 57,
+        "restored_empty_core_pixels": 329,
+        "preserved_visible_pixels": 10398,
+        "source_overlap": 0.9979232594936709,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          72,
+          76,
+          195,
+          189
+        ],
+        "restored_border_pixels": 32,
+        "restored_empty_core_pixels": 369,
+        "preserved_visible_pixels": 10411,
+        "source_overlap": 0.9975325700750098,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          74,
+          76,
+          188,
+          190
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 378,
+        "preserved_visible_pixels": 10023,
+        "source_overlap": 0.9972222222222222,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          76,
+          186,
+          190
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 300,
+        "preserved_visible_pixels": 10141,
+        "source_overlap": 0.9961260067285146,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          76,
+          183,
+          190
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 338,
+        "preserved_visible_pixels": 9509,
+        "source_overlap": 0.995436270781267,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          69,
+          76,
+          184,
+          190
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 339,
+        "preserved_visible_pixels": 9431,
+        "source_overlap": 0.9955112765491569,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "129": [
+      {
+        "pose": 0,
+        "bounds": [
+          73,
+          75,
+          196,
+          184
+        ],
+        "restored_border_pixels": 40,
+        "restored_empty_core_pixels": 87,
+        "preserved_visible_pixels": 10090,
+        "source_overlap": 0.9968396370679988,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          71,
+          75,
+          195,
+          185
+        ],
+        "restored_border_pixels": 27,
+        "restored_empty_core_pixels": 136,
+        "preserved_visible_pixels": 10198,
+        "source_overlap": 0.9970727768244676,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          74,
+          76,
+          188,
+          182
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 22,
+        "preserved_visible_pixels": 9558,
+        "source_overlap": 0.9952319029042046,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          77,
+          186,
+          182
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 23,
+        "preserved_visible_pixels": 9677,
+        "source_overlap": 0.9967835316822129,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          77,
+          184,
+          183
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 72,
+        "preserved_visible_pixels": 9328,
+        "source_overlap": 0.9965574680732926,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          69,
+          77,
+          184,
+          182
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 53,
+        "preserved_visible_pixels": 9284,
+        "source_overlap": 0.9962104324565314,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "130": [
+      {
+        "pose": 0,
+        "bounds": [
+          72,
+          75,
+          197,
+          181
+        ],
+        "restored_border_pixels": 68,
+        "restored_empty_core_pixels": 15,
+        "preserved_visible_pixels": 9269,
+        "source_overlap": 0.9959677419354839,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          72,
+          75,
+          196,
+          181
+        ],
+        "restored_border_pixels": 36,
+        "restored_empty_core_pixels": 13,
+        "preserved_visible_pixels": 9214,
+        "source_overlap": 0.9952595936794583,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          74,
+          76,
+          188,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8790,
+        "source_overlap": 0.9956009986921888,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          76,
+          187,
+          179
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8902,
+        "source_overlap": 0.9936671748563387,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          67,
+          77,
+          183,
+          170
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8105,
+        "source_overlap": 0.9935517152437452,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          76,
+          184,
+          170
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8101,
+        "source_overlap": 0.9952208731593903,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "132": [
+      {
+        "pose": 0,
+        "bounds": [
+          73,
+          73,
+          197,
+          178
+        ],
+        "restored_border_pixels": 56,
+        "restored_empty_core_pixels": 73,
+        "preserved_visible_pixels": 9892,
+        "source_overlap": 0.9960221919815765,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          72,
+          73,
+          195,
+          179
+        ],
+        "restored_border_pixels": 26,
+        "restored_empty_core_pixels": 64,
+        "preserved_visible_pixels": 9878,
+        "source_overlap": 0.995582202587567,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          74,
+          73,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 73,
+        "preserved_visible_pixels": 9529,
+        "source_overlap": 0.9949765206945507,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          70,
+          73,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 58,
+        "preserved_visible_pixels": 9746,
+        "source_overlap": 0.9946660977170898,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          68,
+          74,
+          183,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 35,
+        "preserved_visible_pixels": 9177,
+        "source_overlap": 0.993780391269931,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          69,
+          74,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 38,
+        "preserved_visible_pixels": 9137,
+        "source_overlap": 0.9944286526435475,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "134": [
+      {
+        "pose": 0,
+        "bounds": [
+          66,
+          76,
+          198,
+          180
+        ],
+        "restored_border_pixels": 32,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9983,
+        "source_overlap": 0.9900669176076955,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          58,
+          76,
+          187,
+          180
+        ],
+        "restored_border_pixels": 91,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9979,
+        "source_overlap": 0.9923926636098375,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          61,
+          76,
+          186,
+          180
+        ],
+        "restored_border_pixels": 73,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9765,
+        "source_overlap": 0.9960427807486631,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          60,
+          75,
+          185,
+          180
+        ],
+        "restored_border_pixels": 79,
+        "restored_empty_core_pixels": 6,
+        "preserved_visible_pixels": 10025,
+        "source_overlap": 0.9947117378681045,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          60,
+          76,
+          186,
+          180
+        ],
+        "restored_border_pixels": 76,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9377,
+        "source_overlap": 0.9953187695051271,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          62,
+          76,
+          188,
+          180
+        ],
+        "restored_border_pixels": 14,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9580,
+        "source_overlap": 0.9934547834624196,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "138": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          76,
+          187,
+          188
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 305,
+        "preserved_visible_pixels": 9819,
+        "source_overlap": 0.9974758098443416,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          67,
+          76,
+          186,
+          189
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 326,
+        "preserved_visible_pixels": 9926,
+        "source_overlap": 0.9974034067303698,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          77,
+          76,
+          186,
+          188
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 240,
+        "preserved_visible_pixels": 9510,
+        "source_overlap": 0.9971742201934573,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          72,
+          76,
+          185,
+          188
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 256,
+        "preserved_visible_pixels": 9816,
+        "source_overlap": 0.9976851851851852,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          76,
+          76,
+          185,
+          189
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 273,
+        "preserved_visible_pixels": 9050,
+        "source_overlap": 0.9966876070816676,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          76,
+          76,
+          188,
+          189
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 287,
+        "preserved_visible_pixels": 9244,
+        "source_overlap": 0.99742671738644,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "141": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          76,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9563,
+        "source_overlap": 0.9946646341463414,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          67,
+          75,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 4,
+        "preserved_visible_pixels": 9719,
+        "source_overlap": 0.9950738916256158,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          74,
+          77,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9077,
+        "source_overlap": 0.9949477551957745,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          71,
+          77,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9488,
+        "source_overlap": 0.994059405940594,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          75,
+          75,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 7,
+        "preserved_visible_pixels": 9032,
+        "source_overlap": 0.994688221709007,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          76,
+          76,
+          189,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 8866,
+        "source_overlap": 0.9963464938126105,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "143": [
+      {
+        "pose": 0,
+        "bounds": [
+          69,
+          71,
+          188,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 134,
+        "preserved_visible_pixels": 9754,
+        "source_overlap": 0.9959630298523319,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          68,
+          71,
+          187,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 149,
+        "preserved_visible_pixels": 9986,
+        "source_overlap": 0.9946046897696618,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          76,
+          72,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 102,
+        "preserved_visible_pixels": 9291,
+        "source_overlap": 0.9946428571428572,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          72,
+          72,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 98,
+        "preserved_visible_pixels": 9536,
+        "source_overlap": 0.9952095808383233,
+        "source_rgb_median": 2.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          75,
+          72,
+          186,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 100,
+        "preserved_visible_pixels": 8970,
+        "source_overlap": 0.9942096120440069,
+        "source_rgb_median": 0.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          75,
+          71,
+          189,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 114,
+        "preserved_visible_pixels": 9140,
+        "source_overlap": 0.9956818181818182,
+        "source_rgb_median": 0.0
+      }
+    ],
+    "300": [
+      {
+        "pose": 0,
+        "bounds": [
+          74,
+          80,
+          195,
+          180
+        ],
+        "restored_border_pixels": 65,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9939,
+        "source_overlap": 0.9955053830876973,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          73,
+          80,
+          192,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9946,
+        "source_overlap": 0.9957036571308813,
+        "source_rgb_median": 4.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          73,
+          76,
+          188,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9630,
+        "source_overlap": 0.9955622902911571,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          69,
+          76,
+          185,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9396,
+        "source_overlap": 0.9941228653803504,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          72,
+          75,
+          191,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 4,
+        "preserved_visible_pixels": 10064,
+        "source_overlap": 0.9954479619284089,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          67,
+          76,
+          184,
+          180
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 0,
+        "preserved_visible_pixels": 9829,
+        "source_overlap": 0.9958677685950413,
+        "source_rgb_median": 1.0
+      }
+    ],
+    "342": [
+      {
+        "pose": 0,
+        "bounds": [
+          75,
+          77,
+          195,
+          184
+        ],
+        "restored_border_pixels": 50,
+        "restored_empty_core_pixels": 88,
+        "preserved_visible_pixels": 9621,
+        "source_overlap": 0.9964497041420118,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 1,
+        "bounds": [
+          72,
+          76,
+          194,
+          184
+        ],
+        "restored_border_pixels": 20,
+        "restored_empty_core_pixels": 70,
+        "preserved_visible_pixels": 9830,
+        "source_overlap": 0.9962065331928346,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 2,
+        "bounds": [
+          74,
+          75,
+          192,
+          183
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 36,
+        "preserved_visible_pixels": 9260,
+        "source_overlap": 0.9952840781495621,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 3,
+        "bounds": [
+          66,
+          76,
+          190,
+          184
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 38,
+        "preserved_visible_pixels": 9537,
+        "source_overlap": 0.9961819570197448,
+        "source_rgb_median": 3.0
+      },
+      {
+        "pose": 4,
+        "bounds": [
+          74,
+          76,
+          190,
+          182
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 10,
+        "preserved_visible_pixels": 9008,
+        "source_overlap": 0.9961739130434782,
+        "source_rgb_median": 1.0
+      },
+      {
+        "pose": 5,
+        "bounds": [
+          68,
+          76,
+          184,
+          182
+        ],
+        "restored_border_pixels": 0,
+        "restored_empty_core_pixels": 14,
+        "preserved_visible_pixels": 9106,
+        "source_overlap": 0.9951978047107249,
+        "source_rgb_median": 1.0
+      }
+    ]
+  }
+}

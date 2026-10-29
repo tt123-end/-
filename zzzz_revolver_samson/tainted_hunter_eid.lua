@@ -6,6 +6,7 @@ return function(mod, playerType)
         zh_cn=table.concat({
             "{{Damage}} 单发泪弹造成角色面板攻击力400%的伤害",
             "默认每次攻击后进入换弹，持续1个攻击间隔",
+            "初始死亡之眼隐藏外观，保留原有效果",
             "长子权：弹仓2发，发间隔为面板间隔的20%，打空后正常换弹",
             "{{Warning}} 换弹期间受到的伤害翻倍",
             "{{BrokenHeart}} 非主动付血型伤害实际扣到心之容器内的红心时，每次+1碎心",
@@ -19,6 +20,7 @@ return function(mod, playerType)
         en_us=table.concat({
             "{{Damage}} Each tear deals 400% of the character's displayed damage",
             "Normally reload after every attack for one attack interval",
+            "Starting Dead Eye costume is hidden; its effects are retained",
             "Birthright: 2 rounds, 20% of the sheet interval between rounds; normal reload when empty",
             "{{Warning}} Damage taken is doubled while reloading",
             "{{BrokenHeart}} Gain 1 Broken Heart per non-payment hit that actually removes Red Hearts from regular Heart Containers",

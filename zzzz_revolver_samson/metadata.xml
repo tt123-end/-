@@ -2,7 +2,7 @@
 <metadata>
   <name>Revolver Samson - 4-Shot Revolver Character</name>
   <directory>zzzz_revolver_samson</directory>
-  <description>v1.76-art: per-outfit, per-pose face-landmark registration replaces the v1.75 global offset. Neutral actor/body and gameplay retained.</description>
-  <version>1.76-art</version>
+  <description>v1.77-art: restore complete outfit borders with padded animation frames; hide Tainted Hunter Dead Eye costume while retaining native item effects and v1.76 face registration.</description>
+  <version>1.77-art</version>
   <visibility>Private</visibility>
 </metadata>
