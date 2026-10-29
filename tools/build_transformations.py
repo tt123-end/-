@@ -195,13 +195,6 @@ def build_heads():
     (SRC / 'landmarks.json').write_text(json.dumps({'neutral': neutral, 'forms': metadata}, ensure_ascii=False, indent=2) + '\n')
 
 
-WING_ROOTS = [
-    [(134, 163), (384, 166), (659, 163), (936, 143), (1194, 137), (1435, 162)],
-    [(129, 410), (384, 411), (660, 413), (941, 390), (1201, 388), (1435, 411)],
-    [(126, 650), (384, 650), (660, 650), (941, 636), (1202, 635), (1434, 652)],
-    [(133, 898), (385, 904), (664, 905), (945, 873), (1205, 877), (1437, 905)],
-]
-
 
 def frame_attributes(**values):
     result = dict(XPosition='0', YPosition='0', XPivot='128', YPivot='128',
@@ -213,47 +206,14 @@ def frame_attributes(**values):
 
 
 def build_wings():
-    sprites = segments(SRC / 'wings.png', WING_ROOTS)
-    for row, kind in enumerate(['guppy', 'fly', 'angel', 'devil']):
-        sheet = Image.new('RGBA', (1536, 768))
-        for pose in range(6):
-            rx, ry = WING_ROOTS[row][pose]
-            for direction in range(3):
-                cell = warp(sprites[row * 6 + pose], .68, 128 - .68 * rx, 128 - .68 * ry)
-                # Side views are a technical projection of the same articulated
-                # illustration; fixed harness, no animation via rotating one PNG.
-                if direction == 1:
-                    narrow = cell.resize((154, 256), Image.Resampling.LANCZOS)
-                    cell = Image.new('RGBA', (256, 256))
-                    cell.paste(narrow, (51, 0))
-                bounds = cell.getchannel('A').point(lambda x: 255 if x > 20 else 0).getbbox()
-                assert bounds and min(bounds[:2]) >= 8 and max(bounds[2:]) <= 248, (kind, pose, direction, bounds)
-                sheet.paste(cell, (pose * 256, direction * 256))
-        sheet.save(OUT / f'wings_{kind}.png')
-        tree = E.Element('AnimatedActor')
-        E.SubElement(tree, 'Info', CreatedBy='Hunter', Version='1', Fps='30')
-        content = E.SubElement(tree, 'Content')
-        sheets = E.SubElement(content, 'Spritesheets')
-        E.SubElement(sheets, 'Spritesheet', Id='0', Path=f'wings_{kind}.png')
-        layers = E.SubElement(content, 'Layers')
-        E.SubElement(layers, 'Layer', Id='0', Name='wings', SpritesheetId='0')
-        E.SubElement(content, 'Nulls'); E.SubElement(content, 'Events')
-        animations = E.SubElement(tree, 'Animations', DefaultAnimation='Down')
-        for direction, offset in [('Down', 0), ('Right', 256), ('Up', 512), ('Left', 256)]:
-            a = E.SubElement(animations, 'Animation', Name=direction, FrameNum='12', Loop='true')
-            E.SubElement(E.SubElement(a, 'RootAnimation'), 'Frame', **frame_attributes(Delay=12))
-            layer = E.SubElement(E.SubElement(a, 'LayerAnimations'), 'LayerAnimation', LayerId='0', Visible='true')
-            for pose in range(6):
-                E.SubElement(layer, 'Frame', **frame_attributes(XCrop=pose * 256, YCrop=offset, Width=256, Height=256,
-                                                              XScale=-100 if direction == 'Left' else 100))
-            E.SubElement(a, 'NullAnimations'); E.SubElement(a, 'Triggers')
-        E.ElementTree(tree).write(OUT / f'wings_{kind}.anm2', encoding='utf-8', xml_declaration=True)
-    (SRC / 'wing_roots.json').write_text(json.dumps(WING_ROOTS, indent=2) + '\n')
+    import runpy
+    runpy.run_path(str(REPO / 'tools/build_native_wings.py'), run_name='__main__')
 
 
 def build_anchors():
-    # Shoulder points from the untouched native cape/body transforms, including
-    # walk bobbing and item-holding motion. Screen positions never use headwear.
+    # Native-style wings attach to the lower back (source y80), as shown in
+    # the supplied video, rather than the old y64 neck/upper-chest anchor.
+    # Preserve each body transform, including item-holding motion and scale.
     actor = E.parse(GFX / '001.000_player_hunter_b_v153.anm2')
     lines = ['return {']
     for animation in actor.findall('Animations/Animation'):
@@ -267,10 +227,10 @@ def build_anchors():
         values = []
         for frame in frames:
             x = float(frame.get('XPosition', '0')) + (64 - float(frame.get('XPivot', '64'))) * float(frame.get('XScale', '30')) / 100
-            y = float(frame.get('YPosition', '0')) + (64 - float(frame.get('YPivot', '100'))) * float(frame.get('YScale', '30')) / 100
+            y = float(frame.get('YPosition', '0')) + (80 - float(frame.get('YPivot', '100'))) * float(frame.get('YScale', '30')) / 100
             # Only regular body crops have the common 128-pixel anatomy.
             if frame.get('Width') != '128':
-                x, y = 0, -8.4
+                x, y = 0, -3.6
             values.extend(['{%s,%s}' % (round(x, 4), round(y, 4))] * int(frame.get('Delay', '1')))
         lines.append('  [%s]={%s},' % (json.dumps(animation.get('Name')), ','.join(values)))
     lines.append('}')

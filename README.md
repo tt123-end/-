@@ -1,8 +1,8 @@
-# 里猎手 v1.78-art 套装与衣柜测试版
+# 里猎手 v1.79-art 原版风格羽翼测试版
 
-本版为里猎手新增14种套装外观、飞行套装的六帧背部翅膀，以及用户上传旧衣柜的兼容版。保留66项道具外观、边缘补全与死亡之眼隐藏。目标环境：忏悔+及匹配版本的REPENTOGON。
+本版参照用户上传视频重做四种飞行套装的羽翼：紧凑的短羽毛轮廓、约1.33秒的收放周期、单侧视图与背部挂接。保留14种套装造型、66项道具外观、死亡之眼隐藏，以及旧衣柜/EID/Stats+兼容。目标环境：忏悔+及匹配版本的REPENTOGON。
 
-- [下载完整Mod安装包](deliverables/Hunter_v1.78-art_wardrobe_test.zip)
+- [下载完整Mod安装包](deliverables/Hunter_v1.79-art_wardrobe_test.zip)
 - [浏览美术源图](art_sources) · [制作与验证工具](tools)
 - [查看动态哭泣合成预览](deliverables/crying-animation.gif)
 - [道具清单](deliverables/COSTUME_CATALOG.md)
@@ -10,11 +10,21 @@
 
 点击ZIP文件后选择Download raw file下载。安装包内含猎手与旧衣柜两个完整文件夹及安装说明；请同时替换这两份Mod。也可分别从zzzz_revolver_samson和compat目录取得文件夹。
 
+## v1.79 视频参考羽翼
+
+四种飞行套装统一采用视频中的原版风格短羽翼：黑褐轮廓、少量羽毛分叉，去掉旧版的大幅展翼、膜翅/蝠翼与中央饰物。嗝屁粉白、蝇王青绿、炽天使暖白、利维坦紫色。侧面有单独绘制的一只近侧翅膀，正面与背面显示成对羽翼。
+
+六个姿态依次为下垂、内收、紧收、上扬至头后、水平回展、弯曲下拍，采用40个游戏更新帧循环（约1.33秒）。按视频调整到下背部，向下时露出身体两侧/下方，向上时被头部与头发自然遮挡。身体、头部贴图与坐标保持v1.78结果。衣柜预览使用同一轮廓、时序、颜色和位置。
+
+同时对圣经实际使用效果、命运等常见原版羽翼来源进行外观去重，避免原版白翼与套装羽翼叠加；解除定制飞行外观时恢复仍有效的原版服装。道具、套装效果和飞行能力保留。
+
+[新羽翼动画](deliverables/transformation-wings.gif) · [视频参考与制作说明](docs/WINGS_179.md)
+
 ## v1.78 套装外观与旧衣柜
 
 覆盖游戏的14种角色变身：嗝屁、蝇王、真菌、炽天使、鲍勃、药物过量、妈宝、连体婴、利维坦、大便套装、书虫、成人、蜘蛛宝宝及践踏。保留猎手的白发、绿眼与兜帽，每种含正面/侧面/背面的待机和射击状态，左向使用镜像；按脸部轮廓定位，身体与原动作时序保留。未使用的Flight引擎枚举另有防御性备用支持；超级乞丐属于跟班合成，不是角色PlayerForm。
 
-四种飞行套装各有六帧独立扇动：嗝屁粉白膜翅、蝇王青蓝虫翅、炽天使白金羽翼、利维坦紫黑蝠翼。四个朝向均有动画，站立和蓄力不依赖走路帧，位于身体/头部后方；衣柜预览采用同一绘制接口。
+四种飞行套装各有六帧独立扇动：嗝屁粉白羽翼、蝇王青绿羽翼、炽天使暖白羽翼、利维坦紫色羽翼。四个朝向均有动画，站立和蓄力不依赖走路帧，位于身体/头部后方；衣柜预览采用同一绘制接口。
 
 [查看14种套装](deliverables/transformation-preview.png) · [查看四向造型](deliverables/transformation-all-directions.png) · [查看四向动态翅膀](deliverables/transformation-wings.gif)
 
@@ -70,4 +80,4 @@ EID中英文说明同步，支持巧克力牛奶隐藏替代道具。Stats+数�
 
 原角色/玩法来自用户上传的猎手v1.72。新整合头部图集由图像生成工具参照原人物制作；图集裁切时仅保留主体，清除相邻帧残片。泪滴、引线与蓝蘑菇循环素材及动画结构借用用户提供的Marisa as Cain v1.16（Cordelia、Vd65_63RUS及其贡献者），并按猎手挂接调整。未打包EID/Stats+本体。
 
-原始图集和循环源文件见art_sources。制作依赖：Python3、Pillow、NumPy、SciPy、ImageMagick；运行时模拟检查使用Lua5.4共享库。执行 `python3 tools/build_dynamic_art.py` 装配全部资源（已存在的道具头部PNG保留；重新装配前删除hunter_art174中的数字命名PNG）；新增套装可单独执行python3 tools/build_transformations.py。
+原始图集和循环源文件见art_sources；新羽翼源图、参考关键帧、时序与挂接数据见art_sources/wings179。制作依赖：Python3、Pillow、NumPy、SciPy、ImageMagick；运行时模拟检查使用Lua5.4共享库。执行 `python3 tools/build_dynamic_art.py` 装配全部资源（已存在的道具头部PNG保留；重新装配前删除hunter_art174中的数字命名PNG）；新增套装可单独执行python3 tools/build_transformations.py。

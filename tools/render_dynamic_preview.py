@@ -7,7 +7,7 @@ OUT=REPO/'deliverables';OUT.mkdir(exist_ok=True)
 TMP=REPO/'art_sources/assembly/render';TMP.mkdir(parents=True,exist_ok=True)
 native=E.parse(GFX/'001.000_player_hunter_b_v153.anm2').getroot()
 def run(args):subprocess.run(['magick',*map(str,args)],check=True,stderr=subprocess.DEVNULL)
-def render(canvas,actor,folder,name,tick,override=None,origin=(64,108),sprite_scale=1):
+def render(canvas,actor,folder,name,tick,override=None,origin=(64,108),sprite_scale=1,tint=None):
     sheets={x.get('Id'):folder/x.get('Path').replace('\\','/')for x in actor.findall('Content/Spritesheets/Spritesheet')}
     layers={x.get('Id'):x.get('SpritesheetId')for x in actor.findall('Content/Layers/Layer')}
     a=actor.find(f"Animations/Animation[@Name='{name}']")
@@ -29,6 +29,10 @@ def render(canvas,actor,folder,name,tick,override=None,origin=(64,108),sprite_sc
         piece=canvas.with_name(canvas.stem+'_piece.png')
         args=[path,'-crop',f"{int(v('Width'))}x{int(v('Height'))}+{int(v('XCrop'))}+{int(v('YCrop'))}",'+repage','-resize',f'{w}x{h}!']
         if sx<0:args+=['-flop']
+        if tint:
+            for channel,factor in zip(('R','G','B'),tint):
+                args+=['-channel',channel,'-evaluate','multiply',str(factor)]
+            args+=['+channel']
         run(args+[piece]);run([canvas,piece,'-geometry',f'{x:+}{y:+}','-composite',canvas])
 def card(id,direction,tick,dest):
     run(['-size','128x144','xc:#283832',dest])

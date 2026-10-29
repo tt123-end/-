@@ -4,11 +4,40 @@ import copy
 import json
 import xml.etree.ElementTree as E
 import zipfile
-from PIL import Image, ImageChops
+from PIL import Image, ImageChops, ImageOps
 
 ROOT=Path(__file__).resolve().parents[1]
 MOD=ROOT/'zzzz_revolver_samson'
 GFX=MOD/'resources/gfx'
+
+
+def rendered_alpha(actor,name,folder,origin=(96,120),scale=1,tick=0):
+    """Rasterize actual ANM2 masks to test occlusion, not illustration style."""
+    result=Image.new('L',(192,176))
+    sheets={node.get('Id'):folder/node.get('Path').replace('\\','/')for node in actor.findall('Content/Spritesheets/Spritesheet')}
+    layers={node.get('Id'):node.get('SpritesheetId')for node in actor.findall('Content/Layers/Layer')}
+    animation=actor.find(f"Animations/Animation[@Name='{name}']")
+    for layer in animation.findall('LayerAnimations/LayerAnimation'):
+        frames=layer.findall('Frame')
+        if not frames:continue
+        remaining=tick%sum(int(frame.get('Delay','1'))for frame in frames)
+        frame=frames[-1]
+        for candidate in frames:
+            if remaining<int(candidate.get('Delay','1')):frame=candidate;break
+            remaining-=int(candidate.get('Delay','1'))
+        path=sheets[layers[layer.get('LayerId')]]
+        if not path.is_file()or frame.get('Visible')=='false':continue
+        value=lambda key:float(frame.get(key,'0'))
+        x,y,w,h=[int(value(key))for key in ['XCrop','YCrop','Width','Height']]
+        sx=value('XScale')/100*2*scale;sy=value('YScale')/100*2*scale
+        crop=Image.open(path).convert('RGBA').crop((x,y,x+w,y+h)).getchannel('A')
+        crop=crop.resize((max(1,round(w*abs(sx))),max(1,round(h*abs(sy)))),Image.Resampling.NEAREST)
+        if sx<0:crop=ImageOps.mirror(crop)
+        left=round(origin[0]+value('XPosition')*2-value('XPivot')*abs(sx))
+        top=round(origin[1]+value('YPosition')*2-value('YPivot')*abs(sy))
+        layer_image=Image.new('L',result.size);layer_image.paste(crop,(left,top))
+        result=ImageChops.screen(result,layer_image)
+    return result
 
 
 def main():
@@ -48,28 +77,56 @@ def main():
                         actual=(points[pose][axis]+64-float(new.get(pivot)))*float(new.get(scale))/100
                         wanted=(data['neutral'][pose][axis]-float(old.get(pivot)))*float(old.get(scale))/100
                         assert abs(actual-wanted)<1e-7,(form,pose,axis,actual,wanted)
-    wing_hashes=[]
-    for kind in ['guppy','fly','angel','devil']:
-        image=Image.open(GFX/f'characters/hunter_forms178/wings_{kind}.png').convert('RGBA')
-        assert image.size==(1536,768)
-        wing_hashes.append(image.tobytes())
-        actor=E.parse(GFX/f'characters/hunter_forms178/wings_{kind}.anm2').getroot()
-        for animation in actor.findall('Animations/Animation'):
-            assert animation.get('FrameNum')=='12'and animation.get('Loop')=='true'
-            frames=animation.findall('LayerAnimations/LayerAnimation/Frame')
-            assert len(frames)==6 and sum(int(f.get('Delay'))for f in frames)==12
-            pixels=[];silhouettes=[]
-            for frame in frames:
-                x,y,w,h=[int(frame.get(key))for key in ['XCrop','YCrop','Width','Height']]
-                assert 0<=x<x+w<=image.width and 0<=y<y+h<=image.height
-                assert frame.get('XPivot')=='128'and frame.get('YPivot')=='128'
-                crop=image.crop((x,y,x+w,y+h))
-                alpha=crop.getchannel('A').point(lambda value:255 if value>20 else 0)
-                bounds=alpha.getbbox()
-                assert bounds and min(bounds[:2])>=8 and max(bounds[2:])<=248
-                pixels.append(crop.tobytes());silhouettes.append(alpha.tobytes())
-            assert len(set(pixels))==6 and len(set(silhouettes))==6,'wing animation reused a static silhouette'
-    assert len(set(wing_hashes))==4,'wing colours/designs were duplicated'
+    motion=json.loads((ROOT/'art_sources/wings179/motion.json').read_text())
+    assert motion['frames']==40 and motion['delays']==[10,7,3,10,5,5]
+    assert len({tuple(motion['colours'][key])for key in ['guppy','fly','angel','devil']})==4
+    image=Image.open(GFX/'characters/hunter_wings179/feathers.png').convert('RGBA')
+    assert image.size==(1536,1024)
+    actor=E.parse(GFX/'characters/hunter_wings179/wings.anm2').getroot()
+    from scipy import ndimage as ndi
+    import numpy as np
+    for direction,animation in enumerate(actor.findall('Animations/Animation')):
+        assert animation.get('FrameNum')=='40'and animation.get('Loop')=='true'
+        frames=animation.findall('LayerAnimations/LayerAnimation/Frame')
+        assert len(frames)==6 and [int(f.get('Delay'))for f in frames]==motion['delays']
+        pixels=[];silhouettes=[]
+        for pose,frame in enumerate(frames):
+            x,y,w,h=[int(frame.get(key))for key in ['XCrop','YCrop','Width','Height']]
+            assert (x,y,w,h)==(pose*256,direction*256,256,256)
+            assert frame.get('XPivot')=='128'and frame.get('YPivot')=='128'
+            crop=image.crop((x,y,x+w,y+h))
+            alpha=crop.getchannel('A').point(lambda value:255 if value>20 else 0)
+            bounds=alpha.getbbox()
+            assert bounds and min(bounds[:2])>=56 and max(bounds[2:])<=200
+            labels,total=ndi.label(np.asarray(alpha)>0,structure=np.ones((3,3)))
+            areas=np.bincount(labels.ravel())[1:]
+            main_components=int((areas>20).sum())
+            assert main_components==(2 if direction in (0,2)else 1),(direction,pose,main_components)
+            if direction==0 and pose==0:
+                assert bounds[2]-bounds[0]<=126 and bounds[3]-bounds[1]<=48,'feathers exceed video proportions'
+                assert alpha.crop((120,0,136,256)).getextrema()[1]==0,'central ornament survived'
+            pixels.append(crop.tobytes());silhouettes.append(alpha.tobytes())
+        assert len(set(pixels))==6 and len(set(silhouettes))==6,'feather beat reused one rigid sprite'
+    roots=json.loads((ROOT/'art_sources/wings179/registration.json').read_text())
+    assert len(roots)==36
+    for record in roots:
+        for axis in range(2):
+            assert abs(record['source_root'][axis]*record['scale'][axis]+record['translation'][axis]-record['joint'][axis])<1e-9
+    assert not list((GFX/'characters/hunter_forms178').glob('wings_*')),'rejected wing art remains installed'
+    # Match the visible behavior in the supplied video: low feathers project
+    # beside/below the body; the upward stroke disappears behind the head.
+    head=E.parse(GFX/'001.000_player_hunter_b_v178_f3.anm2').getroot()
+    body_mask=rendered_alpha(head,'WalkDown',GFX)
+    head_mask=rendered_alpha(head,'HeadDown',GFX)
+    occluder=ImageChops.screen(body_mask,head_mask)
+    down=rendered_alpha(actor,'Down',GFX/'characters/hunter_wings179',origin=(96,120-3.6*2),scale=.33,tick=0)
+    up=rendered_alpha(actor,'Down',GFX/'characters/hunter_wings179',origin=(96,120-3.6*2),scale=.33,tick=23)
+    visible_down=ImageChops.multiply(down,ImageOps.invert(occluder))
+    visible_up=ImageChops.multiply(up,ImageOps.invert(occluder))
+    down_area=sum(value>100 for value in visible_down.getdata())
+    up_area=sum(value>100 for value in visible_up.getdata())
+    assert down_area>100 and up_area<down_area*.12,(down_area,up_area,'upstroke does not tuck behind the head')
+    assert 6<=visible_down.getbbox()[3]-body_mask.getbbox()[3]<=18,'feathers are detached or do not drop below the body'
     selector='hunter_forms178/wardrobe_selector.anm2'
     registrations=E.parse(MOD/'content/costumes2.xml').getroot()
     node=next(node for node in registrations if node.get('anm2path')==selector)
@@ -95,7 +152,7 @@ def main():
     assert source.count('HunterBridge("form",')==1 and source.count('HunterBridge("item",')==1
     assert 'HunterWardrobe178.renderWings(player, Vector(invPosition.X+148,invPosition.Y+29), true)'in source
     print('PASS:15form actors/90pose crops preserve native body/timing and face anchors; '
-          '4wing designs x4directions x6distinct silhouettes, clear frame/source edges; '
+          'video-referenced40tick feather beat,36fixed-root parts,pairedfront/back andsingle-side views,4palettes; '
           'all companion wardrobe resources unchanged.')
 
 

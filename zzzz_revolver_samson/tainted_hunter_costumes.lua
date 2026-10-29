@@ -118,7 +118,7 @@ return function(mod, playerType)
     -- Item ownership, Dead Eye charge and native damage remain untouched.
     if ModCallbacks.MC_PRE_PLAYER_ADD_COSTUME then
         mod:AddCallback(ModCallbacks.MC_PRE_PLAYER_ADD_COSTUME,function(_,item,p)
-            if item and item.ID==373 and isHunter(p)then return true end
+            if item and isHunter(p)and(item.ID==373 or transformations.blocksNativeWing(p,item.ID))then return true end
         end)
     end
     -- Keep all native animation state while changing only the head pivot table.
@@ -212,7 +212,7 @@ return function(mod, playerType)
     if ModCallbacks.MC_EXECUTE_CMD then
         mod:AddCallback(ModCallbacks.MC_EXECUTE_CMD, function(_, command)
             if command ~= 'hunterartdiag' then return end
-            local lines = {'[Hunter art v1.78] integrated heads, transformations and animated wings'}
+            local lines = {'[Hunter art v1.79] integrated heads, transformations and native-style feather wings'}
             for i=0,game:GetNumPlayers()-1 do
                 local p = Isaac.GetPlayer(i)
                 local s = p:GetData().hunterDynamic174

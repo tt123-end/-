@@ -5,7 +5,7 @@ import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'deliverables'
-NAME='Hunter_v1.78-art_wardrobe_test.zip'
+NAME='Hunter_v1.79-art_wardrobe_test.zip'
 
 
 def main():
@@ -24,7 +24,8 @@ def main():
         assert len(names)==len(set(names))
         assert 'zzzz_revolver_samson/main.lua'in names and 'old wardrobe_2488945061/main.lua'in names
         assert len([name for name in names if '001.000_player_hunter_b_v178_f'in name])==15
-        assert len([name for name in names if '/hunter_forms178/wings_'in name and name.endswith('.anm2')])==4
+        assert names.count('zzzz_revolver_samson/resources/gfx/characters/hunter_wings179/wings.anm2')==1
+        assert not any('/hunter_forms178/wings_'in name for name in names)
         for name in names:
             if name=='安装说明.txt':continue
             source=ROOT/name if name.startswith('zzzz_revolver_samson/') else ROOT/'compat'/name
@@ -32,7 +33,8 @@ def main():
     sha=hashlib.sha256(path.read_bytes()).hexdigest()
     (OUT/'SHA256SUMS.txt').write_text(f'{sha}  {NAME}\n')
     # Previous complete releases remain available in repository history.
-    for old in OUT.glob('Hunter_v1.77-art_test.zip'):old.unlink()
+    for pattern in ['Hunter_v1.77-art_test.zip','Hunter_v1.78-art_wardrobe_test.zip']:
+        for old in OUT.glob(pattern):old.unlink()
     print(f'PASS: full two-Mod bundle, byte/CRC verified, {path.stat().st_size:,}bytes, SHA256 {sha}')
 
 

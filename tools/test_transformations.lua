@@ -13,7 +13,15 @@ return function(T)
         if type(a)=='number'then return Vector(a*b.X,a*b.Y)end
         return Vector(a.X*b,a.Y*b)
     end
-    function Color(r,g,b,a)return{R=r,G=g,B=b,A=a}end
+    local colourMeta={}
+    function Color(r,g,b,a,ro,go,bo)
+        return setmetatable({R=r,G=g,B=b,A=a,RO=ro or 0,GO=go or 0,BO=bo or 0},colourMeta)
+    end
+    colourMeta.__mul=function(a,b)
+        local colour=Color(a.R*b.R,a.G*b.G,a.B*b.B,a.A*b.A,a.RO+b.RO,a.GO+b.GO,a.BO+b.BO)
+        colour.left,colour.right=a,b
+        return colour
+    end
     local renders,loads={},0
     function Sprite()
         local sprite={}
@@ -75,20 +83,23 @@ return function(T)
     p.sprite.animation='WalkRight';p.sprite.frame=7;p.sprite.overlay='HeadUp';p.sprite.overlayFrame=2
     bridge.select(p,'H178:F8')
     assert(p.sprite.animation=='WalkRight'and p.sprite.frame==7 and p.sprite.overlay=='HeadUp'and p.sprite.overlayFrame==2)
-    -- Six drawn frames advance with game time while the player stays on frame0.
+    -- The recorded slow folding beat advances while the player stays on frame0.
     p.sprite.animation='WalkDown';p.sprite.frame=0
     local previousLoads=loads
     local frames={}
-    for tick=0,11 do
+    for tick=0,39 do
         T.setFrame(tick);renders={};fire('pre_render',p)
         assert(#renders==1 and renders[1].kind=='wings')
         local wing=renders[1];frames[wing.frame]=true
         near(wing.position.X,p.Position.X+camera.X+p.SpriteOffset.X)
-        near(wing.position.Y,p.Position.Y+camera.Y+p.SpriteOffset.Y-8.4)
-        assert(wing.color==p.sprite.Color and p.sprite.frame==0)
+        near(wing.position.Y,p.Position.Y+camera.Y+p.SpriteOffset.Y-3.6)
+        local rgb=api.transformations.wingMotion.colours.devil
+        assert(wing.color.left==p.sprite.Color and p.sprite.frame==0)
+        near(wing.color.R,p.sprite.Color.R*rgb[1]);near(wing.color.G,p.sprite.Color.G*rgb[2])
+        near(wing.color.B,p.sprite.Color.B*rgb[3]);near(wing.color.A,p.sprite.Color.A)
     end
     assert(loads==previousLoads+1,'wing sprite loaded every render')
-    local count=0;for _ in pairs(frames)do count=count+1 end;assert(count==12)
+    local count=0;for _ in pairs(frames)do count=count+1 end;assert(count==40)
     local tick=renders[1].frame;fire('pre_render',p);assert(renders[#renders].frame==tick,'paused game tick advanced')
     for _,direction in ipairs({'Down','Right','Up','Left'})do
         p.sprite.animation='Walk'..direction;renders={};fire('pre_render',p)
@@ -97,9 +108,9 @@ return function(T)
     p.sprite.animation='WalkDown';p.sprite.Scale=Vector(1.4,.9)
     renders={};fire('pre_render',p);near(renders[1].scale.X,.33*1.4);near(renders[1].scale.Y,.33*.9)
     renders={};api.transformations.renderWings(p,Vector(258,111),true)
-    near(renders[1].position.X,258);near(renders[1].position.Y,111-8.4*.9)
+    near(renders[1].position.X,258);near(renders[1].position.Y,111-3.6*.9)
     p.sprite.Rotation=90;renders={};api.transformations.renderWings(p,Vector(258,111),true)
-    near(renders[1].position.X,258+8.4*.9);near(renders[1].position.Y,111)
+    near(renders[1].position.X,258+3.6*.9);near(renders[1].position.Y,111)
     p.sprite.Rotation=0
     p.Visible=false;renders={};fire('pre_render',p);assert(#renders==0);p.Visible=true
     p.dead=true;fire('pre_render',p);assert(#renders==0);p.dead=false
@@ -110,6 +121,20 @@ return function(T)
     p.sprite.file=forms[9].actor
     p.CanFly=false;api.sync(p);assert(not api.state(p).wingStyle)
     p.CanFly=true;api.sync(p);assert(api.state(p).wingStyle=='devil')
+    -- Native wing providers must not render an additional white pair over
+    -- the selected form. Cancellation/restoration is cosmetic and reversible.
+    p.items[179]=1;p.items[33]=1;p.effects[33]=1;api.sync(p)
+    assert(p.nativeRemoved[179]and p.nativeRemoved[33])
+    assert(p.items[179]==1 and p.items[33]==1 and p.effects[33]==1 and p.CanFly)
+    for _,callback in ipairs(T.callbacks.costume_pre)do
+        assert(callback(nil,{ID=179},p,false)==true)
+        assert(callback(nil,{ID=33},p,false)==true)
+    end
+    bridge.select(p,'H178:BASE')
+    assert(p.nativeAdded[179]and p.nativeAdded[33]and p.CanFly)
+    for _,callback in ipairs(T.callbacks.costume_pre)do assert(callback(nil,{ID=179},p,false)==nil)end
+    p.nativeRemoved[33]=nil;p.effects[33]=nil;bridge.select(p,'H178:F8')
+    assert(not p.nativeRemoved[33],'merely holding Bible should not be treated as an active effect')
 
     -- Appearance, hidden rows, observed form order survive an actual save/load.
     T.setPlayers({p});bridge.undress(p,'H178:I7');bridge.select(p,'H178:F8')
@@ -192,7 +217,7 @@ return function(T)
     renders={};drawPlayer(p)
     assert(#renders==5 and renders[1].kind=='wings'and renders[2].kind=='RenderGlow'and renders[5].kind=='RenderTop')
     near(renders[1].position.X,renders[3].position.X)
-    near(renders[1].position.Y,renders[3].position.Y-8.4)
+    near(renders[1].position.Y,renders[3].position.Y-3.6)
     set(renderList,'DrawList',function()end)
     local furniture={ToNPC=function(self)return self end,PlaySound=function()end,Exists=function()return true end}
     set(renderList,'dressingEnt',furniture)
@@ -253,7 +278,7 @@ return function(T)
     EID={addCharacterInfo=function(_,kind,text,name,language)texts[language]=text end}
     include('tainted_hunter_eid')(T.mod,42)
     assert(texts.zh_cn:find('14种套装',1,true)and texts.en_us:find('14 transformation',1,true))
-    print('PASS:14forms+fallback, form/item/manual precedence, six-frame idle wings/4directions, '
+    print('PASS:14forms+fallback, form/item/manual precedence,40tick feather beat/4directions, '
         ..'native anchors/tint/scale/visibility, death/ghost/special guards, no flight/inventory changes, '
-        ..'coop isolation, saved filters/order, actual uploaded wardrobe list/grid/preview/bulk actions, bilingual EID.')
+        ..'coop isolation, saved filters/order, native wing deduplication/Bible activity, actual uploaded wardrobe list/grid/preview/bulk actions, bilingual EID.')
 end

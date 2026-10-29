@@ -2,7 +2,7 @@
 <metadata>
   <name>Revolver Samson - 4-Shot Revolver Character</name>
   <directory>zzzz_revolver_samson</directory>
-  <description>v1.78-art: 14 Tainted Hunter transformation appearances, six-frame animated back wings for flying forms, and an explicit Old Wardrobe dressing bridge. Preserves native gameplay, registered face anchors and hidden Dead Eye costume.</description>
-  <version>1.78-art</version>
+  <description>v1.79-art: video-referenced compact vanilla-style feather wings for flying Hunter forms; six folding poses with a 40-tick cycle, proper side views and lower-back attachment. Retains transformation/item outfits, Old Wardrobe bridge, EID and Stats+ compatibility.</description>
+  <version>1.79-art</version>
   <visibility>Private</visibility>
 </metadata>

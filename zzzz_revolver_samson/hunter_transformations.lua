@@ -4,13 +4,20 @@ return function(mod, playerType, items, isHunter)
     local game = Game()
     local definitions = include('hunter_form_manifest')
     local anchors = include('hunter_wing_anchors')
+    local motion = include('hunter_wing_motion')
+    local paletteColours={}
+    -- Wing-only vanilla visual providers can otherwise add a second white
+    -- pair over the selected form. Inventory/effects remain engine-owned.
+    local wingProviders={33,179,181,184,185,633,643}
+    local wingProvider={}
+    for _,id in ipairs(wingProviders)do wingProvider[id]=true end
     local forms, native, byItem = {}, {}, {}
     for _, entry in ipairs(definitions) do
         forms[entry.form] = entry
         if entry.native then native[entry.native] = entry end
     end
     for _, entry in ipairs(items) do byItem[entry.id] = entry end
-    local api = {definitions=definitions}
+    local api = {definitions=definitions,wingMotion=motion}
     local sync
     local function state(p)
         local data = p:GetData()
@@ -40,6 +47,9 @@ return function(mod, playerType, items, isHunter)
         local wardrobe=s.wardrobe
         local winner, flight, newest, wingNewest
         local bits={signature, 'wardrobe:'..tostring(s.wardrobeRevision or 0)}
+        for _,id in ipairs(wingProviders)do
+            bits[#bits+1]='vanillaWing'..id..':'..p:GetCollectibleNum(id,true)..':'..p:GetEffects():GetCollectibleEffectNum(id)
+        end
         for _, entry in ipairs(definitions) do
             local yes=has(p,entry.form)
             if yes and not s.formPresent[entry.form] then
@@ -67,7 +77,37 @@ return function(mod, playerType, items, isHunter)
         s.wingStyle=wing
         return winner,table.concat(bits,';')..';wing:'..tostring(wing)
     end
+    local function nativeWingPresent(p,id)
+        local effect=p:GetEffects():GetCollectibleEffectNum(id)
+        if id==33 then return effect>0 end -- Bible must actually be active.
+        return effect+p:GetCollectibleNum(id,true)>0
+    end
+    local function restoreNativeWings(p,s)
+        for id in pairs(s.wingNativeSuppressed or {})do
+            if nativeWingPresent(p,id)then
+                local item=Isaac.GetItemConfig():GetCollectible(id)
+                if item then p:AddCostume(item)end
+            end
+        end
+        s.wingNativeSuppressed={}
+    end
+    function api.blocksNativeWing(p,id)
+        local s=p:GetData().hunterDynamic174
+        if not isHunter(p)or not wingProvider[id]or not s or not s.wingStyle then return false end
+        s.wingNativeSuppressed=s.wingNativeSuppressed or{}
+        s.wingNativeSuppressed[id]=true
+        return true
+    end
     function api.suppress(p,s)
+        if s.wingStyle then
+            s.wingNativeSuppressed=s.wingNativeSuppressed or{}
+            for _,id in ipairs(wingProviders)do
+                if nativeWingPresent(p,id)then
+                    local item=Isaac.GetItemConfig():GetCollectible(id)
+                    if item then p:RemoveCostume(item);s.wingNativeSuppressed[id]=true end
+                end
+            end
+        else restoreNativeWings(p,s)end
         s.formNativeSuppressed=s.formNativeSuppressed or {}
         for _,entry in ipairs(definitions) do
             if entry.native and has(p,entry.form) then
@@ -78,6 +118,8 @@ return function(mod, playerType, items, isHunter)
     end
     function api.cleanup(p,s)
         s.wingStyle,s.wingSprite,s.wingSpriteStyle=nil,nil,nil
+        s.wingSpriteVersion=nil
+        restoreNativeWings(p,s)
         for id in pairs(s.formNativeSuppressed or {}) do
             local entry=forms[id]
             if entry and entry.native and has(p,id) then p:AddNullCostume(entry.native) end
@@ -222,26 +264,30 @@ return function(mod, playerType, items, isHunter)
         local sprite=p:GetSprite();local animation=sprite:GetAnimation()
         local file=(sprite:GetFilename() or ''):lower():gsub('\\','/')
         if not file:find('001.000_player_hunter_b_v',1,true) or not ordinary[animation] then return end
-        local style=s.wingStyle=='emerald' and 'fly' or s.wingStyle
-        if not s.wingSprite or s.wingSpriteStyle~=style then
+        local style=s.wingStyle
+        local palette=motion.colours[style]
+        if not palette then return end
+        if not s.wingSprite or s.wingSpriteVersion~=motion.version then
             s.wingSprite=Sprite()
-            s.wingSprite:Load('gfx/characters/hunter_forms178/wings_'..style..'.anm2',true)
-            s.wingSpriteStyle=style
+            s.wingSprite:Load(motion.actor,true)
+            s.wingSpriteVersion=motion.version
         end
+        s.wingSpriteStyle=style
         local direction=animation:match('(Down)$') or animation:match('(Up)$')
             or animation:match('(Left)$') or animation:match('(Right)$') or 'Down'
         local path=anchors[animation]
         local index=sprite:GetFrame()+1
-        local point=path and path[(index-1)%#path+1] or {0,-8.4}
+        local point=path and path[(index-1)%#path+1] or {0,-3.6}
         local scale=sprite.Scale or Vector(1,1)
         local wing=s.wingSprite
-        wing.Scale=Vector(.33*scale.X,.33*scale.Y)
-        wing.Color=sprite.Color
+        wing.Scale=Vector(motion.scale*scale.X,motion.scale*scale.Y)
+        if not paletteColours[style]then paletteColours[style]=Color(palette[1],palette[2],palette[3],1,0,0,0)end
+        wing.Color=sprite.Color*paletteColours[style]
         wing.Rotation=sprite.Rotation or 0
         wing.FlipX,wing.FlipY=sprite.FlipX,sprite.FlipY
         -- Game ticks freeze on pause. Frame selection is independent of the
         -- walking/head frame, so standing and charging keep beating wings.
-        wing:SetFrame(direction,game:GetFrameCount()%12)
+        wing:SetFrame(direction,game:GetFrameCount()%motion.frames)
         local angle=math.rad(wing.Rotation)
         local x,y=point[1]*scale.X,point[2]*scale.Y
         local offset=Vector(x*math.cos(angle)-y*math.sin(angle),x*math.sin(angle)+y*math.cos(angle))
