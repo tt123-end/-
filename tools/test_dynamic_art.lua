@@ -65,6 +65,14 @@ local function player()
     function p:GetSprite()return self.sprite end
     function p.sprite:GetFilename()return self.file end
     function p.sprite:GetAnimation()return self.animation or 'WalkDown' end
+    function p.sprite:GetFrame()return self.frame or 0 end
+    function p.sprite:GetOverlayAnimation()return self.overlay or '' end
+    function p.sprite:GetOverlayFrame()return self.overlayFrame or 0 end
+    function p.sprite:Load(file)self.file=file;self.animation='';self.frame=0;self.overlay='';self.overlayFrame=0 end
+    function p.sprite:Play(animation)self.animation=animation end
+    function p.sprite:SetFrame(frame)self.frame=frame end
+    function p.sprite:PlayOverlay(animation)self.overlay=animation end
+    function p.sprite:SetOverlayFrame(animation,frame)self.overlay=animation;self.overlayFrame=frame end
     function p.sprite:ReplaceSpritesheet(layer,path)
         assert(layer==4,'cosmetic modified a body, cape, ghost or collision layer')
         self.writes=self.writes+1;self.sheet=path
@@ -91,6 +99,15 @@ end
 local api=include('tainted_hunter_costumes')(mod,42)
 assert(api==mod.HunterDynamicArt174)
 local definitions=api.definitions;assert(#definitions==66,'wrong design count')
+local alignmentProbe=player();players={alignmentProbe}
+alignmentProbe.sprite.animation='Pickup';alignmentProbe.sprite.frame=3
+alignmentProbe.sprite.overlay='HeadRight';alignmentProbe.sprite.overlayFrame=1
+alignmentProbe.items[1]=1;api.sync(alignmentProbe)
+assert(alignmentProbe.sprite.file=='gfx/001.000_player_hunter_b_v175.anm2')
+assert(alignmentProbe.sprite.frame==3 and alignmentProbe.sprite.animation=='Pickup')
+assert(alignmentProbe.sprite.overlay=='HeadRight'and alignmentProbe.sprite.overlayFrame==1)
+alignmentProbe.items[1]=nil;api.sync(alignmentProbe)
+assert(alignmentProbe.sprite.file==native,'neutral actor must retain its original head anchor')
 local lookup={}
 local exported=assert(io.open(TEST_MANIFEST_OUTPUT,'w'))
 for _,entry in ipairs(definitions)do
@@ -185,7 +202,7 @@ assert(codec.decode(savedData).existingGameplayState.ammo==2,'shared save data l
 fire('start',true);assert(api.selected(p).id==4,'continue changed acquisition order')
 diagnostic=nil;fire('command','unrelated');assert(diagnostic==nil)
 writes=p.sprite.writes;fire('command','hunterartdiag')
-assert(diagnostic:find('[Hunter art v1.74]',1,true)
+assert(diagnostic:find('[Hunter art v1.75]',1,true)
     and diagnostic:find('selected=4',1,true)
     and diagnostic:find('sheet='..lookup[4].sheet,1,true),'diagnostic missing actual outfit')
 assert(p.sprite.writes==writes,'diagnostic changed outfit state')

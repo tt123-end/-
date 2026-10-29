@@ -144,3 +144,7 @@ costumes.write(MOD/'content/costumes2.xml',encoding='utf-8',xml_declaration=True
 legacy=MOD/'resources/gfx/characters/hunter_art173'
 if legacy.exists():shutil.rmtree(legacy)
 print(f'Assembled {len(complete)}/66 integrated heads; registered three real overlay loops.')
+
+# Apply the conditional outfit actor geometry after regenerating loop files.
+import runpy
+runpy.run_path(str(REPO/'tools/align_head_anchors.py'))

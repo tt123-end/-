@@ -2,7 +2,7 @@
 <metadata>
   <name>Revolver Samson - 4-Shot Revolver Character</name>
   <directory>zzzz_revolver_samson</directory>
-  <description>v1.74-art: integrated directional idle/shoot expressions; real tear/fuse/cap overlay loops; replaces v1.73 static accessory pack. Gameplay remains v1.72.</description>
-  <version>1.74-art</version>
+  <description>v1.75-art: correct conditional head anchors and attached loop alignment; neutral character and body geometry retained.</description>
+  <version>1.75-art</version>
   <visibility>Private</visibility>
 </metadata>

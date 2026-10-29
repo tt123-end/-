@@ -109,7 +109,7 @@ return function(mod, playerType, normalType)
         return state,now.lost
     end
     local function filename(sprite)
-        return (sprite:GetFilename() or ""):lower():gsub("\\", "/")
+        return (sprite:GetFilename() or ""):lower():gsub("\\", "/"):gsub("001%.000_player_hunter_b_v175%.anm2", "001.000_player_hunter_b_v153.anm2")
     end
     local function changeAnimationFile(player)
         if not player or playerType == -1 then return end

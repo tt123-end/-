@@ -6,6 +6,8 @@ return function(mod, playerType)
     local definitions = include('hunter_costume_manifest')
     local jsonOK, json = pcall(require, 'json')
     local nativeFile = 'gfx/001.000_player_hunter_b_v153.anm2'
+    local alignedFile = 'gfx/001.000_player_hunter_b_v175.anm2'
+    local function owned(source)return source==nativeFile or source==alignedFile end
     local baseSheet = 'gfx/characters/costumes/hunter_b_heads_v152.png'
     local byId, serial = {}, 0
     local nativeActive = {[34]=true, [77]=true, [83]=true, [93]=true}
@@ -103,6 +105,22 @@ return function(mod, playerType)
             end
         end
     end
+    -- Keep all native animation state while changing only the head pivot table.
+    local function actor(sprite, target)
+        if normalized(sprite:GetFilename())==target then return false end
+        local animation=sprite:GetAnimation()
+        local frame=sprite.GetFrame and sprite:GetFrame()or 0
+        local overlay=sprite.GetOverlayAnimation and sprite:GetOverlayAnimation()or ''
+        local overlayFrame=sprite.GetOverlayFrame and sprite:GetOverlayFrame()or 0
+        local scale,color,rotation=sprite.Scale,sprite.Color,sprite.Rotation
+        local flipX,flipY,speed=sprite.FlipX,sprite.FlipY,sprite.PlaybackSpeed
+        sprite:Load(target,true)
+        if animation~=''then sprite:Play(animation,true);sprite:SetFrame(frame)end
+        if overlay~=''then sprite:PlayOverlay(overlay,true);sprite:SetOverlayFrame(overlay,overlayFrame)end
+        sprite.Scale,sprite.Color,sprite.Rotation=scale,color,rotation
+        sprite.FlipX,sprite.FlipY,sprite.PlaybackSpeed=flipX,flipY,speed
+        return true
+    end
     local function sync(p, revision)
         if not p then return end
         local existing = p:GetData().hunterDynamic174
@@ -111,7 +129,7 @@ return function(mod, playerType)
         local sprite = p:GetSprite()
         local source = normalized(sprite:GetFilename())
         local force = revision == true or (revision ~= nil and revision ~= s.revision)
-        if source == nativeFile and s.source and s.source ~= source then force = true end
+        if owned(source) and s.source and s.source ~= source then force = true end
         s.source = source
         if revision ~= nil and revision ~= true then s.revision = revision end
         if not isHunter(p) then
@@ -119,10 +137,11 @@ return function(mod, playerType)
             restoreNative(p, s)
             sprite = p:GetSprite()
             source = normalized(sprite:GetFilename())
-            if s.sheet and source == nativeFile then
+            if s.sheet and owned(source) then
                 -- The owning visual module handles Lost/special sprite files.
                 local lost = NullItemID and NullItemID.ID_LOST_CURSE
                 if not (lost and p:GetEffects():HasNullEffect(lost)) then
+                    actor(sprite,nativeFile)
                     sprite:ReplaceSpritesheet(4, baseSheet)
                     sprite:LoadGraphics()
                 end
@@ -142,7 +161,7 @@ return function(mod, playerType)
         local dead = (p.IsDead and p:IsDead())
             or tostring(animation):lower():find('death', 1, true) ~= nil
         local looping = entry and entry.loop and entry.costume and entry.costume >= 0
-        if looping and source == nativeFile and not dead then
+        if looping and owned(source) and not dead then
             if s.loopCostume ~= entry.costume or force then
                 removeLoop(p, s)
                 p:AddNullCostume(entry.costume)
@@ -154,14 +173,17 @@ return function(mod, playerType)
         -- selected head, so a costume rebuild cannot erase it in this frame.
         sprite = p:GetSprite()
         source = normalized(sprite:GetFilename())
-        if source == nativeFile and (sheet ~= s.sheet or force or changed or previousLoop ~= s.loopCostume) then
+        local target=entry and alignedFile or nativeFile
+        local swapped=owned(source) and actor(sprite,target)
+        if owned(source) and (swapped or sheet ~= s.sheet or force or changed or previousLoop ~= s.loopCostume) then
             sprite:ReplaceSpritesheet(4, sheet)
             sprite:LoadGraphics()
             s.sheet = sheet
-        elseif source ~= nativeFile then
+        elseif not owned(source) then
             -- Reapply when the native Hunter sprite returns from a special form.
             s.sheet = nil
         end
+        s.source=normalized(sprite:GetFilename())
     end
     local api = {sync=sync, state=state, definitions=definitions}
     function api.selected(p)
@@ -172,7 +194,7 @@ return function(mod, playerType)
     if ModCallbacks.MC_EXECUTE_CMD then
         mod:AddCallback(ModCallbacks.MC_EXECUTE_CMD, function(_, command)
             if command ~= 'hunterartdiag' then return end
-            local lines = {'[Hunter art v1.74] integrated heads and native dynamic overlays'}
+            local lines = {'[Hunter art v1.75] integrated heads and native dynamic overlays'}
             for i=0,game:GetNumPlayers()-1 do
                 local p = Isaac.GetPlayer(i)
                 local s = p:GetData().hunterDynamic174

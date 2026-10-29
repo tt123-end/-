@@ -5,7 +5,7 @@ import subprocess,xml.etree.ElementTree as E
 REPO=Path(__file__).resolve().parents[1];GFX=REPO/'zzzz_revolver_samson/resources/gfx'
 OUT=REPO/'deliverables';OUT.mkdir(exist_ok=True)
 TMP=Path('/workspace/redesign174/render');TMP.mkdir(parents=True,exist_ok=True)
-native=E.parse(GFX/'001.000_player_hunter_b_v153.anm2').getroot()
+native=E.parse(GFX/'001.000_player_hunter_b_v175.anm2').getroot()
 def run(args):subprocess.run(['magick',*map(str,args)],check=True,stderr=subprocess.DEVNULL)
 def render(canvas,actor,folder,name,tick,override=None):
     sheets={x.get('Id'):folder/x.get('Path').replace('\\','/')for x in actor.findall('Content/Spritesheets/Spritesheet')}

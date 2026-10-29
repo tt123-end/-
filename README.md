@@ -1,8 +1,8 @@
-# 里猎手 v1.74-art 动态外观测试版
+# 里猎手 v1.75-art 动态外观测试版
 
 本版移除v1.73的全部静态配饰贴片，重做66项道具的整合头部造型与表情帧。目标环境：忏悔+及匹配版本的REPENTOGON。
 
-- [下载完整Mod安装包](deliverables/Hunter_v1.74-art_test.zip)
+- [下载完整Mod安装包](deliverables/Hunter_v1.75-art_test.zip)
 - [浏览美术源图](art_sources) · [制作与验证工具](tools)
 - [查看动态哭泣合成预览](deliverables/crying-animation.gif)
 - [道具清单](deliverables/COSTUME_CATALOG.md)
@@ -10,7 +10,13 @@
 
 点击ZIP文件后选择Download raw file下载。也可直接使用仓库中的zzzz_revolver_samson文件夹。
 
-## 本次重做
+## v1.75位置修正
+
+修正启用道具造型后头部向右下方偏移的问题。仅为道具造型切换校正后的头部枢轴，正常人物仍使用原动画；脸部循环效果同步校正。覆盖正面、侧面以及拾取、举物和受伤动作，背面与身体动画保持原坐标。
+
+[查看位置对比](deliverables/alignment-comparison.png)
+
+## 原外观重做
 
 悲伤洋葱替换整张脸的含泪眼睛和张嘴表情，使用三幅独立泪滴帧循环。炸弹引线和蓝蘑菇采用四帧循环。其余道具按参考Mod的处理思路，提供正面/侧面/背面的待机和射击状态，并使用原人物动作曲线。
 
