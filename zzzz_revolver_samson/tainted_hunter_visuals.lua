@@ -41,9 +41,11 @@ return function(mod, playerType, normalType)
         [15]="gfx/characters/costumes/hunter_b_body_layers_v153.png",
         [16]="gfx/characters/costumes/hunter_b_death_v141.png"
     }
-    local function bindHunterLayers(sprite)
+    local function bindHunterLayers(sprite, player)
         for layer=0,16 do sprite:ReplaceSpritesheet(layer, LAYERS[layer]) end
         sprite:LoadGraphics()
+        local data=player:GetData()
+        data.hunterArtGraphicsRevision174=(data.hunterArtGraphicsRevision174 or 0)+1
     end
     local function appearanceState(player)
         local now={kind=player:GetPlayerType(),lost=false,forms=0,items=0,effects={}}
@@ -132,7 +134,7 @@ return function(mod, playerType, normalType)
         elseif hunter and source==NATIVE and recover then
             -- A delayed engine skin rebuild can arrive after the exit update.
             -- Rebind without Load/Play/SetFrame, so animation events never replay.
-            bindHunterLayers(sprite)
+            bindHunterLayers(sprite, player)
             state.remaining=state.remaining-1
             return
         else
@@ -146,7 +148,7 @@ return function(mod, playerType, normalType)
         sprite:Load(target, true)
         if hunter then
             data.hunterWasB136 = true
-            bindHunterLayers(sprite)
+            bindHunterLayers(sprite, player)
             state.remaining=2
             if state.reason then
                 Isaac.DebugString("[Revolver Samson] v1.53 restored Hunter layers after "..state.reason.."; source="..source)
@@ -216,6 +218,9 @@ return function(mod, playerType, normalType)
     mod:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, function(_, player)
         changeAnimationFile(player)
         synchronizeBodyAim(player)
+        if mod.HunterDynamicArt174 then
+            mod.HunterDynamicArt174.sync(player, player:GetData().hunterArtGraphicsRevision174)
+        end
     end)
     Isaac.DebugString("[Revolver Samson] v1.53 Tainted Hunter: connected pickup and costume-exit recovery loaded")
 end

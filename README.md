@@ -1,34 +1,41 @@
-# 里猎手外观包 v1.73-art（测试版）
+# 里猎手 v1.74-art 动态外观测试版
 
-基于猎手 v1.72，增加66项道具外观、多方向素材及EID中英文外观说明。保留原战斗逻辑与Stats+数值接口。目标环境：以撒的结合：忏悔+，启用匹配版本的REPENTOGON。
+本版移除v1.73的全部静态配饰贴片，重做66项道具的整合头部造型与表情帧。目标环境：忏悔+及匹配版本的REPENTOGON。
 
-## 下载
-
-- [完整Mod安装包](deliverables/Hunter_v1.73-art_test.zip)
-- [美术源图及制作文件](deliverables/Hunter_art_sources.zip)
-- [66项道具设计清单](deliverables/COSTUME_CATALOG.md)
+- [下载完整Mod安装包](deliverables/Hunter_v1.74-art_test.zip)
+- [浏览美术源图](art_sources) · [制作与验证工具](tools)
+- [查看动态哭泣合成预览](deliverables/crying-animation.gif)
+- [道具清单](deliverables/COSTUME_CATALOG.md)
 - [安装与验证说明](zzzz_revolver_samson/ART_PACK_README.md)
 
-点击ZIP文件后选择Download raw file下载。
+点击ZIP文件后选择Download raw file下载。也可直接使用仓库中的zzzz_revolver_samson文件夹。
+
+## 本次重做
+
+悲伤洋葱替换整张脸的含泪眼睛和张嘴表情，使用三幅独立泪滴帧循环。炸弹引线和蓝蘑菇采用四帧循环。其余道具按参考Mod的处理思路，提供正面/侧面/背面的待机和射击状态，并使用原人物动作曲线。
+
+饰物、头发、脸和兜帽合并绘制，移除旧版悬空配件，按原头顶/下巴边界对齐。拾取、举物、使用道具和受伤动作的头部也使用新造型；动作本身的时序与位移保留。
+
+同槽位采用一种整合造型：悲伤洋葱优先，硫磺火/巴比伦/钉子次之，其余按最近获得显示。此规则避免多张完整脸/帽子穿插，组合不会把所有造型同时叠加。持续型主动依赖游戏临时效果，短时使用反应有单独显示。
+
+EID中英文说明同步，支持巧克力牛奶隐藏替代道具。Stats+数值接口与原玩法保留。调试控制台输入hunterartdiag可查看外观版本和当前造型。
 
 ## 安装
 
-完全退出游戏，将旧猎手文件夹移出mods备份，再解压安装包，把zzzz_revolver_samson放入mods。只启用一份猎手，无需改动EID或Stats+文件。
+完全退出游戏，把旧猎手文件夹移出mods备份，再解压完整安装包，将zzzz_revolver_samson放入mods。只启用一份猎手。不要覆盖解压到旧文件夹，否则旧静态资源可能残留。无需改动EID或Stats+文件。
 
-也可直接使用本仓库中的zzzz_revolver_samson文件夹。
+## 验证
 
-## 当前验证状态
+运行 `python3 tools/test_dynamic_art.py`。检查Lua、66项状态/存档逻辑、实际像素不同的动作帧、原生坐标范围、资源引用和真实多帧循环。使用ImageMagick按ANM2坐标离线合成预览。
 
-Lua语法、XML/ANM2解析、资源路径和裁切边界、透明通道、服装增删模拟检查及ZIP完整性检查通过。模拟检查覆盖双人独立状态、主动触发、道具移除、角色切换、白火游魂恢复和EID说明追加。
+此云环境没有Isaac运行程序。测试使用接口模拟与离线渲染，尚未进行游戏内验收；不能据此保证全部组合在游戏中显示正确。
 
-尚未进行游戏实测。本版是外观测试版；服装叠加、特殊动画、主动效果组合及继续游戏后的恢复需要在游戏中验收。
+![离线合成预览](deliverables/costume-preview.png)
 
-## 离线合成预览
+![四向哭泣离线动画](deliverables/crying-animation.gif)
 
-下图按动画坐标离线合成，不是游戏截图。
+## 美术来源与制作
 
-![里猎手外观预览](deliverables/costume-preview.png)
+原角色/玩法来自用户上传的猎手v1.72。新整合头部图集由图像生成工具参照原人物制作；图集裁切时仅保留主体，清除相邻帧残片。泪滴、引线与蓝蘑菇循环素材及动画结构借用用户提供的Marisa as Cain v1.16（Cordelia、Vd65_63RUS及其贡献者），并按猎手挂接调整。未打包EID/Stats+本体。
 
-## 来源
-
-原角色与战斗代码来自用户提供的猎手Mod。道具外观覆盖范围及组织方式参照用户提供的Marisa as Cain v1.16；新配饰由图像生成工具按里猎手主题制作。未打包参考Mod、EID或Stats+本体。不对原有素材及第三方内容另行声明授权。
+原始图集和循环源文件见art_sources。制作依赖：Python3、Pillow、ImageMagick；运行时模拟检查使用Lua5.4共享库。执行 `python3 tools/build_dynamic_art.py` 装配资源（已存在的头部PNG保留；重新装配前删除hunter_art174中的数字命名PNG）。
